@@ -22,85 +22,39 @@
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <!--navbar icon 導覽列-->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
         <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 16 16">
-        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+
+      <!--Footer Icons-->
+      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-right" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 16 16">
-        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+      <symbol xmlns="http://www.w3.org/2000/svg" id="skip-end" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.713 3.31 4 3.655 4 4.308v7.384c0 .653.713.998 1.233.696L11.5 8.752V12a.5.5 0 0 0 1 0zM5 4.633 10.804 8 5 11.367z"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 512 512">
-        <path fill="currentColor" d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3ZM97.92 222.72a124.8 124.8 0 1 1 124.8 124.8a124.95 124.95 0 0 1-124.8-124.8Z" />
+      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-left" viewBox="0 0 16 16">
+        <path file="currentColor" d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-arrow-left" viewBox="0 0 1024 1024">
-        <path fill="currentColor" d="M609.408 149.376L277.76 489.6a32 32 0 0 0 0 44.672l331.648 340.352a29.12 29.12 0 0 0 41.728 0a30.592 30.592 0 0 0 0-42.752L339.264 511.936l311.872-319.872a30.592 30.592 0 0 0 0-42.688a29.12 29.12 0 0 0-41.728 0z" />
+      <symbol xmlns="http://www.w3.org/2000/svg" id="skip-start" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L5 8.752V12a.5.5 0 0 1-1 0zm7.5.633L5.696 8l5.804 3.367z"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-arrow-right" viewBox="0 0 24 24">
-        <path fill="currentColor" d="m19.704 12l-8.492-8.727a.75.75 0 1 1 1.075-1.046l9 9.25a.75.75 0 0 1 0 1.046l-9 9.25a.75.75 0 1 1-1.075-1.046L19.705 12Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="star-fill" viewBox="0 0 16 16">
-        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="star-empty" viewBox="0 0 16 16">
-        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-left" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M10.78 19.03a.75.75 0 0 1-1.06 0l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.749.749 0 0 1 1.275.326a.749.749 0 0 1-.215.734L5.81 11.5h14.44a.75.75 0 0 1 0 1.5H5.81l4.97 4.97a.75.75 0 0 1 0 1.06Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 16 16">
-        <path fill="currentColor" d="M2.5 7.5a.5.5 0 1 0 0 1h9.697l-4.031 3.628a.5.5 0 1 0 .668.744l5-4.5a.5.5 0 0 0 0-.744l-5-4.5a.5.5 0 0 0-.668.744L12.197 7.5H2.5Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="play" viewBox="0 0 32 32">
-        <path fill="currentColor" d="M7 28a1 1 0 0 1-1-1V5a1 1 0 0 1 1.482-.876l20 11a1 1 0 0 1 0 1.752l-20 11A1 1 0 0 1 7 28ZM8 6.69v18.62L24.925 16Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="truck" viewBox="0 0 24 24">
-        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
-          <path stroke-linejoin="round" stroke-miterlimit="1.5" d="M8 19a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4a2 2 0 0 0 0 4Z" />
-          <path d="M10.05 17H15V6.6a.6.6 0 0 0-.6-.6H1m4.65 11H3.6a.6.6 0 0 1-.6-.6v-4.9" />
-          <path stroke-linejoin="round" d="M2 9h4" />
-          <path d="M15 9h5.61a.6.6 0 0 1 .548.356l1.79 4.028a.6.6 0 0 1 .052.243V16.4a.6.6 0 0 1-.6.6h-1.9M15 17h1" />
-        </g>
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="luggage-cart" viewBox="0 0 32 32">
-        <path fill="currentColor" d="M19 6c-1.645 0-3 1.355-3 3h-6v12h18V9h-6c0-1.645-1.355-3-3-3zM4 7v2h1c.555 0 1 .445 1 1v11c0 2.21 1.79 4 4 4h18v-2H10c-1.191 0-2-.809-2-2V10c0-1.645-1.355-3-3-3zm20.5 18a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3zm-12 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3zM19 8c.555 0 1 .445 1 1h-2c0-.555.445-1 1-1zm-7 3h14v8H12z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="coffee" viewBox="0 0 32 32">
-        <path fill="currentColor" d="M11 3v4h2V3zm4 1v3h2V4zM4.875 8L5 9.094l1.813 17.218c.16 1.52 1.472 2.688 3 2.688h9.374c1.528 0 2.84-1.168 3-2.688l.47-4.312H25c1.645 0 3-1.355 3-3v-3c0-1.645-1.355-3-3-3h-1.406L24 9.094L24.125 8zm2.25 2h14.75l-1.688 16.094a1 1 0 0 1-1 .906H9.813c-.519 0-.945-.387-1-.906zm16.25 5H25c.566 0 1 .434 1 1v3c0 .566-.434 1-1 1h-2.156z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="insta" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="send" viewBox="0 0 32 32">
-        <path fill="currentColor" d="M26.07 3.996a2.974 2.974 0 0 0-.933.223h-.004c-.285.113-1.64.683-3.7 1.547l-7.382 3.109c-5.297 2.23-10.504 4.426-10.504 4.426l.062-.024s-.359.118-.734.375a2.03 2.03 0 0 0-.586.567c-.184.27-.332.683-.277 1.11c.09.722.558 1.155.894 1.394c.34.242.664.355.664.355h.008l4.883 1.645c.219.703 1.488 4.875 1.793 5.836c.18.574.355.933.574 1.207c.106.14.23.257.379.351a1.119 1.119 0 0 0 .246.106l-.05-.012c.015.004.027.016.038.02c.04.011.067.015.118.023c.773.234 1.394-.246 1.394-.246l.035-.028l2.883-2.625l4.832 3.707l.11.047c1.007.442 2.027.196 2.566-.238c.543-.437.754-.996.754-.996l.035-.09l3.734-19.129c.106-.472.133-.914.016-1.343a1.807 1.807 0 0 0-.781-1.047a1.872 1.872 0 0 0-1.067-.27zm-.101 2.05c-.004.063.008.056-.02.177v.011l-3.699 18.93c-.016.027-.043.086-.117.145c-.078.062-.14.101-.465-.028l-5.91-4.531l-3.57 3.254l.75-4.79l9.656-9c.398-.37.265-.448.265-.448c.028-.454-.601-.133-.601-.133l-12.176 7.543l-.004-.02l-5.836-1.965v-.004l-.015-.003a.27.27 0 0 0 .03-.012l.032-.016l.031-.011s5.211-2.196 10.508-4.426c2.652-1.117 5.324-2.242 7.379-3.11a807.312 807.312 0 0 1 3.66-1.53c.082-.032.043-.032.102-.032z"></path>
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 24 24">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m6-8l-6-6m-6 6l6-6" />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="cup" viewBox="0 0 24 24">
-        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-          <path d="M17 11.6V15a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6v-3.4a.6.6 0 0 1 .6-.6h12.8a.6.6 0 0 1 .6.6ZM12 9c0-1 .714-2 2.143-2v0A2.857 2.857 0 0 0 17 4.143V3.5M8 9v-.5a3 3 0 0 1 3-3v0a2 2 0 0 0 2-2V3"/><path d="M16 11h2.5a2.5 2.5 0 0 1 0 5H17"/>
-        </g>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-up" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
     <!--待轉畫面-->
-    <div class="preloader">
+    <div class="preloader" style="background-color: #87A9BC;">
       <div class="loader">
         <div class="dot">
-          <svg class="cup svg-primary" width="40" height="40">
-            <use xlink:href="#cup"></use>
-          </svg>
+          <img src="images/logo/preloader_img01.png" width="100px">
         </div>
         <div class="dot">
-          <svg class="cup svg-primary" width="40" height="40">
-            <use xlink:href="#cup"></use>
-          </svg>
+          <img src="images/logo/preloader_img02.png" width="100px">
         </div>
         <div class="dot">
-          <svg class="cup svg-primary" width="40" height="40">
-            <use xlink:href="#cup"></use>
-          </svg>
+          <img src="images/logo/preloader_img03.png" width="80px">
         </div>
       </div>
     </div>
@@ -109,7 +63,13 @@
       <div class="container-lg">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
-            <!--手機版LOGO-->
+            <!--Navbar for mobile-->
+            <button class="navbar-toggler d-flex d-lg-none order-3 p-2 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+              <svg class="navbar-icon svg-white" width="40" height="40">
+                <use xlink:href="#navbar-icon"></use>
+              </svg>
+            </button>
+            <!--LOGO for mobile-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
               <img src="images/logo/PUDS_v1.png" alt="Logo">
             </a>
@@ -118,52 +78,64 @@
                 <div class="offcanvas-header px-4 pb-0">
                   <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
                 </div>
-                <!--目錄-->
+                <!--Menu-->
                 <div class="navbar-collapse order-1 order-lg-1" id="navbarMenu">
                   <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                      <a class="nav-link text-light me-4" href="intro_and_motivation.html"> 首頁 </a>
+                    <li class="btn btn-link btn-sm">
+                      <button type="button" class="btn btn-link btn-sm btn-black" style="text-decoration: none; font-size: 20px;">
+                        <a href="intro_and_motivation.html">首頁</a>
+                      </button>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-light me-4" href="data.html"> 資料介紹 </a>
+                    <li class="btn btn-link btn-sm">
+                      <button type="button" class="btn btn-link btn-sm btn-black" style="text-decoration: none; font-size: 20px;">
+                        <a href="data.html">資料介紹</a>
+                      </button>
                     </li>
-                    <li class="nav-item dropdown">
-                      <button type="button" class="btn btn-link" style="text-decoration: none;"><a href="method.html" style="color: white;">流程與方法</a></button>
-                      <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
-                        <span class="visually-hidden">Toggle Dropdown</span>
+                    <li class="btn btn-group btn-sm" role="group">
+                      <button type="button" class="btn btn-link btn-sm btn-black" style="text-decoration: none; font-size: 20px;">
+                        <a href="method.html">流程與方法</a>
+                      </button>
+                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
                       </button>
                       <ul class="dropdown-menu">
                         <li>
-                          <a href="edge_detection.html" class="dropdown-item">邊線偵測</a>
+                          <a class="dropdown-item" href="edge_detection.html">邊線偵測</a>
                         </li>
                         <li>
-                          <a href="ball_tracking.html" class="dropdown-item">羽球軌跡</a>
+                          <a class="dropdown-item" href="ball_tracking.html">羽球軌跡</a>
                         </li>
                         <li>
-                          <a href="pose.html" class="dropdown-item">人體節點</a>
+                          <a class="dropdown-item" href="pose.html">人體節點</a>
                         </li>
                         <li>
-                          <a href="hit_point.html" class="dropdown-item">擊球點</a>
+                          <a class="dropdown-item" href="hit_point.html">擊球點</a>
                         </li>
                         <li>
-                          <a href="hitter.html" class="dropdown-item">判斷擊球方</a>
+                          <a class="dropdown-item" href="hitter.html">擊球方</a>
                         </li>
                         <li>
-                          <a href="winner.html" class="dropdown-item">得分方</a>
+                          <a class="dropdown-item" href="winner.html">得分方</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="ball_trajectory.html">球路</a>
                         </li>
                       </ul>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-light me-4" href="demo.html"> DEMO </a>
+                    <li class="btn btn-link btn-sm">
+                      <button type="button" class="btn btn-link btn-sm btn-black" style="text-decoration: none; font-size: 20px;">
+                        <a href="demo.html">DEMO</a>
+                      </button>
                     </li> 
-                    <li class="nav-item">
-                        <a class="nav-link text-light me-4" href="references.html"> 參考文獻 </a>
+                    <li class="btn btn-link btn-sm">
+                      <button type="button" class="btn btn-link btn-sm btn-black" style="text-decoration: none; font-size: 20px;">
+                        <a href="reference.html">參考文獻</a>
+                      </button>
                     </li>                  
                   </ul>
                 </div>
                 <!--LOGO-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/PUDS_v1.png" alt="Logo">
+                  <img src="images/logo/PUDS_v1.png" alt="Logo" width="100px">
                 </a>
               </div>
             </div>
@@ -237,22 +209,52 @@
       <div class="border-top py-4">
         <div class="container-lg">
           <div class="row justify-content-between">
-            <div class="col-md-10">
-              <p>Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
-                羽球比賽辨識系統專題團隊。All rights reserved.</p>
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-2" style="width: 150px">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#arrow-up"></use>
+                  <use xlink:href="#caret-up"></use>
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
-              <a href="demo.html" class="d-flex">
+              <a href="hitter.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#arrow-right"></use>
+                  <use xlink:href="#caret-left"></use>
                 </svg>
-                <span class="ps-4">Next Pages</span>
+                <span class="ps-4">Previous Page</span>
+              </a>
+              <a href="intro_and_motivation.html" class="d-flex">
+                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                  <use xlink:href="#skip-start"></use>
+                </svg>
+                <span class="ps-4">First Page</span>
+              </a>
+            </div>
+            <div class="col-md-10" style="width: 835px">
+              <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
+                羽球比賽辨識系統專題團隊。All Rights Reserved.
+              </p>
+              <p style="text-align: center;">
+                更新日期：2024／02／01
+              </p>
+            </div>
+            <div class="col-md-2" style="width: 150px">
+              <a href="#" class="d-flex">
+                <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                  <use xlink:href="#caret-up"></use>
+                </svg>
+                <span class="ps-4">Back to top</span>
+              </a>
+              <a href="ball_trajectory.html" class="d-flex">
+                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                  <use xlink:href="#caret-right"></use>
+                </svg>
+                <span class="ps-4">Next Page</span>
+              </a>
+              <a href="reference.html" class="d-flex">
+                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                  <use xlink:href="#skip-end"></use>
+                </svg>
+                <span class="ps-4">Last Page</span>
               </a>
             </div>
           </div>

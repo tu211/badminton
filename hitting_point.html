@@ -143,41 +143,55 @@
         </div>
       </div>
     </header>
-    <!--標題-->
-    <section class="hero-section p-5">
-      <div class="hero-content text-center p-5">
+    <!--封面背景-->
+    <section class="hero-section position-relative jarallax">
+      <img src="images/data/bg.jpg" alt="background" class="jarallax-img">
+      <div class="hero-content position-absolute d-flex justify-content-center align-items-center text-center">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="display-2 fst-italic">邊線偵測</h1>
+              <h1 class="page-title text-light fst-italic" style="background-color: lightblue;">擊球點</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--選項-->
+    <!--內文-->
     <div class="post-wrap">
       <div class="container">
         <div class="row">
           <main class="post-list">
             <div class="row">
-              <div>
-                <input type="checkbox" id="the_checkbox_of_bg">去背</input>
-                <input type="checkbox" id="the_checkbox_of_pose">人物</input>
-                <input type="checkbox" id="the_checkbox_of_ball">羽球</input>
-                <input type="checkbox" id="the_checkbox_of_line">場地</input>
-                <button type="button" id="the_btn">送出</button>
-                <video id="myVideo" width="1100px" controls autoplay>
-                  <source id="videoSource" src="images/data/00001_video.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <script src="js/demo.js"></script>
-              </div>
+              <article class="post-item">
+                <div class="post-content">
+                  <h2 class="fs-1 text-capitalize fst-italic"></h2>
+                  <div class="post-description">
+                    <div>
+                      <h4 class="fs-5 fst-italic">羽球軌跡的Y軸相對低點判斷其擊球幀</h4>
+                      <p style="font-size: 20px;"></p>
+                      <div class="row align-items-center">
+                        <div class="col-lg-6">
+                          <figure class="image-holder mb-5 jarallax">
+                            <img src="images/method/edge_detection/image.png" alt="original" class="jarallax-img">
+                          </figure>
+                          <p style="text-align: center; font-size: 15px;">（原圖）</p>
+                        </div>
+                        <div class="col-lg-6">
+                          <figure class="image-holder mb-5 jarallax">
+                            <img src="images/method/edge_detection/hsv.png" alt="hsv" class="jarallax-img">
+                          </figure>
+                          <p style="text-align: center; font-size: 15px;">（HSV）</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
           </main>
         </div>
       </div>
-    </div> 
+    </div>
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
@@ -189,7 +203,7 @@
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
-              <a href="ball_trajectory.html" class="d-flex">
+              <a href="pose.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#caret-left"></use>
                 </svg>
@@ -217,7 +231,7 @@
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
-              <a href="reference.html" class="d-flex">
+              <a href="hitter.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#caret-right"></use>
                 </svg>

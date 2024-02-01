@@ -261,7 +261,7 @@ a {
   --bs-dropdown-link-color: #87a9bc;
   --bs-dropdown-link-hover-color: #fff;
   --bs-dropdown-link-hover-bg: #87a9bc;
-  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-link-active-color: #ffffff00;
   --bs-dropdown-link-active-bg: #87a9bc;
   }
 
@@ -284,7 +284,7 @@ a {
   box-shadow: none;
 }
 
-/* text white */
+/* text white*/ 
 .text-white {
   --heading-color: var(--bs-light);
   --bs-breadcrumb-item-active-color: var(--bs-light);
@@ -769,12 +769,12 @@ tfoot {
   box-shadow: var(--bs-light);
 }
 
-/* - Flow Chart
+/* - Flow Chart DESIGN BY TU
 ------------------------------------------------------------- */
 .node {
   width: 100px;
   height: 50px;
-  background-color: #72afd8;
+  background-color: #87A9BC;
   color: #fff;
   text-align: center;
   line-height: 50px;
@@ -782,24 +782,23 @@ tfoot {
   cursor: pointer;
 }
 
-/* 样式化直线 */
 .line_ro {
   position: absolute;
   width: 2px;
   height: 50px;
-  background-color: #3498db;
+  background-color: #87A9BC;
 }
 
 .line_l {
   position: absolute;
   width: 2px;
   height: 200px;
-  background-color: #3498db;
+  background-color: #87A9BC;
 }
 
 .line_s {
   position: absolute;
   width: 2px;
   height: 100px;
-  background-color: #3498db;
+  background-color: #87A9BC;
 }
