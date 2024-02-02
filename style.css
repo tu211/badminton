@@ -785,20 +785,20 @@ tfoot {
 .line_ro {
   position: absolute;
   width: 2px;
-  height: 50px;
+  height: 150px;
   background-color: #87A9BC;
 }
 
 .line_l {
   position: absolute;
   width: 2px;
-  height: 200px;
+  height: 300px;
   background-color: #87A9BC;
 }
 
 .line_s {
   position: absolute;
   width: 2px;
-  height: 100px;
+  height: 150px;
   background-color: #87A9BC;
 }
