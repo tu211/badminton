@@ -152,14 +152,14 @@
       </div>
     </section>
     <!--選項-->
-    <div class="post-wrap">
+    <div class="post-wrap" style="height: 1000px;" >
       <div class="container">
         <div class="row">
           <main class="post-list">
             <div class="row">
               <div>
                 <form style="height: 140px; width: 1200px; font-size: 30px; text-align: left;">
-                  <fieldset>
+                  <fieldset style="height: 180px;">
                     <label>您選擇的影片：
                       <select id="the_option_of_video">
                         <option value="">請選擇影片</option>
@@ -168,7 +168,7 @@
                         <option value="00108">2022 世界羽球錦標賽 山口茜 vs 安洗瑩</option>
                       </select>
                     </label> 
-                    <label>請勾選顯示項目：
+                    <label style="margin-top: 20px;">請勾選顯示項目：
                       <input type="checkbox" id="the_checkbox_of_bg">去背</input>
                       <input type="checkbox" id="the_checkbox_of_pose">人物</input>
                       <input type="checkbox" id="the_checkbox_of_ball">羽球</input>
@@ -177,6 +177,8 @@
                   </label> 
                   </fieldset>
                 </form>
+              </div>
+              <div style="height: 700px; top: 10px; margin-top: 50px;">
                 <video id="myVideo" width="1200px" controls autoplay>
                   <source id="videoSource" src="images/data/00001_video.mp4" type="video/mp4">
                   Your browser does not support the video tag.
