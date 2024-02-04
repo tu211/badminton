@@ -769,8 +769,7 @@ tfoot {
   box-shadow: var(--bs-light);
 }
 
-/* - Flow Chart DESIGN BY TU
-------------------------------------------------------------- */
+/* ========== Flow Chart ========== */
 .node {
   width: 100px;
   height: 50px;
