@@ -156,30 +156,32 @@
     <section id="about" class="py-lg-8">
       <div class="container-lg">
         <div class="row align-items-center">
-          <div class="col-lg-6">
-            <figure class="image-holder mb-5 jarallax">
-              <video src="images/data/00001_video.mp4" autoplay loop alt="video" class="jarallax-img">
-            </figure>
-          </div>
-          <div class="col-lg-5">
-            <div class="detail-entry px-4">
-              <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>mp4</strong></h3>
-              <p style="font-size: 20px;">從GITHUB取得的公開資料集，資料中提供羽球賽事影片(如右圖)及csv檔，
-                每個影片是發球到落地前的擊球過程</p>
-            </div>
+          <div>
+            <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>資料集</strong></h3>
+            <p style="font-size: 30px;">
+              此資料集取自於GITHUB，共800筆資料，資料皆來自BWF羽球賽事的單打比賽，每筆資料中包含影片及相對應的數據。
+            </p>
           </div>
           <div>
             <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>csv</strong></h3>
-            <p style="font-size: 20px;">此資料集內容包含800筆來自各類羽球賽事的打擊至得分之片段影像及其觀測之各項數據。
-                數據內容包含擊球當下幀數、雙方球員的站位、擊球種類、是否繞頭擊球等多項數據(表一)。
-                源於Github資料集，資料集內容包含mp4、csv兩類型檔案，
-                影像部分截自羽球各賽事中選手從打擊到得分的片段內容，
-                而csv的部分則包含擊球當下幀數(HitFrame)、雙方球員的站位(HitterL、DefenderL)、
-                擊球種類(BallType)、是否繞頭擊球(Backhand)等多項數據(圖二)。</p>
-          </div> 
+            <p style="font-size: 30px;">
+              在資料集中所提供的csv內包含，ShotSeq(擊球次數)、HitFrame(擊球偵數)、
+              Hitter(擊球方)、RoundHead(是否繞頭擊球)、Backhand(是否反手擊球)、
+              ballHeight(是否高於網)、LandingX(球的落地點座標X)、LandingY(球的落地點座標Y)、
+              HitterLocationX(擊球方的座標X)、HitterLocationY(擊球方的座標Y)、
+              DefenderLocationX(防守方的座標X)、DefenderLocationY(防守方的座標Y)、
+              BallType(球種)、Winner(得分方)。
+            </p>
+            <img src="images/data/00001_csv_index.png" class="jarallax-img" style="width: 1400px;">
+            <p style="text-align: center; font-size: 20px;">（ 00001.csv）</p>
+          </div>
           <div>
-            <img src="images/data/00001_csv.png" alt="tea" class="jarallax-img" style="width: 1150px;">
-            <p style="text-align: center; font-size: 15px;">（ 00001.csv）</p>
+            <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>mp4</strong></h3>
+            <p style="font-size: 30px;">
+              資料集中所提供的影片檔案，每個影片是從發球到落地的擊球過程。
+            </p>
+            <video src="images/data/00001_video.mp4" autoplay loop style="width: 1400px;"></video>
+            <p style="text-align: center; font-size: 20px;">（ 00001.mp4）</p>
           </div>
         </div>
       </div>
