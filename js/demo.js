@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // 獲取相關元素
+  const video = document.getElementById('the_option_of_video');
   const bg = document.getElementById('the_checkbox_of_bg');
   const pose = document.getElementById('the_checkbox_of_pose');
   const ball = document.getElementById('the_checkbox_of_ball');
@@ -10,59 +11,158 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 設定影片路徑
   const videoPaths = {
-    origin: 'images/data/00001_video.mp4',
-    nob_full: 'images/demo/AVI_to_MP4/00001_nob_full.mp4',
-    nob_pose: 'images/demo/AVI_to_MP4/00001_nob_pose.mp4',
-    nob_line: 'images/demo/AVI_to_MP4/00001_nob_line.mp4',
-    nob_ball: 'images/demo/AVI_to_MP4/00001_nob_ball.mp4',
-    nob_nopose: 'images/demo/AVI_to_MP4/00001_nob_nopose.mp4',
-    nob_noline: 'images/demo/AVI_to_MP4/00001_nob_noline.mp4',
-    nob_noball: 'images/demo/AVI_to_MP4/00001_nob_noball.mp4',
-    
-    full: 'images/demo/AVI_to_MP4/00001_full.mp4',
-    pose: 'images/demo/AVI_to_MP4/00001_pose.mp4',
-    ball: 'images/demo/AVI_to_MP4/00001_ball.mp4',
-    line: 'images/demo/AVI_to_MP4/00001_line.mp4',
-    nopose: 'images/demo/AVI_to_MP4/00001_nopose.mp4',
-    noline: 'images/demo/AVI_to_MP4/00001_noline.mp4',
-    noball: 'images/demo/AVI_to_MP4/00001_noball.mp4',
-    // 可以根據需要添加更多影片路徑
+    origin_00001: 'images/demo/00001/00001.mp4',
+    nob_full_00001: 'images/demo/00001/00001_nob_full.mp4',
+    nob_pose_00001: 'images/demo/00001/00001_nob_pose.mp4',
+    nob_line_00001: 'images/demo/00001/00001_nob_line.mp4',
+    nob_ball_00001: 'images/demo/00001/00001_nob_ball.mp4',
+    nob_nopose_00001: 'images/demo/00001/00001_nob_nopose.mp4',
+    nob_noline_00001: 'images/demo/00001/00001_nob_noline.mp4',
+    nob_noball_00001: 'images/demo/00001/00001_nob_noball.mp4',
+    full_00001: 'images/demo/00001/00001_full.mp4',
+    pose_00001: 'images/demo/00001/00001_pose.mp4',
+    ball_00001: 'images/demo/00001/00001_ball.mp4',
+    line_00001: 'images/demo/00001/00001_line.mp4',
+    nopose_00001: 'images/demo/00001/00001_nopose.mp4',
+    noline_00001: 'images/demo/00001/00001_noline.mp4',
+    noball_00001: 'images/demo/00001/00001_noball.mp4',
+
+    origin_00105: 'images/demo/00105/00105.mp4',
+    nob_full_00105: 'images/demo/00105/00105_nob_full.mp4',
+    nob_pose_00105: 'images/demo/00105/00105_nob_pose.mp4',
+    nob_line_00105: 'images/demo/00105/00105_nob_line.mp4',
+    nob_ball_00105: 'images/demo/00105/00105_nob_ball.mp4',
+    nob_nopose_00105: 'images/demo/00105/00105_nob_nopose.mp4',
+    nob_noline_00105: 'images/demo/00105/00105_nob_noline.mp4',
+    nob_noball_00105: 'images/demo/00105/00105_nob_noball.mp4',
+    full_00105: 'images/demo/00105/00105_full.mp4',
+    pose_00105: 'images/demo/00105/00105_pose.mp4',
+    ball_00105: 'images/demo/00105/00105_ball.mp4',
+    line_00105: 'images/demo/00105/00105_line.mp4',
+    nopose_00105: 'images/demo/00105/00105_nopose.mp4',
+    noline_00105: 'images/demo/00105/00105_noline.mp4',
+    noball_00105: 'images/demo/00105/00105_noball.mp4',
+
+    origin_00108: 'images/demo/00108/00108.mp4',
+    nob_full_00108: 'images/demo/00108/00108_nob_full.mp4',
+    nob_pose_00108: 'images/demo/00108/00108_nob_pose.mp4',
+    nob_line_00108: 'images/demo/00108/00108_nob_line.mp4',
+    nob_ball_00108: 'images/demo/00108/00108_nob_ball.mp4',
+    nob_nopose_00108: 'images/demo/00108/00108_nob_nopose.mp4',
+    nob_noline_00108: 'images/demo/00108/00108_nob_noline.mp4',
+    nob_noball_00108: 'images/demo/00108/00108_nob_noball.mp4',
+    full_00108: 'images/demo/00108/00108_full.mp4',
+    pose_00108: 'images/demo/00108/00108_pose.mp4',
+    ball_00108: 'images/demo/00108/00108_ball.mp4',
+    line_00108: 'images/demo/00108/00108_line.mp4',
+    nopose_00108: 'images/demo/00108/00108_nopose.mp4',
+    noline_00108: 'images/demo/00108/00108_noline.mp4',
+    noball_00108: 'images/demo/00108/00108_noball.mp4',
   };
 
   // 監聽按鈕點擊事件
   changeVideoBtn.addEventListener('click', function () {
-    // 根據 checkbox 狀態切換影片
-    if (bg.checked && pose.checked && line.checked && ball.checked) {
-      changeVideoSource(videoPaths.nob_full);
-    } else if (bg.checked && pose.checked && line.checked) {
-      changeVideoSource(videoPaths.nob_noball);
-    } else if (bg.checked && pose.checked && ball.checked) {
-      changeVideoSource(videoPaths.nob_noline);
-    } else if (bg.checked && line.checked && ball.checked) {
-      changeVideoSource(videoPaths.nob_nopose);
-    } else if (bg.checked && pose.checked) {
-      changeVideoSource(videoPaths.nob_pose);
-    } else if (bg.checked && ball.checked) {
-      changeVideoSource(videoPaths.nob_ball);
-    } else if (bg.checked && line.checked) {
-      changeVideoSource(videoPaths.nob_line);
-    } else if (pose.checked && line.checked && ball.checked) {
-      changeVideoSource(videoPaths.full);
-    } else if (pose.checked && line.checked) {
-      changeVideoSource(videoPaths.noball);
-    } else if (pose.checked && ball.checked) {
-      changeVideoSource(videoPaths.noline);
-    } else if (line.checked && ball.checked) {
-      changeVideoSource(videoPaths.nopose);
-    } else if (pose.checked) {
-      changeVideoSource(videoPaths.pose);
-    } else if (ball.checked) {
-      changeVideoSource(videoPaths.ball);
-    } else if (line.checked) {
-      changeVideoSource(videoPaths.line);
+    if (video.value === "00001"){
+      if (bg.checked && pose.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_full_00001);
+      } else if (bg.checked && pose.checked && line.checked) {
+        changeVideoSource(videoPaths.nob_noball_00001);
+      } else if (bg.checked && pose.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_noline_00001);
+      } else if (bg.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_nopose_00001);
+      } else if (bg.checked && pose.checked) {
+        changeVideoSource(videoPaths.nob_pose_00001);
+      } else if (bg.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_ball_00001);
+      } else if (bg.checked && line.checked) {
+        changeVideoSource(videoPaths.nob_line_00001);
+      } else if (pose.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.full_00001);
+      } else if (pose.checked && line.checked) {
+        changeVideoSource(videoPaths.noball_00001);
+      } else if (pose.checked && ball.checked) {
+        changeVideoSource(videoPaths.noline_00001);
+      } else if (line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nopose_00001);
+      } else if (pose.checked) {
+        changeVideoSource(videoPaths.pose_00001);
+      } else if (ball.checked) {
+        changeVideoSource(videoPaths.ball_00001);
+      } else if (line.checked) {
+        changeVideoSource(videoPaths.line_00001);
+      } else {
+        // 如果沒有 checkbox 被勾選，保留初始影片
+        changeVideoSource(videoPaths.origin_00001);
+      }
+    } else if (video.value === "000105") {
+      if (bg.checked && pose.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_full_00105);
+      } else if (bg.checked && pose.checked && line.checked) {
+        changeVideoSource(videoPaths.nob_noball_00105);
+      } else if (bg.checked && pose.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_noline_00105);
+      } else if (bg.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_nopose_00105);
+      } else if (bg.checked && pose.checked) {
+        changeVideoSource(videoPaths.nob_pose_00105);
+      } else if (bg.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_ball_00105);
+      } else if (bg.checked && line.checked) {
+        changeVideoSource(videoPaths.nob_line_00105);
+      } else if (pose.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.full_00105);
+      } else if (pose.checked && line.checked) {
+        changeVideoSource(videoPaths.noball_00105);
+      } else if (pose.checked && ball.checked) {
+        changeVideoSource(videoPaths.noline_00105);
+      } else if (line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nopose_00105);
+      } else if (pose.checked) {
+        changeVideoSource(videoPaths.pose_00105);
+      } else if (ball.checked) {
+        changeVideoSource(videoPaths.ball_00105);
+      } else if (line.checked) {
+        changeVideoSource(videoPaths.line_00105);
+      } else {
+        // 如果沒有 checkbox 被勾選，保留初始影片
+        changeVideoSource(videoPaths.origin_00105);
+      }
+    } else if (video.value === "00108") {
+      if (bg.checked && pose.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_full_00108);
+      } else if (bg.checked && pose.checked && line.checked) {
+        changeVideoSource(videoPaths.nob_noball_00108);
+      } else if (bg.checked && pose.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_noline_00108);
+      } else if (bg.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_nopose_00108);
+      } else if (bg.checked && pose.checked) {
+        changeVideoSource(videoPaths.nob_pose_00108);
+      } else if (bg.checked && ball.checked) {
+        changeVideoSource(videoPaths.nob_ball_00108);
+      } else if (bg.checked && line.checked) {
+        changeVideoSource(videoPaths.nob_line_00108);
+      } else if (pose.checked && line.checked && ball.checked) {
+        changeVideoSource(videoPaths.full_00108);
+      } else if (pose.checked && line.checked) {
+        changeVideoSource(videoPaths.noball_00108);
+      } else if (pose.checked && ball.checked) {
+        changeVideoSource(videoPaths.noline_00108);
+      } else if (line.checked && ball.checked) {
+        changeVideoSource(videoPaths.nopose_00108);
+      } else if (pose.checked) {
+        changeVideoSource(videoPaths.pose_00108);
+      } else if (ball.checked) {
+        changeVideoSource(videoPaths.ball_00108);
+      } else if (line.checked) {
+        changeVideoSource(videoPaths.line_00108);
+      } else {
+        // 如果沒有 checkbox 被勾選，保留初始影片
+        changeVideoSource(videoPaths.origin_00108);
+      }
     } else {
-      // 如果沒有 checkbox 被勾選，保留初始影片
-      changeVideoSource(videoPaths.origin);
+      alert("請選擇影片")
     }
   });
 
