@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 如果沒有 checkbox 被勾選，保留初始影片
         changeVideoSource(videoPaths.origin_00001);
       }
-    } else if (video.value === "000105") {
+    } else if (video.value === "00105") {
       if (bg.checked && pose.checked && line.checked && ball.checked) {
         changeVideoSource(videoPaths.nob_full_00105);
       } else if (bg.checked && pose.checked && line.checked) {
