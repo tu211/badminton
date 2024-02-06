@@ -162,7 +162,10 @@
                   <h2 class="fs-1 text-capitalize fst-italic"></h2>
                   <div class="post-description">
                     <div>
-                      <h4 class="fs-5 fst-italic">RGB -> HSV</h4>
+                      <div class="container">
+                        <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                        <div class="text">RGB -> HSV</div>
+                      </div>
                       <p style="font-size: 20px;">因為羽球場地大多數為綠色的場地，因此為了能夠更快速尋找目標，
                         在這將原圖的RGB格式轉為HSV格式</p>
                       <div class="row align-items-center">
@@ -200,7 +203,6 @@
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">Canny</h4>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                           <figure class="image-holder mb-5 jarallax">
@@ -209,13 +211,13 @@
                           <p style="text-align: center; font-size: 15px;">（Canny）</p>
                         </div>
                         <div class="col-lg-6">
+                          <h4 class="fs-5 fst-italic">Canny</h4>
                           <p style="font-size: 20px;">對處理後的圖片進行Canny邊緣偵測，
                             可看見Canny描繪出圖中所有可辨識的線條。</p>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">霍夫轉換</h4>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                           <figure class="image-holder mb-5 jarallax">
@@ -224,6 +226,7 @@
                           <p style="text-align: center; font-size: 15px;">（HoughLine）</p>
                         </div>
                         <div class="col-lg-6">
+                          <h4 class="fs-5 fst-italic">霍夫轉換</h4>
                           <p style="font-size: 20px;">對進行過Canny偵測的圖片進行霍夫轉換，
                             透過轉換後的座標畫出場地線。</p>
                         </div>
@@ -249,8 +252,10 @@
                     </div>
                     <div>
                       <h4 class="fs-5 fst-italic">處理後ROWS & COLUMNS</h4>
-                      <p style="font-size: 20px;">將場外的線刪除，並將圖中線段重合的部分分群處理，
-                        取每一群的線段的平均值重新畫線。</p>
+                      <p style="font-size: 20px;">先將場地外的線刪除，因為有多條線重合在一起，
+                        為了留下一條線，所以我們利用分組的方式將重合在一起的線分在同一組，並計算出他的平均值，
+                        將這個值當作最後這條線的結果，因為分組的區域限制所以我們將上述步驟進行了兩次，
+                        為了讓這個結果可以更加貼近原本的場地線。</p>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                           <figure class="image-holder mb-5 jarallax">
@@ -267,7 +272,6 @@
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">合併ROWS & COLUMNS</h4>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                           <figure class="image-holder mb-5 jarallax">
@@ -276,6 +280,7 @@
                           <p style="text-align: center; font-size: 15px;">（線段合併）</p>
                         </div>
                         <div class="col-lg-6">
+                          <h4 class="fs-5 fst-italic">合併ROWS & COLUMNS</h4>
                           <p style="font-size: 20px;">將處理後的ROWS和COLUMNS合併。</p>
                         </div>
                       </div>

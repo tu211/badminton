@@ -773,6 +773,27 @@ tfoot {
   box-shadow: var(--bs-light);
 }
 
+/* ========== 標題至中 ========== */
+h1 {
+  text-align: center;
+  width: 1100px
+}
+
+/* ========== Side by Side ========== */
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  flex-shrink: 0; /* 防止圖片縮小 */
+  margin-right: 10px; /* 調整圖片與文字之間的間距 */
+}
+
+.text {
+  font-size: 30px;
+}
+
 /* ========== Flow Chart ========== */
 .node_s {
   width: 100px;
