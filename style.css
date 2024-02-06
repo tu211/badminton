@@ -486,6 +486,10 @@ a {
   fill: var(--bs-white);
   color: var(--bs-white);
 }
+.svg-gray {
+  fill: var(--bs-gray);
+  color: var(--bs-gray);
+}
 
 /* - Preloader
 ------------------------------------------------------------- */ 
