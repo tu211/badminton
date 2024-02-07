@@ -107,10 +107,10 @@
                           <a class="dropdown-item" href="hitting_point.html">擊球點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitter.html">擊球方</a>
+                          <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="winner.html">得分方</a>
+                          <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
                         <li>
                           <a class="dropdown-item" href="ball_trajectory.html">球路</a>
@@ -146,19 +146,19 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="page-title text-light fst-italic" style="background-color: lightblue;">擊球方</h1>
+              <h1 class="page-title text-light fst-italic" style="background-color: lightblue;">判斷擊球方</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
     <div class="post-wrap">
-      <div class="container">
+      <div>
         <div class="row">
           <section id="about" class="py-lg-8">
             <div class="container-lg">
-              <div class="row align-items-center" style="width: 1120px; height: 500px">
-                <div class="col-lg-6" style="width: 450px; font-size: 20px;">
+              <div class="row align-items-center" style="width: 1400px; height: 750px;">
+                <div class="col-lg-6" style="width: 500px; font-size: 20px;">
                   <h3>利用已得到的所有擊球幀，共2485筆資料</h3>
                   <p>171項變數如下:</p>
                   <p>羽球軌跡座標（ｘ、ｙ座標）</p>
@@ -168,43 +168,43 @@
                   <p style="color: red;">擊球方為ｙ</p>
                   <p>其中是Logistic Regression(邏輯式回歸)最高</p>
                 </div>
-                <div class="col-lg-5" style="width: 650px; font-size: 20px;">
+                <div class="col-lg-5" style="width: 850px; font-size: 20px;">
                   <table style="border: 2px solid black;">
                     <tbody>
                       <tr>
-                        <td style="border: 2px solid black; background-color: lightblue;"></td>
-                        <td style="border: 2px solid black; background-color: lightblue;">訓練集準確率</td>
-                        <td style="border: 2px solid black; background-color: lightblue;">測試集準確率</td>
+                        <td style="border: 2px solid black; background-color: lightblue; text-align: center; font-size: 30px;"><br>模型<br>&nbsp;</td>
+                        <td style="border: 2px solid black; background-color: lightblue; text-align: center; font-size: 30px;"><br>&nbsp;訓練集準確率&nbsp;<br>&nbsp;</td>
+                        <td style="border: 2px solid black; background-color: lightblue; text-align: center; font-size: 30px;"><br>&nbsp;測試集準確率&nbsp;<br>&nbsp;</td>
                       </tr>
                       <tr>
-                        <td style="border: 2px solid black;">Perceptron(感知器)</td>
-                        <td style="border: 2px solid black;">0.88</td>
-                        <td style="border: 2px solid black;">0.88</td>
+                        <td style="border: 2px solid black; text-align: center;"><br>Perceptron(感知器)<br>&nbsp;</td>
+                        <td style="border: 2px solid black; text-align: center;">0.88</td>
+                        <td style="border: 2px solid black; text-align: center;">0.88</td>
                       </tr>
                       <tr>
-                        <td style="border: 2px solid black; color: red;">Logistic Regression(邏輯式回歸)</td>
-                        <td style="border: 2px solid black; color: red;">0.97</td>
-                        <td style="border: 2px solid black; color: red;">0.96</td>
+                        <td style="border: 2px solid black; color: red; text-align: center;"><br>Logistic Regression(邏輯式回歸)&nbsp;<br>&nbsp;</td>
+                        <td style="border: 2px solid black; color: red; text-align: center;">0.97</td>
+                        <td style="border: 2px solid black; color: red; text-align: center;">0.96</td>
                       </tr>
                       <tr>
-                        <td style="border: 2px solid black;">SVM(支援向量機)</td>
-                        <td style="border: 2px solid black;">0.95</td>
-                        <td style="border: 2px solid black;">0.94</td>
+                        <td style="border: 2px solid black; text-align: center;"><br>SVM(支援向量機)<br>&nbsp;</td>
+                        <td style="border: 2px solid black; text-align: center;">0.95</td>
+                        <td style="border: 2px solid black; text-align: center;">0.94</td>
                       </tr>
                       <tr>
-                        <td style="border: 2px solid black;">Decision Tree(決策樹)</td>
-                        <td style="border: 2px solid black;">0.89</td>
-                        <td style="border: 2px solid black;">0.86</td>
+                        <td style="border: 2px solid black; text-align: center;"><br>Decision Tree(決策樹)<br>&nbsp;</td>
+                        <td style="border: 2px solid black; text-align: center;">0.89</td>
+                        <td style="border: 2px solid black; text-align: center;">0.86</td>
                       </tr>
                       <tr>
-                        <td style="border: 2px solid black;">Random Decision Forests(隨機森林)</td>
-                        <td style="border: 2px solid black;">0.91</td>
-                        <td style="border: 2px solid black;">0.88</td>
+                        <td style="border: 2px solid black; text-align: center;"><br>&nbsp;Random Decision Forests(隨機森林)&nbsp;<br>&nbsp;</td>
+                        <td style="border: 2px solid black; text-align: center;">0.91</td>
+                        <td style="border: 2px solid black; text-align: center;">0.88</td>
                       </tr>
                       <tr>
-                        <td style="border: 2px solid black;">XGBoost</td>
-                        <td style="border: 2px solid black;">0.85</td>
-                        <td style="border: 2px solid black;">0.82</td>
+                        <td style="border: 2px solid black; text-align: center;"><br>XGBoost<br>&nbsp;</td>
+                        <td style="border: 2px solid black; text-align: center;">0.85</td>
+                        <td style="border: 2px solid black; text-align: center;">0.82</td>
                       </tr>
                     </tbody>
                   </table>

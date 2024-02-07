@@ -107,10 +107,10 @@
                           <a class="dropdown-item" href="hitting_point.html">擊球點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitter.html">擊球方</a>
+                          <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="winner.html">得分方</a>
+                          <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
                         <li>
                           <a class="dropdown-item" href="ball_trajectory.html">球路</a>
@@ -184,7 +184,10 @@
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">遮罩</h4>
+                      <div class="container">
+                        <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                        <div class="text">遮罩</div>
+                      </div>
                       <p style="font-size: 20px;">將轉換後的HSV圖片進行遮罩，可看到圖中綠色的部分轉換成白色，
                         其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
                       <div class="row align-items-center">
@@ -211,7 +214,10 @@
                           <p style="text-align: center; font-size: 15px;">（Canny）</p>
                         </div>
                         <div class="col-lg-6">
-                          <h4 class="fs-5 fst-italic">Canny</h4>
+                          <div class="container">
+                            <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                            <div class="text">Canny</div>
+                          </div>
                           <p style="font-size: 20px;">對處理後的圖片進行Canny邊緣偵測，
                             可看見Canny描繪出圖中所有可辨識的線條。</p>
                         </div>
@@ -226,14 +232,20 @@
                           <p style="text-align: center; font-size: 15px;">（HoughLine）</p>
                         </div>
                         <div class="col-lg-6">
-                          <h4 class="fs-5 fst-italic">霍夫轉換</h4>
+                          <div class="container">
+                            <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                            <div class="text">霍夫轉換</div>
+                          </div>
                           <p style="font-size: 20px;">對進行過Canny偵測的圖片進行霍夫轉換，
                             透過轉換後的座標畫出場地線。</p>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">ROWS & COLUMNS</h4>
+                      <div class="container">
+                        <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                        <div class="text">ROWS & COLUMNS</div>
+                      </div>
                       <p style="font-size: 20px;">將進行霍夫轉換後的ROW和COLUMN拆分。</p>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
@@ -251,7 +263,10 @@
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">處理後ROWS & COLUMNS</h4>
+                      <div class="container">
+                        <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                        <div class="text">處理後ROWS & COLUMNS</div>
+                      </div>
                       <p style="font-size: 20px;">先將場地外的線刪除，因為有多條線重合在一起，
                         為了留下一條線，所以我們利用分組的方式將重合在一起的線分在同一組，並計算出他的平均值，
                         將這個值當作最後這條線的結果，因為分組的區域限制所以我們將上述步驟進行了兩次，
@@ -280,13 +295,19 @@
                           <p style="text-align: center; font-size: 15px;">（線段合併）</p>
                         </div>
                         <div class="col-lg-6">
-                          <h4 class="fs-5 fst-italic">合併ROWS & COLUMNS</h4>
+                          <div class="container">
+                            <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                            <div class="text">合併ROWS & COLUMNS</div>
+                          </div>
                           <p style="font-size: 20px;">將處理後的ROWS和COLUMNS合併。</p>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <h4 class="fs-5 fst-italic">單打線</h4>
+                      <div class="container">
+                        <img src="images/logo/badminton.png" style="height: 50px; width: 50px;">
+                        <div class="text">單打線</div>
+                      </div>
                       <p style="font-size: 20px;">將合併後的線段進行交點判斷，並留下單打線。</p>
                       <div class="row align-items-center">
                         <div class="col-lg-6">

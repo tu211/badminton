@@ -261,7 +261,7 @@ a {
   --bs-dropdown-link-color: #87a9bc;
   --bs-dropdown-link-hover-color: #fff;
   --bs-dropdown-link-hover-bg: #87a9bc;
-  --bs-dropdown-link-active-color: #ffffff00;
+  --bs-dropdown-link-active-color: #ffffff;
   --bs-dropdown-link-active-bg: #87a9bc;
   }
 
@@ -806,13 +806,6 @@ h1 {
   cursor: pointer;
 }
 
-.node_s:hover {
-  background-color: white;
-  color: #87A9BC;
-  border: #87A9BC 2px solid;
-  text-align: center;
-}
-
 .node_l {
   width: 150px;
   height: 50px;
@@ -824,7 +817,18 @@ h1 {
   cursor: pointer;
 }
 
-.node_l:hover {
+.node_ll {
+  width: 200px;
+  height: 50px;
+  background-color: #87A9BC;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.node_s:hover, .node_l:hover, .node_ll:hover {
   background-color: white;
   color: #87A9BC;
   border: #87A9BC 2px solid;
@@ -835,6 +839,13 @@ h1 {
   position: absolute;
   width: 2px;
   height: 150px;
+  background-color: #87A9BC;
+}
+
+.line_ro_s {
+  position: absolute;
+  width: 2px;
+  height: 50px;
   background-color: #87A9BC;
 }
 
