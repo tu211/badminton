@@ -862,3 +862,10 @@ h1 {
   height: 150px;
   background-color: #87A9BC;
 }
+
+/* ========== Hitter Table ========== */
+.table {
+  border: 2px solid black;
+  text-align: center;
+  font-size: 20px;
+}
