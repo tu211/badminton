@@ -18,25 +18,33 @@
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-      <!--navbar icon 導覽列-->
+      <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
         <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
       </symbol>
 
+      <!--container icon-->
+      <symbol xmlns="http://www.w3.org/2000/svg" id="container_arrow-right" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="container_arrow-left" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"/>
+      </symbol>
+
       <!--Footer Icons-->
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-right" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-right" viewBox="0 0 16 16">
         <path fill="currentColor" d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="skip-end" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-end" viewBox="0 0 16 16">
         <path fill="currentColor" d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.713 3.31 4 3.655 4 4.308v7.384c0 .653.713.998 1.233.696L11.5 8.752V12a.5.5 0 0 0 1 0zM5 4.633 10.804 8 5 11.367z"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-left" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-left" viewBox="0 0 16 16">
         <path file="currentColor" d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="skip-start" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-start" viewBox="0 0 16 16">
         <path fill="currentColor" d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L5 8.752V12a.5.5 0 0 1-1 0zm7.5.633L5.696 8l5.804 3.367z"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-up" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-up" viewBox="0 0 16 16">
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
@@ -171,43 +179,73 @@
       </div>
     </section>
     <!--內文-->
-    <section id="about" class="py-lg-8">
-      <div class="container-lg">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <figure class="image-holder mb-5 jarallax">
-              <img src="images/index/bg4.jpg" alt="introduction" class="jarallax-img">
-            </figure>
-          </div>
-          <div class="col-lg-5">
-            <div class="detail-entry px-4">
-              <h4 class="fs-6">Introduction</h4>
-              <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>摘要</strong></h3>
-              <p style="font-size: 20px;">本專題旨在利用AI技術，以研究分析出羽球賽事中各項數據。
-                我們分別使用了TrackNetV2對影像中的羽球進行初步的偵測，
-                以獲取羽球在影像中的不同變化；此外，再利用OpenPose對打擊者進行節點座標的採集，
-                並以其輔佐我們對於往後數據的分析；羽球競賽中，場地線也是一項評判得失分的主要標準，
-                我們採用了遮罩的方式將場地線篩選出來，
-                並且再以Canny和HoughLine將場地線單獨以函數的方式呈現出來。
-                這項研究的結果將有助於我們對於大小羽球賽事的表現分析，
-                甚至在訓練方面也能提高教學專業性的水準。</p>
+    <section id="trending" class="py-lg-9">
+      <div class="product-content position-relative">
+        <div class="container-lg">
+          <div class="row">
+            <div class="arrow-wrap">
+              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
+                <a href="#">
+                  <button class="button-with-tooltip" onclick="return false" style="background-color: lightgray;">
+                    <svg class="caret-arrow-left" width="25" height="25">
+                      <use xlink:href="#container_arrow-left"></use>
+                    </svg>
+                    Previous
+                  </button>
+                </a>
+                <div class="tooltip">No Previous.</div>
+              </div>
+              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
+                <a href="data.html">
+                  <button class="button-with-tooltip">
+                    <svg class="caret-arrow-right" width="25" height="25">
+                      <use xlink:href="#container_arrow-right"></use>
+                    </svg>
+                    Next
+                  </button>
+                </a>
+                <div class="tooltip">資料介紹</div>
+              </div>
+            </div>
+            <div class="container-lg">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <figure class="image-holder mb-5 jarallax">
+                    <img src="images/index/bg4.jpg" alt="introduction" class="jarallax-img">
+                  </figure>
+                </div>
+                <div class="col-lg-5">
+                  <div class="detail-entry px-4">
+                    <h4 class="fs-6">Introduction</h4>
+                    <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>摘要</strong></h3>
+                    <p style="font-size: 20px;">本專題旨在利用AI技術，以研究分析出羽球賽事中各項數據。
+                      我們分別使用了TrackNetV2對影像中的羽球進行初步的偵測，
+                      以獲取羽球在影像中的不同變化；此外，再利用OpenPose對打擊者進行節點座標的採集，
+                      並以其輔佐我們對於往後數據的分析；羽球競賽中，場地線也是一項評判得失分的主要標準，
+                      我們採用了遮罩的方式將場地線篩選出來，
+                      並且再以Canny和HoughLine將場地線單獨以函數的方式呈現出來。
+                      這項研究的結果將有助於我們對於大小羽球賽事的表現分析，
+                      甚至在訓練方面也能提高教學專業性的水準。</p>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="detail-entry px-4">
+                    <h4 class="fs-6">Motivation and Purpose</h4>
+                    <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>研究動機與目標</strong></h3>
+                    <p style="font-size: 20px;">隨著羽球運動的逐漸興起，我們希望做出能對羽球比賽進行分析的互動式網頁，
+                      透過這個平台，使用者可以更方便地觀察影片中的得分方、球種和擊球技巧，
+                      以便更迅速的理解比賽內容。我們的目標是提供一個直觀而功能豐富的工具，
+                      協助使用者深入瞭解羽球比賽的關鍵要素。</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <figure class="image-holder mb-5 jarallax">
+                    <img src="images/index/bg5.jpg" alt="motivation_and_purpose" class="jarallax-img">
+                  </figure>
+                </div>  
+              </div>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="detail-entry px-4">
-              <h4 class="fs-6">Motivation and Purpose</h4>
-              <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>研究動機與目標</strong></h3>
-              <p style="font-size: 20px;">隨著羽球運動的逐漸興起，我們希望做出能對羽球比賽進行分析的互動式網頁，
-                透過這個平台，使用者可以更方便地觀察影片中的得分方、球種和擊球技巧，
-                以便更迅速的理解比賽內容。我們的目標是提供一個直觀而功能豐富的工具，
-                協助使用者深入瞭解羽球比賽的關鍵要素。</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <figure class="image-holder mb-5 jarallax">
-              <img src="images/index/bg5.jpg" alt="motivation_and_purpose" class="jarallax-img">
-            </figure>
-          </div>  
         </div>
       </div>
     </section>
@@ -218,19 +256,19 @@
             <div class="col-md-2" style="width: 200px;">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-up"></use>
+                  <use xlink:href="#footer_arrow-up"></use>
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
               <a href="index.html" class="d-flex" onclick="return false">
                 <svg class="arrow-right svg-gray position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-left"></use>
+                  <use xlink:href="#footer_arrow-left"></use>
                 </svg>
                 <span class="ps-4" style="color: gray;">Previous Page</span>
               </a>
               <a href="index.html" class="d-flex" onclick="return false">
                 <svg class="arrow-right svg-gray position-absolute" width="20" height="20">
-                  <use xlink:href="#skip-start"></use>
+                  <use xlink:href="#footer_arrow-start"></use>
                 </svg>
                 <span class="ps-4" style="color: gray;">First Page</span>
               </a>
@@ -245,19 +283,19 @@
             <div class="col-md-2" style="width: 150px">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-up"></use>
+                  <use xlink:href="#footer_arrow-up"></use>
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
               <a href="data.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-right"></use>
+                  <use xlink:href="#footer_arrow-right"></use>
                 </svg>
                 <span class="ps-4">Next Page</span>
               </a>
               <a href="reference.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#skip-end"></use>
+                  <use xlink:href="#footer_arrow-end"></use>
                 </svg>
                 <span class="ps-4">Last Page</span>
               </a>
