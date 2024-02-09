@@ -795,6 +795,11 @@ h1 {
 }
 
 /* ========== Flow Chart ========== */
+.flow-chart {
+  font-size: 30px;
+  height: 650px;
+}
+
 .node_s {
   width: 100px;
   height: 50px;
@@ -852,22 +857,22 @@ h1 {
 .line_l {
   position: absolute;
   width: 2px;
-  height: 300px;
+  height: 400px;
   background-color: #87A9BC;
 }
 
 .line_s {
   position: absolute;
   width: 2px;
-  height: 150px;
+  height: 200px;
   background-color: #87A9BC;
 }
 
 /* ========== Hitter Table ========== */
-.table {
-  border: 2px solid black;
+.hitter-table {
   text-align: center;
   font-size: 20px;
+  border: 2px solid black;
 }
 
 /* ========== Tooltip ========== */

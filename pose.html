@@ -18,25 +18,33 @@
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-      <!--navbar icon 導覽列-->
+      <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
         <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
       </symbol>
 
+      <!--container icon-->
+      <symbol xmlns="http://www.w3.org/2000/svg" id="container_arrow-right" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="container_arrow-left" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"/>
+      </symbol>
+
       <!--Footer Icons-->
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-right" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-right" viewBox="0 0 16 16">
         <path fill="currentColor" d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="skip-end" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-end" viewBox="0 0 16 16">
         <path fill="currentColor" d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.713 3.31 4 3.655 4 4.308v7.384c0 .653.713.998 1.233.696L11.5 8.752V12a.5.5 0 0 0 1 0zM5 4.633 10.804 8 5 11.367z"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-left" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-left" viewBox="0 0 16 16">
         <path file="currentColor" d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="skip-start" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-start" viewBox="0 0 16 16">
         <path fill="currentColor" d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L5 8.752V12a.5.5 0 0 1-1 0zm7.5.633L5.696 8l5.804 3.367z"/>
       </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="caret-up" viewBox="0 0 16 16">
+      <symbol xmlns="http://www.w3.org/2000/svg" id="footer_arrow-up" viewBox="0 0 16 16">
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
@@ -155,106 +163,123 @@
       </div>
     </section>
     <!--內文-->
-    <div class="post-wrap">
-      <div class="container">
-        <div class="row">
-          <main class="post-list">
-            <div class="row">
-              <article class="post-item">
-                <div class="post-content">
-                  <h2 class="fs-1 text-capitalize fst-italic"></h2>
-                  <div class="post-description">
-                    <div>
-                      <h4 class="fs-5 fst-italic">使用openpose所提供的執行檔，以獲取25人物節點之json檔及影片</h4>
-                      <div class="row align-items-center">
-                        <div class="col-lg-6">
-                          <figure class="image-holder mb-5 jarallax">
-                            <img src="/images/method/pose/pose.gif" width="500px" >
-                          </figure>
-                        </div>
-                        <div class="col-lg-6">
-                          <p style="font-size: 20px;">在github所提供的openpose執行檔，只要將影片輸入，
-                            就可輸出畫上人體節點檔的影片，含有25個人物節點的json檔，而我們僅需要人體節點的數據檔，
-                            因此僅輸出json檔。</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="fs-5 fst-italic">將json檔整理後切割出首幀選手座標範圍，
-                        再將每個節點獨立整理成list檔，再統一插補遺失值</h4>
-                      <p style="font-size: 20px;">將基礎節點座標檔中的遺失值進行插補，但為了維持資料的可用性，
-                        也為了不要讓資料有太大的偏差，遺失的禎數只要大於等於10禎，就不進行插補。</p>
-                      <div class="row align-items-center">
-                        <div class="col-lg-6">
-                          <img src="images/method/pose/img1.png" class="jarallax-img" style="width: 250px;">
-                          <p style="text-align: center; font-size: 15px;">（節點順序）</p>
-                        </div>
-                        <div class="col-lg-6">
-                          <img src="images/method/pose/img2.png" class="jarallax-img" style="width: 500px;">
-                          <p style="text-align: center; font-size: 15px;">（輸出對應結果）</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="fs-5 fst-italic">利用Arima檢查各點運動軌跡，避免出現運動的不連貫</h4>
-                      <p style="font-size: 20px;">利用arima來檢查各點的運動軌跡，因openpose偵測錯誤產生偏差，
-                        所以導致前後座標誤差太大，運動軌跡不連貫。因此我們使用arima進行偵測，將軌跡異常的禎數歸0</p>
-                      <div class="row align-items-center">
-                        <div class="col-lg-6">
-                          <img src="images/method/pose/img3.png" class="jarallax-img" style="width: 500px;">
-                          <p style="text-align: center; font-size: 15px;">（軌跡平滑前）</p>
-                        </div>
-                        <div class="col-lg-6">
-                          <img src="images/method/pose/img4.png" class="jarallax-img" style="width: 500px;">
-                          <p style="text-align: center; font-size: 15px;">（軌跡平滑後）</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="fs-5 fst-italic">輸出CSV</h4>
-                      <div class="row align-items-center">
-                        <div class="col-lg-6">
-                          <img src="images/method/pose/img5.png" class="jarallax-img" style="width: 500px;">
-                          <p style="text-align: center; font-size: 15px;">（CSV）</p>
-                        </div>
-                        <div class="col-lg-6">
-                          <p style="font-size: 20px;">輸出CSV。</p>
-                        </div>
-                      </div>
-                    </div>
+    <section id="trending" class="py-lg-9">
+      <div class="product-content position-relative">
+        <div class="container-lg">
+          <div class="row">
+            <div class="arrow-wrap">
+              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
+                <a href="ball_tracking.html">
+                  <button class="button-with-tooltip">
+                    <svg class="caret-arrow-left" width="25" height="25">
+                      <use xlink:href="#container_arrow-left"></use>
+                    </svg>
+                    Previous
+                  </button>
+                </a>
+                <div class="tooltip">羽球軌跡</div>
+              </div>
+              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
+                <a href="hitting_point.html">
+                  <button class="button-with-tooltip">
+                    <svg class="caret-arrow-right" width="25" height="25">
+                      <use xlink:href="#container_arrow-right"></use>
+                    </svg>
+                    Next
+                  </button>
+                </a>
+                <div class="tooltip">判斷擊球點</div>
+              </div>
+            </div>
+            <div class="post-description">
+              <div>
+                <h4 class="fs-5 fst-italic">使用openpose所提供的執行檔，以獲取25人物節點之json檔及影片</h4>
+                <div class="row align-items-center">
+                  <div class="col-lg-6">
+                    <figure class="image-holder mb-5 jarallax">
+                      <img src="/images/method/pose/pose.gif" width="500px" >
+                    </figure>
+                  </div>
+                  <div class="col-lg-6">
+                    <p style="font-size: 20px;">在github所提供的openpose執行檔，只要將影片輸入，
+                      就可輸出畫上人體節點檔的影片，含有25個人物節點的json檔，而我們僅需要人體節點的數據檔，
+                      因此僅輸出json檔。</p>
                   </div>
                 </div>
-              </article>
+              </div>
+              <div>
+                <h4 class="fs-5 fst-italic">將json檔整理後切割出首幀選手座標範圍，
+                  再將每個節點獨立整理成list檔，再統一插補遺失值</h4>
+                <p style="font-size: 20px;">將基礎節點座標檔中的遺失值進行插補，但為了維持資料的可用性，
+                  也為了不要讓資料有太大的偏差，遺失的禎數只要大於等於10禎，就不進行插補。</p>
+                <div class="row align-items-center">
+                  <div class="col-lg-6">
+                    <img src="images/method/pose/img1.png" class="jarallax-img" style="width: 250px;">
+                    <p style="text-align: center; font-size: 15px;">（節點順序）</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <img src="images/method/pose/img2.png" class="jarallax-img" style="width: 500px;">
+                    <p style="text-align: center; font-size: 15px;">（輸出對應結果）</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="fs-5 fst-italic">利用Arima檢查各點運動軌跡，避免出現運動的不連貫</h4>
+                <p style="font-size: 20px;">利用arima來檢查各點的運動軌跡，因openpose偵測錯誤產生偏差，
+                  所以導致前後座標誤差太大，運動軌跡不連貫。因此我們使用arima進行偵測，將軌跡異常的禎數歸0</p>
+                <div class="row align-items-center">
+                  <div class="col-lg-6">
+                    <img src="images/method/pose/img3.png" class="jarallax-img" style="width: 500px;">
+                    <p style="text-align: center; font-size: 15px;">（軌跡平滑前）</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <img src="images/method/pose/img4.png" class="jarallax-img" style="width: 500px;">
+                    <p style="text-align: center; font-size: 15px;">（軌跡平滑後）</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="fs-5 fst-italic">輸出CSV</h4>
+                <div class="row align-items-center">
+                  <div class="col-lg-6">
+                    <img src="images/method/pose/img5.png" class="jarallax-img" style="width: 500px;">
+                    <p style="text-align: center; font-size: 15px;">（CSV）</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p style="font-size: 20px;">輸出CSV。</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </main>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
           <div class="row justify-content-between">
-            <div class="col-md-2" style="width: 200px">
+            <div class="col-md-2" style="width: 200px;">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-up"></use>
+                  <use xlink:href="#footer_arrow-up"></use>
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
               <a href="ball_tracking.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-left"></use>
+                  <use xlink:href="#footer_arrow-left"></use>
                 </svg>
                 <span class="ps-4">Previous Page</span>
               </a>
               <a href="index.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#skip-start"></use>
+                  <use xlink:href="#footer_arrow-start"></use>
                 </svg>
                 <span class="ps-4">First Page</span>
               </a>
             </div>
-            <div class="col-md-10" style="width: 900px">
+            <div class="col-md-10" style="width: 900px;">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
                 羽球比賽辨識系統專題團隊。All Rights Reserved.
               </p>
@@ -264,19 +289,19 @@
             <div class="col-md-2" style="width: 150px">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-up"></use>
+                  <use xlink:href="#footer_arrow-up"></use>
                 </svg>
                 <span class="ps-4">Back to top</span>
               </a>
               <a href="hitting_point.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#caret-right"></use>
+                  <use xlink:href="#footer_arrow-right"></use>
                 </svg>
                 <span class="ps-4">Next Page</span>
               </a>
               <a href="reference.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#skip-end"></use>
+                  <use xlink:href="#footer_arrow-end"></use>
                 </svg>
                 <span class="ps-4">Last Page</span>
               </a>
