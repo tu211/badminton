@@ -795,78 +795,126 @@ h1 {
 }
 
 /* ========== Flow Chart ========== */
-.flow-chart {
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.flex1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.flex2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.flex3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.flex4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.flex5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.flex6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.flex7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.item {
+  width: 160px;
   font-size: 30px;
-  height: 650px;
-}
-
-.node_s {
-  width: 100px;
-  height: 50px;
-  background-color: #87A9BC;
-  color: #fff;
   text-align: center;
-  line-height: 50px;
-  position: absolute;
-  cursor: pointer;
-}
-
-.node_l {
-  width: 150px;
-  height: 50px;
+  margin: 50px;
+  border: 2px solid #87A9BC;
   background-color: #87A9BC;
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  position: absolute;
-  cursor: pointer;
+  z-index: 2;
 }
 
-.node_ll {
-  width: 200px;
-  height: 50px;
-  background-color: #87A9BC;
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  position: absolute;
-  cursor: pointer;
-}
-
-.node_s:hover, .node_l:hover, .node_ll:hover {
+.item:hover {
   background-color: white;
-  color: #87A9BC;
-  border: #87A9BC 2px solid;
-  text-align: center;
-}
-
-.line_ro {
-  position: absolute;
-  width: 2px;
-  height: 150px;
-  background-color: #87A9BC;
-}
-
-.line_ro_s {
-  position: absolute;
-  width: 2px;
-  height: 50px;
-  background-color: #87A9BC;
 }
 
 .line_l {
   position: absolute;
   width: 2px;
-  height: 400px;
+  height: 305px;
   background-color: #87A9BC;
 }
 
 .line_s {
   position: absolute;
   width: 2px;
-  height: 200px;
+  height: 223px;
   background-color: #87A9BC;
 }
+
+.line_ro_l {
+  width: 2px;
+  height: 380px;
+  background-color: #87A9BC;
+  position: absolute;
+  left: 705px;
+  top: -120px;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.line_ro_l:nth-child(2) {
+  top: -30px; /* 調整第二個 .line_ro 的位置 */
+  height: 500px;
+  left: 648px;
+}
+
+.line_ro_l:nth-child(3) {
+  top: 182px; /* 調整第三個 .line_ro 的位置 */
+}
+
+.line_ro_s {
+  width: 2px;
+  height: 493px;
+  background-color: #87A9BC;
+  position: absolute;
+  left: 1142px;
+  top: -136px;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.line_ro_s:nth-child(2) {
+  top: 85px; /* 調整第二個 .line_ro 的位置 */
+}
+
 
 /* ========== Hitter Table ========== */
 .hitter-table {
