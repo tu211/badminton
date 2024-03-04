@@ -3,8 +3,14 @@
   <head>
     <title>羽球比賽辨識系統</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo/badminton_icon.ico" type="image/x-icon" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="keywords" content="ecommerce,herbal tea,shop">
+    <meta name="description" content="Bootstrap 5 Tea Shop HTML CSS Template">
+    <!--Icon-->
+    <link rel="icon" href="images/icons/badminton_icon.ico" type="image/x-icon" />
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -17,6 +23,7 @@
     <script src="js/modernizr.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <!--Bootstrap Icons-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
@@ -48,34 +55,33 @@
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
-    <!--待轉畫面-->
+    <!--Preloader-->
     <div class="preloader" style="background-color: #87A9BC;">
       <div class="loader">
         <div class="dot">
-          <img src="images/logo/preloader_img01.png" width="100px">
+          <img src="images/icons/preloader_img01.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img02.png" width="100px">
+          <img src="images/icons/preloader_img02.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img03.png" width="80px">
+          <img src="images/icons/preloader_img03.png" width="80px">
         </div>
       </div>
     </div>
-    <!--LOGO 目錄-->
+    <!--Navbar Menu-->
     <header id="header" class="site-header fixed-top border-bottom">
       <div class="container-lg">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
-            <!--Navbar for mobile-->
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <svg class="navbar-icon svg-white" width="40" height="40">
                 <use xlink:href="#navbar-icon"></use>
               </svg>
             </button>
-            <!--LOGO for mobile-->
+            <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/logo/PUDS_v1.png" alt="Logo" width="50px">
+              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -117,6 +123,15 @@
                         <li>
                           <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
+                      </ul>
+                    </li>
+                    <li class="btn btn-group btn-sm" role="group">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                      </button>
+                      <ul class="dropdown-menu">
                         <li>
                           <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
@@ -137,9 +152,9 @@
                     </li>                  
                   </ul>
                 </div>
-                <!--LOGO-->
+                <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/PUDS_v1.png" alt="Logo" width="100px">
+                  <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 30vw; height: 10vh;">
                 </a>
               </div>
             </div>
@@ -147,129 +162,235 @@
         </div>
       </div>
     </header>
-    <!--標題-->
+    <!--Header-->
     <section class="hero-section p-5">
       <div class="hero-content text-center p-5">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="display-2 fst-italic">參考文獻</h1>
+              <h1 id="title4" class="display-2 fst-italic">參考文獻</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--內文-->
-    <section id="trending" class="py-lg-9">
-      <div class="product-content position-relative">
-        <div class="container-lg">
-          <div class="row">
-            <div class="arrow-wrap">
-              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="demo.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-left" width="25" height="25">
-                      <use xlink:href="#container_arrow-left"></use>
-                    </svg>
-                    Previous
+    <!--Content-->
+    <div id="faqs">
+      <div class="container-lg">
+        <div class="row">
+          <div>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingOne">
+                  <button class="accordion-button fs-4 fst-italic bg-transparent px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    1. Dataset-TackNetV2
                   </button>
-                </a>
-                <div class="tooltip">結果展示</div>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    wywyWang(時間)。CoachAI-Projects。GitHub。
+                    <a href="https://github.com/wywyWang/CoachAI-Projects">https://github.com/wywyWang/CoachAI-Projects</a>
+                  </div>
+                </div>
               </div>
-              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="reference.html">
-                  <button class="button-with-tooltip" onclick="return false" style="background-color: lightgray;">
-                    <svg class="caret-arrow-right" width="25" height="25">
-                      <use xlink:href="#container_arrow-right"></use>
-                    </svg>
-                    Next
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingOne">
+                  <button class="accordion-button fs-4 fst-italic bg-transparent px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    2. Dataset-Shuttlecock
                   </button>
-                </a>
-                <div class="tooltip">No Next.</div>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    林育慶、孫念恩、Tsì-Uí İk(時間)。Shuttlecock Trajectory Dataset。HackMD。
+                    <a href="https://hackmd.io/Nf8Rh1NrSrqNUzmO0sQKZw">https://hackmd.io/Nf8Rh1NrSrqNUzmO0sQKZw</a>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="row" style="font-size: 2vw;">
-              <ol>
-                <li>lin yu-ching(2020,Sep17)。TrackNetV2。GitLab。
-                  <a href="https://nol.cs.nctu.edu.tw:234/open-source/TrackNetv2">https://nol.cs.nctu.edu.tw:234/open-source/TrackNetv2</a></li>
-                <li>Chang-Chia-Chi(2020,Dec22)。TrackNet-Badminton-Tracking-tensorflow2。GitHub。
-                  <a href="https://github.com/Chang-Chia-Chi/TrackNet-Badminton-Tracking-tensorflow2">https://github.com/Chang-Chia-Chi/TrackNet-Badminton-Tracking-tensorflow2</a>
-                </li>
-                <li>Dangkie(2022,Mar01)。使用Python建立时间序列(ARIMA、MA、AR)预测模型。CSDN。
-                  <a href="https://blog.csdn.net/WHYbeHERE/article/details/109277597">https://blog.csdn.net/WHYbeHERE/article/details/109277597</a>
-                </li>
-                <li>Dangkie(2016,Nov23)。轨迹平滑方法。CSDN。
-                  <a href="https://blog.csdn.net/Dangkie/article/details/53311516">https://blog.csdn.net/Dangkie/article/details/53311516</a></li>
-                <li>Nick Blog(2021,Nov01)。【python】求两条直线的交点。CSDN。
-                  <a href="https://blog.csdn.net/xijuezhu8128/article/details/121082445">https://blog.csdn.net/xijuezhu8128/article/details/121082445</a></li>
-                <li>John(2021,May10)。Python Opencv 使用 HSV 擷取特定顏色。HackMD。
-                  <a href="https://hackmd.io/@Johnsonnnn/Syz1nMId_">https://hackmd.io/@Johnsonnnn/Syz1nMId_</a></li>
-                <li>OXXO.STUDIO(2021-2023)。影像遮罩。SREAM 教育學習網。
-                  <a href="https://steam.oxxostudio.tw/category/python/ai/opencv-mask.html">https://steam.oxxostudio.tw/category/python/ai/opencv-mask.html</a></li>
-                <li>OXXO.STUDIO(2021-2023)。影像邊緣偵測。SREAM 教育學習網。
-                  <a href="https://steam.oxxostudio.tw/category/python/ai/opencv-edge-detection.html">https://steam.oxxostudio.tw/category/python/ai/opencv-edge-detection.html</a></li>
-                <li>OXXO.STUDIO(2021-2023)。影像的色彩轉換。SREAM 教育學習網。
-                  <a href="https://steam.oxxostudio.tw/category/python/ai/opencv-cvtcolor.html">ttps://steam.oxxostudio.tw/category/python/ai/opencv-cvtcolor.html</a></li>
-                <li>作者名(時間)。Hough Line Transform。OpenCV。
-                  <a href="https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html">https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html</a></li>
-                <li>天道酬勤(2019,July03)。[邊緣偵測]直線搜查家 - Hough Transform。Medium.
-                  <a href="https://medium.com/@bob800530/hough-transform-cf6cb8337eac">https://medium.com/@bob800530/hough-transform-cf6cb8337eac</a></li>
-              </ol>
-              
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-heade m-0" id="headingTwo">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. TrackNetV2
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    Chang-Chia-Chi(2020,Dec22)。TrackNet-Badminton-Tracking-tensorflow2。GitHub。
+                    <a href="https://github.com/Chang-Chia-Chi/TrackNet-Badminton-Tracking-tensorflow2">https://github.com/Chang-Chia-Chi/TrackNet-Badminton-Tracking-tensorflow2</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingThree">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. ARIMA
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    Avasla(2022,Mar01)。使用Python建立时间序列(ARIMA、MA、AR)预测模型。CSDN。
+                    <a href="https://blog.csdn.net/WHYbeHERE/article/details/109277597">https://blog.csdn.net/WHYbeHERE/article/details/109277597</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingFour">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. 軌跡平滑
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    Dangkie(2016,Nov23)。轨迹平滑方法。CSDN。
+                    <a href="https://blog.csdn.net/Dangkie/article/details/53311516">https://blog.csdn.net/Dangkie/article/details/53311516</a>  
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingFive">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. 【python】求两条直线的交点
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    Nick Blog(2021,Nov01)。【python】求两条直线的交点。CSDN。
+                    <a href="https://blog.csdn.net/xijuezhu8128/article/details/121082445">https://blog.csdn.net/xijuezhu8128/article/details/121082445</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingSix">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. HSV
+                  </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    John(2021,May10)。Python Opencv 使用 HSV 擷取特定顏色。HackMD。
+                    <a href="https://hackmd.io/@Johnsonnnn/Syz1nMId_">https://hackmd.io/@Johnsonnnn/Syz1nMId_</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingSeven">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    7. 影像遮罩
+                  </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    OXXO.STUDIO(2021-2023)。影像遮罩。SREAM 教育學習網。
+                    <a href="https://steam.oxxostudio.tw/category/python/ai/opencv-mask.html">https://steam.oxxostudio.tw/category/python/ai/opencv-mask.html</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingEight">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    8. 影像邊緣偵測
+                  </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    OXXO.STUDIO(2021-2023)。影像邊緣偵測。SREAM 教育學習網。
+                    <a href="https://steam.oxxostudio.tw/category/python/ai/opencv-edge-detection.html">https://steam.oxxostudio.tw/category/python/ai/opencv-edge-detection.html</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingNine">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    9. 影像的色彩轉換
+                  </button>
+                </h2>
+                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    OXXO.STUDIO(2021-2023)。影像的色彩轉換。SREAM 教育學習網。
+                    <a href="https://steam.oxxostudio.tw/category/python/ai/opencv-cvtcolor.html">ttps://steam.oxxostudio.tw/category/python/ai/opencv-cvtcolor.html</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingTen">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                    10. Hough Line Transform
+                  </button>
+                </h2>
+                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    OpenCV(2024,Feb25)。Hough Line Transform。OpenCV。
+                    <a href="https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html">https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header m-0" id="headingEleven">
+                  <button class="accordion-button fs-4 fst-italic px-0 bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                    11. [邊緣偵測]直線搜查家 - Hough Transform
+                  </button>
+                </h2>
+                <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="word-wrap:break-word;">
+                    天道酬勤(2019,July03)。[邊緣偵測]直線搜查家 - Hough Transform。Medium.
+                    <a href="https://medium.com/@bob800530/hough-transform-cf6cb8337eac">https://medium.com/@bob800530/hough-transform-cf6cb8337eac</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <!--Footer-->
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
-          <div class="row justify-content-between">
-            <div class="col-md-2" style="width: 200px;">
+          <div class="row justify-content-center footer-content">
+            <div class="footer01">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
               <a href="demo.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-left"></use>
                 </svg>
-                <span class="ps-4">Previous Page</span>
+                <span class="ps-4">Previous</span>
               </a>
               <a href="index.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-start"></use>
                 </svg>
-                <span class="ps-4">First Page</span>
+                <span class="ps-4">First</span>
               </a>
             </div>
-            <div class="col-md-10" style="width: 900px;">
+            <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
                 羽球比賽辨識系統專題團隊。All Rights Reserved.
               </p>
               <p id="lastModified" style="text-align: center;"></p>
               <script src="js/last_modified.js"></script>
             </div>
-            <div class="col-md-2" style="width: 150px">
+            <div class="footer03">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
-              <a href="reference.html" class="d-flex" onclick="return false">
+              <a href="data.html" class="d-flex" onclick="return false">
                 <svg class="arrow-right svg-gray position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-right"></use>
                 </svg>
-                <span class="ps-4" style="color: gray;">Next Page</span>
+                <span class="ps-4">Next</span>
               </a>
               <a href="reference.html" class="d-flex" onclick="return false">
                 <svg class="arrow-right svg-gray position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-end"></use>
                 </svg>
-                <span class="ps-4" style="color: gray;">Last Page</span>
+                <span class="ps-4">Last</span>
               </a>
             </div>
           </div>

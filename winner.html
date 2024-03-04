@@ -3,8 +3,14 @@
   <head>
     <title>羽球比賽辨識系統</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo/badminton_icon.ico" type="image/x-icon" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="keywords" content="ecommerce,herbal tea,shop">
+    <meta name="description" content="Bootstrap 5 Tea Shop HTML CSS Template">
+    <!--Icon-->
+    <link rel="icon" href="images/icons/badminton_icon.ico" type="image/x-icon" />
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -17,6 +23,7 @@
     <script src="js/modernizr.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <!--Bootstrap Icons-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
@@ -48,34 +55,33 @@
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
-    <!--待轉畫面-->
+    <!--Preloader-->
     <div class="preloader" style="background-color: #87A9BC;">
       <div class="loader">
         <div class="dot">
-          <img src="images/logo/preloader_img01.png" width="100px">
+          <img src="images/icons/preloader_img01.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img02.png" width="100px">
+          <img src="images/icons/preloader_img02.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img03.png" width="80px">
+          <img src="images/icons/preloader_img03.png" width="80px">
         </div>
       </div>
     </div>
-    <!--LOGO 目錄-->
+    <!--Navbar Menu-->
     <header id="header" class="site-header fixed-top border-bottom">
       <div class="container-lg">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
-            <!--Navbar for mobile-->
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <svg class="navbar-icon svg-white" width="40" height="40">
                 <use xlink:href="#navbar-icon"></use>
               </svg>
             </button>
-            <!--LOGO for mobile-->
+            <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/logo/PUDS_v1.png" alt="Logo" width="50px">
+              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -117,6 +123,15 @@
                         <li>
                           <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
+                      </ul>
+                    </li>
+                    <li class="btn btn-group btn-sm" role="group">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                      </button>
+                      <ul class="dropdown-menu">
                         <li>
                           <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
@@ -137,9 +152,9 @@
                     </li>                  
                   </ul>
                 </div>
-                <!--LOGO-->
+                <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/PUDS_v1.png" alt="Logo" width="100px">
+                  <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 30vw; height: 10vh;">
                 </a>
               </div>
             </div>
@@ -147,137 +162,127 @@
         </div>
       </div>
     </header>
-    <!--標題-->
+    <!--Header-->
     <section class="hero-section p-5">
       <div class="hero-content text-center p-5">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="display-2 fst-italic">判斷得分方</h1>
-              <div class="breadcrumbs">
-                <span class="item">
-              </div>
+              <h1 id="title5" class="display-2 fst-italic">判斷得分方</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--內文-->
-    <section id="trending" class="py-lg-9">
-      <div class="product-content position-relative">
-        <div class="container-lg">
-          <div class="row">
-            <div class="arrow-wrap">
-              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="hitter.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-left" width="25" height="25">
-                      <use xlink:href="#container_arrow-left"></use>
-                    </svg>
-                    Previous
-                  </button>
-                </a>
-                <div class="tooltip">判斷擊球方</div>
-              </div>
-              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="ball_trajectory.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-right" width="25" height="25">
-                      <use xlink:href="#container_arrow-right"></use>
-                    </svg>
-                    Next
-                  </button>
-                </a>
-                <div class="tooltip">球路</div>
-              </div>
-            </div>
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <figure class="image-holder mb-5 jarallax">
-                  <img src="images/winner/winner1.png" alt="tea" class="jarallax-img">
-                </figure>
-              </div>
-              <div class="col-lg-5">
-                <div class="detail-entry px-4">
-                  <p>我們判斷得分方的方式，先將球路分為兩種類型(圖十三、圖十四)，
-                    在依照斜率做下一步判斷，如圖九路徑的情況在球路原路徑偏離超過10度時(圖十五)，
-                    我們將其判斷已落地，並進而確認是否出界，若圖十路徑的情況，
-                    當球路角度連續小於20度，並且之後角度出現大幅變動時(圖十六)，則判斷已落地，
-                    並進而確認是否出界。全資料共234筆資料，其中符合路徑一共60部影片，
-                    準確率為0.76，符合路路徑二共174個影片，準確率為0.76，
-                    因而此判斷方式準確率為0.76。</p>
+    <div class="post-wrap" style="height: 2000px;">
+      <div class="container">
+        <div class="row">
+          <main class="post-list">
+            <div class="row">
+              <article class="post-item">
+                <div class="post-content">
+                  <div class="post-description">
+                   <p>&emsp;&emsp;我們判斷得分方的方式，先將球路分為兩種類型(圖十三、圖十四)，在依照斜率做下一步判斷，如圖九路徑的情況在球路原路徑偏離超過10度時(圖十五)，我們將其判斷已落地，並進而確認是否出界，若圖十路徑的情況，當球路角度連續小於20度，並且之後角度出現大幅變動時(圖十六)，則判斷已落地，並進而確認是否出界。全資料共234筆資料，其中符合路徑一共60部影片，準確率為0.76，符合路路徑二共174個影片，準確率為0.76，因而此判斷方式準確率為0.76。</p>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div id="edge_img" class="image-container">
+                          <img id="myImage" src="images/method/winner/winner1.png">
+                        </div>
+                      <p style="text-align: center; font-size: 15px;">（）</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="edge_img" class="image-container">
+                            <img id="myImage" src="images/method/winner/winner2.png">
+                        </div>
+                      <p style="text-align: center; font-size: 15px;">（）</p>
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div id="edge_img" class="image-container">
+                          <img id="myImage" src="images/method/winner/winner3.png">
+                        </div>
+                      <p style="text-align: center; font-size: 15px;">（）</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="edge_img" class="image-container">
+                            <img id="myImage" src="images/method/winner/angle2.png">
+                        </div>
+                      <p style="text-align: center; font-size: 15px;">（）</p>
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div id="edge_img" class="image-container">
+                          <img id="myImage" src="images/method/winner/winner4.png">
+                        </div>
+                      <p style="text-align: center; font-size: 15px;">（）</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="edge_img" class="image-container">
+                            <img id="myImage" src="images/method/winner/angle.png">
+                        </div>
+                      <p style="text-align: center; font-size: 15px;">（）</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-5">
-                <div class="detail-entry px-4">
-                  <p>我們判斷得分方的方式，先將球路分為兩種類型(圖十三、圖十四)，
-                    在依照斜率做下一步判斷，如圖九路徑的情況在球路原路徑偏離超過10度時(圖十五)，
-                    我們將其判斷已落地，並進而確認是否出界，若圖十路徑的情況，
-                    當球路角度連續小於20度，並且之後角度出現大幅變動時(圖十六)，則判斷已落地，
-                    並進而確認是否出界。全資料共234筆資料，其中符合路徑一共60部影片，
-                    準確率為0.76，符合路路徑二共174個影片，準確率為0.76，
-                    因而此判斷方式準確率為0.76。</p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <figure class="image-holder mb-5 jarallax">
-                  <img src="images/winner/winner2.png" alt="tea" class="jarallax-img">
-                </figure>
-              </div>  
+              </article>
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </section>
+    </div>
+    <!--Footer-->
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
-          <div class="row justify-content-between">
-            <div class="col-md-2" style="width: 200px;">
+          <div class="row justify-content-center footer-content">
+            <div class="footer01">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
               <a href="hitter.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-left"></use>
                 </svg>
-                <span class="ps-4">Previous Page</span>
+                <span class="ps-4">Previous</span>
               </a>
               <a href="index.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-start"></use>
                 </svg>
-                <span class="ps-4">First Page</span>
+                <span class="ps-4">First</span>
               </a>
             </div>
-            <div class="col-md-10" style="width: 900px;">
+            <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
                 羽球比賽辨識系統專題團隊。All Rights Reserved.
               </p>
               <p id="lastModified" style="text-align: center;"></p>
               <script src="js/last_modified.js"></script>
             </div>
-            <div class="col-md-2" style="width: 150px">
+            <div class="footer03">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
-              <a href="ba.html" class="d-flex">
+              <a href="ball_trajectory.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-right"></use>
                 </svg>
-                <span class="ps-4">Next Page</span>
+                <span class="ps-4">Next</span>
               </a>
               <a href="reference.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-end"></use>
                 </svg>
-                <span class="ps-4">Last Page</span>
+                <span class="ps-4">Last</span>
               </a>
             </div>
           </div>

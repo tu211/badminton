@@ -3,8 +3,14 @@
   <head>
     <title>羽球比賽辨識系統</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo/badminton_icon.ico" type="image/x-icon" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="keywords" content="ecommerce,herbal tea,shop">
+    <meta name="description" content="Bootstrap 5 Tea Shop HTML CSS Template">
+    <!--Icon-->
+    <link rel="icon" href="images/icons/badminton_icon.ico" type="image/x-icon" />
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -17,6 +23,7 @@
     <script src="js/modernizr.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <!--Bootstrap Icons-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
@@ -48,34 +55,33 @@
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
-    <!--待轉畫面-->
+    <!--Preloader-->
     <div class="preloader" style="background-color: #87A9BC;">
       <div class="loader">
         <div class="dot">
-          <img src="images/logo/preloader_img01.png" width="100px">
+          <img src="images/icons/preloader_img01.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img02.png" width="100px">
+          <img src="images/icons/preloader_img02.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img03.png" width="80px">
+          <img src="images/icons/preloader_img03.png" width="80px">
         </div>
       </div>
     </div>
-    <!--LOGO 目錄-->
+    <!--Navbar Menu-->
     <header id="header" class="site-header fixed-top border-bottom">
       <div class="container-lg">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
-            <!--Navbar for mobile-->
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <svg class="navbar-icon svg-white" width="40" height="40">
                 <use xlink:href="#navbar-icon"></use>
               </svg>
             </button>
-            <!--LOGO for mobile-->
+            <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/logo/PUDS_v1.png" alt="Logo" width="50px">
+              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -117,6 +123,15 @@
                         <li>
                           <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
+                      </ul>
+                    </li>
+                    <li class="btn btn-group btn-sm" role="group">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                      </button>
+                      <ul class="dropdown-menu">
                         <li>
                           <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
@@ -137,9 +152,9 @@
                     </li>                  
                   </ul>
                 </div>
-                <!--LOGO-->
+                <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/PUDS_v1.png" alt="Logo" width="100px">
+                  <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 30vw; height: 10vh;">
                 </a>
               </div>
             </div>
@@ -147,113 +162,89 @@
         </div>
       </div>
     </header>
-    <!--封面背景-->
-    <section class="hero-section position-relative jarallax">
-      <img src="images/data/bg.jpg" alt="background" class="jarallax-img">
-      <div class="hero-content position-absolute d-flex justify-content-center align-items-center text-center">
+    <!--Header-->
+    <section class="hero-section p-5">
+      <div class="hero-content text-center p-5">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="page-title text-light fst-italic" style="background-color: lightblue;">擊球點</h1>
+              <h1 id="title4" class="display-2 fst-italic">擊球點</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--內文-->
-    <section id="trending" class="py-lg-9">
-      <div class="product-content position-relative">
-        <div class="container-lg">
-          <div class="row">
-            <div class="arrow-wrap">
-              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="pose.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-left" width="25" height="25">
-                      <use xlink:href="#container_arrow-left"></use>
-                    </svg>
-                    Previous
-                  </button>
-                </a>
-                <div class="tooltip">人體節點</div>
-              </div>
-              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="hitter.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-right" width="25" height="25">
-                      <use xlink:href="#container_arrow-right"></use>
-                    </svg>
-                    Next
-                  </button>
-                </a>
-                <div class="tooltip">判斷擊球方</div>
-              </div>
-            </div>
-            <div class="post-description">
-              <div>
-                <h4 class="fs-5 fst-italic" style="font-size: 20px;">將平滑化後的資料偵測羽球軌跡y軸的相對低點，以此做為擊球點</h4>
-                <p style="font-size: 20px;"></p>
-                <div class="row align-items-center">
-                  <div class="col-lg-6" style="width: 1100px;">
-                    <img src="images/method/hitting_point/img1.png" alt="original" class="jarallax-img" style="width: 1100px;">
-                    <p style="text-align: center; font-size: 15px;">（原圖）</p>
+    <div class="post-wrap" style="height: 2000px;">
+      <div class="container">
+        <div class="row">
+          <main class="post-list">
+            <div class="row">
+              <article class="post-item">
+                <div class="post-content">
+                  <p>將平滑化後的資料偵測羽球軌跡y軸的相對低點，以此做為擊球點</p>
+                  <div class="video-container" style="height: 500px; margin-top: 50px;">
+                    <video id="myVideo" controls autoplay>
+                      <source id="videoSource" src="images/method/hitting_point/hitting_point.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </section>
+    </div>
+    <!--Footer-->
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
-          <div class="row justify-content-between">
-            <div class="col-md-2" style="width: 200px;">
+          <div class="row justify-content-center footer-content">
+            <div class="footer01">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
               <a href="pose.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-left"></use>
                 </svg>
-                <span class="ps-4">Previous Page</span>
+                <span class="ps-4">Previous</span>
               </a>
               <a href="index.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-start"></use>
                 </svg>
-                <span class="ps-4">First Page</span>
+                <span class="ps-4">First</span>
               </a>
             </div>
-            <div class="col-md-10" style="width: 900px;">
+            <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
                 羽球比賽辨識系統專題團隊。All Rights Reserved.
               </p>
               <p id="lastModified" style="text-align: center;"></p>
               <script src="js/last_modified.js"></script>
             </div>
-            <div class="col-md-2" style="width: 150px">
+            <div class="footer03">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
               <a href="hitter.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-right"></use>
                 </svg>
-                <span class="ps-4">Next Page</span>
+                <span class="ps-4">Next</span>
               </a>
               <a href="reference.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-end"></use>
                 </svg>
-                <span class="ps-4">Last Page</span>
+                <span class="ps-4">Last</span>
               </a>
             </div>
           </div>

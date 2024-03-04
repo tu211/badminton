@@ -3,8 +3,14 @@
   <head>
     <title>羽球比賽辨識系統</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo/badminton_icon.ico" type="image/x-icon" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="keywords" content="ecommerce,herbal tea,shop">
+    <meta name="description" content="Bootstrap 5 Tea Shop HTML CSS Template">
+    <!--Icon-->
+    <link rel="icon" href="images/icons/badminton_icon.ico" type="image/x-icon" />
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -17,6 +23,7 @@
     <script src="js/modernizr.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <!--Bootstrap Icons-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
@@ -48,34 +55,33 @@
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
-    <!--待轉畫面-->
+    <!--Preloader-->
     <div class="preloader" style="background-color: #87A9BC;">
       <div class="loader">
         <div class="dot">
-          <img src="images/logo/preloader_img01.png" width="100px">
+          <img src="images/icons/preloader_img01.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img02.png" width="100px">
+          <img src="images/icons/preloader_img02.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img03.png" width="80px">
+          <img src="images/icons/preloader_img03.png" width="80px">
         </div>
       </div>
     </div>
-    <!--LOGO 目錄-->
+    <!--Navbar Menu-->
     <header id="header" class="site-header fixed-top border-bottom">
       <div class="container-lg">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
-            <!--Navbar for mobile-->
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <svg class="navbar-icon svg-white" width="40" height="40">
                 <use xlink:href="#navbar-icon"></use>
               </svg>
             </button>
-            <!--LOGO for mobile-->
+            <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/logo/PUDS_v1.png" alt="Logo" width="50px">
+              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -117,6 +123,15 @@
                         <li>
                           <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
+                      </ul>
+                    </li>
+                    <li class="btn btn-group btn-sm" role="group">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                      </button>
+                      <ul class="dropdown-menu">
                         <li>
                           <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
@@ -137,9 +152,9 @@
                     </li>                  
                   </ul>
                 </div>
-                <!--LOGO-->
+                <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/PUDS_v1.png" alt="Logo" width="100px">
+                  <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 30vw; height: 10vh;">
                 </a>
               </div>
             </div>
@@ -147,163 +162,290 @@
         </div>
       </div>
     </header>
-    <!--標題-->
+    <!--Header-->
     <section class="hero-section p-5">
       <div class="hero-content text-center p-5">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="display-2 fst-italic">人體節點</h1>
-              <div class="breadcrumbs">
-                <span class="item">
-              </div>
+              <h1 id="title4" class="display-2 fst-italic">人體節點</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--內文-->
-    <section id="trending" class="py-lg-9">
-      <div class="product-content position-relative">
-        <div class="container-lg">
-          <div class="row">
-            <div class="arrow-wrap">
-              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="ball_tracking.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-left" width="25" height="25">
-                      <use xlink:href="#container_arrow-left"></use>
-                    </svg>
-                    Previous
-                  </button>
-                </a>
-                <div class="tooltip">羽球軌跡</div>
-              </div>
-              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="hitting_point.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-right" width="25" height="25">
-                      <use xlink:href="#container_arrow-right"></use>
-                    </svg>
-                    Next
-                  </button>
-                </a>
-                <div class="tooltip">判斷擊球點</div>
-              </div>
+    <div class="post-wrap" id="pose">
+      <div class="container">
+        <div class="row">
+          <main class="post-list">
+            <div class="row">
+              <article class="post-item">
+                <div class="post-content">
+                  <section>
+                    <h2 class="fs-1 text-capitalize fst-italic" style="border: 2px solid #87A9BC;"><strong>建立選手基礎節點座標檔</strong></h2>
+                    <div class="post-description">
+                    <p>&emsp;&emsp;使用CMU - Panoptic Studio (卡內基·梅隆大學的研究單位)在github所提供的openpose執行檔，輸出影片中所有人的25個身體節點json檔。</p>
+                    </div>
+                    <div class="align-items-center">
+                      <div class="row align-items-center" style="display: flex; flex-direction: row; align-items: center;">
+                        <div class="col-lg-6" style="text-align: center;">
+                            <div class="image-container">
+                              <img id="smallImage" src="images/method/pose/img1.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（圖片1）</p>
+                        </div>
+                        <div class="col-lg-6" style="text-align: center;">
+                          <table>
+                            <tbody>
+                              <tr>
+                                <th>0</th>
+                                <th>Nose</th>
+                                <th>13</th>
+                                <th>LKnee</th>
+                              </tr>
+                              <tr>
+                                <th>1</th>
+                                <th>Neck</th>
+                                <th>14</th>
+                                <th>LAnkle</th>
+                              </tr>
+                              <tr>
+                                <th>2</th>
+                                <th>RShoulder</th>
+                                <th>15</th>
+                                <th>REye</th>
+                              </tr>
+                              <tr>
+                                <th>3</th>
+                                <th>RElbow</th>
+                                <th>16</th>
+                                <th>LEye</th>
+                              </tr>
+                              <tr>
+                                <th>4</th>
+                                <th>EWrist</th>
+                                <th>17</th>
+                                <th>REar</th>
+                              </tr>
+                              <tr>
+                                <th>5</th>
+                                <th>LShoulder</th>
+                                <th>18</th>
+                                <th>LEar</th>
+                              </tr>
+                              <tr>
+                                <th>6</th>
+                                <th>LElbow</th>
+                                <th>19</th>
+                                <th>LBigToe</th>
+                              </tr>
+                              <tr>
+                                <th>7</th>
+                                <th>LWrist</th>
+                                <th>20</th>
+                                <th>LSmallToe</th>
+                              </tr>
+                              <tr>
+                                <th>8</th>
+                                <th>MidHip</th>
+                                <th>21</th>
+                                <th>LHeel</th>
+                              </tr>
+                              <tr>
+                                <th>9</th>
+                                <th>RHip</th>
+                                <th>22</th>
+                                <th>RBigToe</th>
+                              </tr>
+                              <tr>
+                                <th>10</th>
+                                <th>RKnee</th>
+                                <th>23</th>
+                                <th>RSmallToe</th>
+                              </tr>
+                              <tr>
+                                <th>11</th>
+                                <th>RAnkle</th>
+                                <th>24</th>
+                                <th>RHeel</th>
+                              </tr>
+                              <tr>
+                                <th>12</th>
+                                <th>LHip</th>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <p>&emsp;&emsp;其執行檔的安裝流程和使用方式均有放置在github上。</p>
+                    <p>&emsp;&emsp;將影片輸入後，其可輸出標示人體關節點的影片(影片1)，及如圖一25個點的json檔(圖2)。因我們僅需人體關節點的數據檔，因此僅輸出json檔以利後續研究。</p>
+                    <div class="align-items-center">
+                      <img id="myImage" src="images/method/pose/img2.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片2）</p>
+                    </div>
+                    <div class="video-container">
+                      <video id="myVideo" controls autoplay>
+                        <source id="videoSource" src="images/method/pose/pose.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <p style="text-align: center; font-size: 15px;">（影片1）</p>
+                    </div>
+                    <div class="small_flow_chart">
+                      <div class="item"><a href="#title01">抓取選<br>手座標</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title02">座標<br>比對</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title03">資料<br>矯正</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title04">資料<br>輸出</a></div>
+                    </div>
+                    <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>1.	讀取第一個json檔</strong></h2>
+                    <p>&emsp;&emsp;將json檔 (圖3)中的每個人單獨整理成一個list(圖4)，並利用先前切割出的第一照幀片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標(圖5)。</p>
+                    <div class="align-items-center">
+                      <img id="myImage" src="images/method/pose/img3.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片3）</p>
+                    </div>
+                    <div class="align-items-center">
+                      <img id="myImage" src="images/method/pose/img4.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片4）</p>
+                    </div>
+                    <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>2.	座標比對</strong></h2>
+                    <p>&emsp;&emsp;利用前一幀座標的距離(和前一幀的x、y座標，相差絕對值20以內)去判斷其是否為該選手的座標，將選手在每一幀的座標點找出，並將每一個節點都單獨整理成一個list檔，所以一共會有25個檔案，而圖6中第一個personA就是初始25個節點的座標。</p>
+                    <div class="align-items-center">
+                      <img id="myImage" src="images/method/pose/img5.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片5）</p>
+                    </div>
+                    <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>3.	資料矯正</strong></h2>
+                    <p>&emsp;&emsp;將Arima偵測出軌跡異常歸0的幀數，使用knn再次進行插補，並且遺失的幀數只要大於等於10，便不進行插補。</p>
+                    <div class="align-items-center">
+                      <img id="myImage" src="images/method/pose/img6.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片6）</p>
+                    </div>
+                    <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>4.	資料輸出</strong></h2>
+                    <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點csv檔(圖7)。</p>
+                    <div class="align-items-center">
+                      <img id="smallImage" src="images/method/pose/img7.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片7）</p>
+                    </div>
+                  </section>
+                  <section>
+                    <h1 class="fs-1 text-capitalize fst-italic"><strong>節點座標資料前處理</strong></h1>
+                    <div class="small_flow_chart">
+                      <div class="item"><a href="#title05">原始資料<br>knn補值</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title06">Arima<br>檢查軌跡 </a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title07">資料<br>矯正</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title08">資料<br>輸出</a></div>
+                    </div>
+                    <h2 id="title05" class="fs-1 text-capitalize fst-italic"><strong>1.	原始資料knn補值</strong></h2>
+                    <div class="post-description">
+                    <p>&emsp;&emsp;將基礎節點座標檔中的遺失值進行插補，但為了維持資料的可用性，也為了不要讓資料有太大的偏差，遺失的幀數只要大於等於10幀，便不進行插補(圖8)。</p>
+                    </div>
+                    <div class="align-items-center">
+                      <img id="smallImage" src="images/method/pose/img8.jpg">
+                      <p style="text-align: center; font-size: 15px;">（圖片8）</p>
+                    </div>
+                    <h2 id="title06" class="fs-1 text-capitalize fst-italic"><strong>2.	arima檢查軌跡</strong></h2>
+                    <div class="post-description">
+                    <p>&emsp;&emsp;利用Arima來檢查各點的運動軌跡，因openpose偵測錯誤產生偏差，所以導致前後座標誤差太大，運動軌跡不連貫。因此我們使用arima進行偵測(圖9)，將軌跡異常的幀數歸0。</p>
+                    </div>
+                    <div class="align-items-center">
+                      <img id="myImage" src="images/method/pose/img9.png">
+                      <p style="text-align: center; font-size: 15px;">（圖片9）</p>
+                    </div>
+                    <h2 id="title07" class="fs-1 text-capitalize fst-italic"><strong>3.	資料矯正</strong></h2>
+                    <div class="post-description">
+                    <p>&emsp;&emsp;將上一步歸0的幀數，使用knn再次進行插補。</p>
+                    </div>
+                    <h2 id="title08" class="fs-1 text-capitalize fst-italic"><strong>4.	資料輸出</strong></h2>
+                    <div class="post-description">
+                    <p>&emsp;&emsp;再次輸出兩位選手在影片中每一幀的25個人體節點csv檔。</p>
+                    </div>
+                  </section>
+                </div>
+              </article>
             </div>
-            <div class="post-description">
-              <div>
-                <h4 class="fs-5 fst-italic">使用openpose所提供的執行檔，以獲取25人物節點之json檔及影片</h4>
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <figure class="image-holder mb-5 jarallax">
-                      <img src="/images/method/pose/pose.gif" width="500px" >
-                    </figure>
-                  </div>
-                  <div class="col-lg-6">
-                    <p style="font-size: 20px;">在github所提供的openpose執行檔，只要將影片輸入，
-                      就可輸出畫上人體節點檔的影片，含有25個人物節點的json檔，而我們僅需要人體節點的數據檔，
-                      因此僅輸出json檔。</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 class="fs-5 fst-italic">將json檔整理後切割出首幀選手座標範圍，
-                  再將每個節點獨立整理成list檔，再統一插補遺失值</h4>
-                <p style="font-size: 20px;">將基礎節點座標檔中的遺失值進行插補，但為了維持資料的可用性，
-                  也為了不要讓資料有太大的偏差，遺失的禎數只要大於等於10禎，就不進行插補。</p>
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <img src="images/method/pose/img1.png" class="jarallax-img" style="width: 250px;">
-                    <p style="text-align: center; font-size: 15px;">（節點順序）</p>
-                  </div>
-                  <div class="col-lg-6">
-                    <img src="images/method/pose/img2.png" class="jarallax-img" style="width: 500px;">
-                    <p style="text-align: center; font-size: 15px;">（輸出對應結果）</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 class="fs-5 fst-italic">利用Arima檢查各點運動軌跡，避免出現運動的不連貫</h4>
-                <p style="font-size: 20px;">利用arima來檢查各點的運動軌跡，因openpose偵測錯誤產生偏差，
-                  所以導致前後座標誤差太大，運動軌跡不連貫。因此我們使用arima進行偵測，將軌跡異常的禎數歸0</p>
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <img src="images/method/pose/img3.png" class="jarallax-img" style="width: 500px;">
-                    <p style="text-align: center; font-size: 15px;">（軌跡平滑前）</p>
-                  </div>
-                  <div class="col-lg-6">
-                    <img src="images/method/pose/img4.png" class="jarallax-img" style="width: 500px;">
-                    <p style="text-align: center; font-size: 15px;">（軌跡平滑後）</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 class="fs-5 fst-italic">輸出CSV</h4>
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                    <img src="images/method/pose/img5.png" class="jarallax-img" style="width: 500px;">
-                    <p style="text-align: center; font-size: 15px;">（CSV）</p>
-                  </div>
-                  <div class="col-lg-6">
-                    <p style="font-size: 20px;">輸出CSV。</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </main>
         </div>
       </div>
-    </section>
+    </div>
+    <!--Footer-->
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
-          <div class="row justify-content-between">
-            <div class="col-md-2" style="width: 200px;">
-              <a href="#" class="d-flex">
+          <div class="row justify-content-center footer-content">
+            <div class="footer01">
+              <a href="#" class="d-flex" title="最上面">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
-              <a href="ball_tracking.html" class="d-flex">
+              <a href="ball_tracking.html" class="d-flex" title="羽球軌跡">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-left"></use>
                 </svg>
-                <span class="ps-4">Previous Page</span>
+                <span class="ps-4">Previous</span>
               </a>
-              <a href="index.html" class="d-flex">
+              <a href="index.html" class="d-flex" title="首頁">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-start"></use>
                 </svg>
-                <span class="ps-4">First Page</span>
+                <span class="ps-4">First</span>
               </a>
             </div>
-            <div class="col-md-10" style="width: 900px;">
+            <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
                 羽球比賽辨識系統專題團隊。All Rights Reserved.
               </p>
               <p id="lastModified" style="text-align: center;"></p>
               <script src="js/last_modified.js"></script>
             </div>
-            <div class="col-md-2" style="width: 150px">
-              <a href="#" class="d-flex">
+            <div class="footer03">
+              <a href="#" class="d-flex" title="最上面">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
-              <a href="hitting_point.html" class="d-flex">
+              <a href="hitting_point_and_hitter.html" class="d-flex" title="判斷擊球點">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-right"></use>
                 </svg>
-                <span class="ps-4">Next Page</span>
+                <span class="ps-4">Next</span>
               </a>
-              <a href="reference.html" class="d-flex">
+              <a href="reference.html" class="d-flex" title="參考文獻">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-end"></use>
                 </svg>
-                <span class="ps-4">Last Page</span>
+                <span class="ps-4">Last</span>
               </a>
             </div>
           </div>

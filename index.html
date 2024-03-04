@@ -3,8 +3,14 @@
   <head>
     <title>羽球比賽辨識系統</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo/badminton_icon.ico" type="image/x-icon" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="keywords" content="ecommerce,herbal tea,shop">
+    <meta name="description" content="Bootstrap 5 Tea Shop HTML CSS Template">
+    <!--Icon-->
+    <link rel="icon" href="images/icons/badminton_icon.ico" type="image/x-icon" />
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -17,6 +23,7 @@
     <script src="js/modernizr.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <!--Bootstrap Icons-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <!--navbar icon -->
       <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
@@ -48,34 +55,33 @@
         <path fill="currentColor" d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
       </symbol>
     </svg>
-    <!--待轉畫面-->
+    <!--Preloader-->
     <div class="preloader" style="background-color: #87A9BC;">
       <div class="loader">
         <div class="dot">
-          <img src="images/logo/preloader_img01.png" width="100px">
+          <img src="images/icons/preloader_img01.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img02.png" width="100px">
+          <img src="images/icons/preloader_img02.png" width="100px">
         </div>
         <div class="dot">
-          <img src="images/logo/preloader_img03.png" width="80px">
+          <img src="images/icons/preloader_img03.png" width="80px">
         </div>
       </div>
     </div>
-    <!--LOGO 目錄-->
+    <!--Navbar Menu-->
     <header id="header" class="site-header fixed-top border-bottom">
       <div class="container-lg">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
-            <!--Navbar for mobile-->
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <svg class="navbar-icon svg-white" width="40" height="40">
                 <use xlink:href="#navbar-icon"></use>
               </svg>
             </button>
-            <!--LOGO for mobile-->
+            <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/logo/PUDS_v1.png" alt="Logo" width="50px">
+              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -117,6 +123,15 @@
                         <li>
                           <a class="dropdown-item" href="hitter.html">判斷擊球方</a>
                         </li>
+                      </ul>
+                    </li>
+                    <li class="btn btn-group btn-sm" role="group">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                      </button>
+                      <ul class="dropdown-menu">
                         <li>
                           <a class="dropdown-item" href="winner.html">判斷得分方</a>
                         </li>
@@ -137,9 +152,9 @@
                     </li>                  
                   </ul>
                 </div>
-                <!--LOGO-->
+                <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/PUDS_v1.png" alt="Logo" width="100px">
+                  <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 30vw; height: 10vh;">
                 </a>
               </div>
             </div>
@@ -147,163 +162,110 @@
         </div>
       </div>
     </header>
-    <!--封面背景-->
-    <section id="intro" class="position-relative overflow-hidden" style="background-image: url(images/index/bg2.jpg); background-repeat: no-repeat; background-position: center; width: 100%; height: 898px;">
-      <div class="container-lg">
-        <div class="row">
-          <div class="col-lg-5 col-md-8">
-            <div class="banner-content position-absolute d-flex justify-left-left align-items-center mx-auto text-center" style="padding: 10px;">
-              <div class="banner-text-wrapper" style="height: 600px; width: 850px;">
-                <div>
-                  <h1>
-                    <span class="body-font d-block" style="color: black; text-align: left; padding-left: 230px; font-size: 5vw;">
-                      <strong>羽球比賽辨識系統</strong>
-                    </span>
-                  </h1>
-                </div>
-                <div>
-                  <h3 style="text-align: left; padding-top: 200px; padding-left: 230px; font-size: 2vw;">
-                    <span>
-                    <strong>指導教授：</strong>林建華老師、郭珈妤老師<br>
-                    <strong>團隊成員：</strong>傅慧晴、黃聖筑、<br>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;涂冠樺、李祐宇、<br>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;吳秉杰、劉恭哲、<br>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;蔡易辰、邱瑛蓁
-                  </span>
-                  </h3>
-                </div>              
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </section>  
-    <!--內文-->
-    <section id="trending" class="py-lg-9">
-      <div class="product-content position-relative">
-        <div class="container-lg">
+    <section class="hero-section position-relative jarallax">
+      <img src="images/background/bg6.jpg" alt="tea cup" class="jarallax-img">
+      <div class="hero-content position-absolute d-flex justify-content-center align-items-center text-center">
+        <div class="container">
           <div class="row">
-            <div class="arrow-wrap">
-              <div class="tooltip-container icon-caret-arrow left-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="#">
-                  <button class="button-with-tooltip" onclick="return false" style="background-color: lightgray;">
-                    <svg class="caret-arrow-left" width="25" height="25">
-                      <use xlink:href="#container_arrow-left"></use>
-                    </svg>
-                    Previous
-                  </button>
-                </a>
-                <div class="tooltip">No Previous.</div>
-              </div>
-              <div class="tooltip-container icon-caret-arrow right-side position-absolute d-flex align-items-center bg-gray-1 border rounded-pill justify-content-center">
-                <a href="data.html">
-                  <button class="button-with-tooltip">
-                    <svg class="caret-arrow-right" width="25" height="25">
-                      <use xlink:href="#container_arrow-right"></use>
-                    </svg>
-                    Next
-                  </button>
-                </a>
-                <div class="tooltip">資料介紹</div>
-              </div>
-            </div>
-            <div class="container-lg">
-              <div class="row align-items-center">
-                <div class="col-lg-6">
-                  <figure class="image-holder mb-5 jarallax">
-                    <img src="images/index/bg4.jpg" alt="introduction" class="jarallax-img">
-                  </figure>
-                </div>
-                <div class="col-lg-5">
-                  <div class="detail-entry px-4">
-                    <h4 class="fs-6">Introduction</h4>
-                    <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>摘要</strong></h3>
-                    <p style="font-size: 20px;">本專題旨在利用AI技術，以研究分析出羽球賽事中各項數據。
-                      我們分別使用了TrackNetV2對影像中的羽球進行初步的偵測，
-                      以獲取羽球在影像中的不同變化；此外，再利用OpenPose對打擊者進行節點座標的採集，
-                      並以其輔佐我們對於往後數據的分析；羽球競賽中，場地線也是一項評判得失分的主要標準，
-                      我們採用了遮罩的方式將場地線篩選出來，
-                      並且再以Canny和HoughLine將場地線單獨以函數的方式呈現出來。
-                      這項研究的結果將有助於我們對於大小羽球賽事的表現分析，
-                      甚至在訓練方面也能提高教學專業性的水準。</p>
-                  </div>
-                </div>
-                <div class="col-lg-5">
-                  <div class="detail-entry px-4">
-                    <h4 class="fs-6">Motivation and Purpose</h4>
-                    <h3 class="mt-0 mb-4 fs-2 fst-italic"><strong>研究動機與目標</strong></h3>
-                    <p style="font-size: 20px;">隨著羽球運動的逐漸興起，我們希望做出能對羽球比賽進行分析的互動式網頁，
-                      透過這個平台，使用者可以更方便地觀察影片中的得分方、球種和擊球技巧，
-                      以便更迅速的理解比賽內容。我們的目標是提供一個直觀而功能豐富的工具，
-                      協助使用者深入瞭解羽球比賽的關鍵要素。</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <figure class="image-holder mb-5 jarallax">
-                    <img src="images/index/bg5.jpg" alt="motivation_and_purpose" class="jarallax-img">
-                  </figure>
-                </div>  
-              </div>
+            <div id="project_content" class="col-md-12">
+              <h1 id="project_title" class="page-title text-light fst-italic">羽球比賽辨識系統</h1>
+              <p id="member">指導教授：林建華老師、郭珈妤老師<br>專題成員：傅慧晴、黃聖筑、涂冠樺、李祐宇、吳秉杰、劉恭哲、蔡易辰、邱瑛蓁</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <section id="about" class="py-lg-8">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col-lg-4 align-items-center">
+            <figure class="image-holder mb-4 jarallax">
+              <img src="images/background/bg4.jpg" class="jarallax-img">
+            </figure>
+          </div>
+          <div class="col-lg-8">
+            <div class="detail-entry px-4">
+              <h3 class="mt-0 mb-4 fs-1 fst-italic"><strong>摘要</strong></h3>
+              <p>&emsp;&emsp;本專題旨在利用AI技術，針對羽球比賽中的各項數據進行分析。首先，使用TrackNetV2<sup>[1]</sup>對影像中的羽球進行初步偵測，以獲取每一幀的羽球變化。接著，利用OpenPose<sup>[2]</sup>技術對選手進行人體關節偵測，這些資訊有助於進一步分析比賽中選手的動作和技術。另外，考慮到場地線在羽球比賽中的重要性，採用遮罩技術來識別場地線，並利用Canny<sup>[3]</sup>和HoughLine<sup>[4]</sup>演算法將其以函數的形式呈現出來。</p>
+              <p>&emsp;&emsp;這項研究的結果將對羽球比賽的表現分析提供有價值的洞察，有助於教練和選手了解其表現的強項和改進的空間。同時，這些分析也可以應用於訓練和教學中，提高教學專業水準，幫助培養更優秀的選手。這項研究對於羽球運動的發展和提高競技水準都具有積極的意義。</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div class="detail-entry px-4">
+              <h3 class="mt-0 mb-4 fs-1 fst-italic"><strong>研究動機與目標</strong></h3>
+              <p>&emsp;&emsp;隨著羽球運動的逐漸興起，我們希望可以透過一個簡易且便利性高的方式，讓大眾可以去用另一個視角觀看羽球賽事，甚至透過這個平台去學習和進行技術研究。因此，我們決定創建一個針對羽球比賽進行分析的網頁，以提供一個新穎的視角去觀看羽球賽事。</p>
+              <p>&emsp;&emsp;我們的目標是建立一個直觀且便利的網頁，讓使用者能夠用不同的方式觀看賽事，且可以從網頁中看出賽事中的羽球球路及得分方，並得知人物及羽球的移動軌跡，從而更迅速地理解比賽。</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <figure class="image-holder mb-5 jarallax">
+              <img src="images/background/bg5.jpg" class="jarallax-img">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
     <footer id="footer" class="mt-5">
       <div class="border-top py-4">
         <div class="container-lg">
-          <div class="row justify-content-between">
-            <div class="col-md-2" style="width: 200px;">
+          <div class="row justify-content-center footer-content">
+            <div class="footer01">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
               <a href="index.html" class="d-flex" onclick="return false">
                 <svg class="arrow-right svg-gray position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-left"></use>
                 </svg>
-                <span class="ps-4" style="color: gray;">Previous Page</span>
+                <span class="ps-4">Previous</span>
               </a>
               <a href="index.html" class="d-flex" onclick="return false">
                 <svg class="arrow-right svg-gray position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-start"></use>
                 </svg>
-                <span class="ps-4" style="color: gray;">First Page</span>
+                <span class="ps-4">First</span>
               </a>
             </div>
-            <div class="col-md-10" style="width: 900px;">
+            <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
                 羽球比賽辨識系統專題團隊。All Rights Reserved.
               </p>
               <p id="lastModified" style="text-align: center;"></p>
               <script src="js/last_modified.js"></script>
             </div>
-            <div class="col-md-2" style="width: 150px">
+            <div class="footer03">
               <a href="#" class="d-flex">
                 <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-up"></use>
                 </svg>
-                <span class="ps-4">Back to top</span>
+                <span class="ps-4">Top</span>
               </a>
               <a href="data.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-right"></use>
                 </svg>
-                <span class="ps-4">Next Page</span>
+                <span class="ps-4">Next</span>
               </a>
               <a href="reference.html" class="d-flex">
                 <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
                   <use xlink:href="#footer_arrow-end"></use>
                 </svg>
-                <span class="ps-4">Last Page</span>
+                <span class="ps-4">Last</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </footer>
+
     <script src="js/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
