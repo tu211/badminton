@@ -174,160 +174,208 @@
         </div>
       </div>
     </section>
-    <div class="post-wrap" id="edge_detection">
-      <div class="container">
-        <div class="row">
-          <main class="post-list">
-            <div class="row">
-              <article class="post-item">
-                <div class="post-content">
-                  <div class="small_flow_chart">
-                    <div class="item"><a href="#title01">影像<br>處理</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title02">霍夫<br>轉換</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title03">拆分<br>處理</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title04">資料<br>合併</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title05">單打線</a></div>
-                  </div>
-                  <section>
-                    <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>RGB -> HSV</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;因為羽球場地大多數為綠色的場地，因此為了能夠更快速尋找目標， 在這將原圖的RGB格式轉為HSV格式。</p>
-                    </div>
-                    <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                          <img id="myImage" src="images/method/edge_detection/image.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（原圖）</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/edge_detection/hsv.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（HSV）</p>
-                    </div>
-                    </div>
-                    <h2 class="fs-1 text-capitalize fst-italic"><strong>遮罩</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;將轉換後的HSV圖片進行遮罩，可看到圖中綠色的部分轉換成白色，其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/mask.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（遮罩）</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/res.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（加疊）</p>
-                        </div>
-                    </div>
-                    <h2 class="fs-1 text-capitalize fst-italic"><strong>Canny</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;對處理後的圖片進行Canny邊緣偵測，可看見Canny描繪出圖中所有可辨識的線條。</p>
-                    </div>
-                    <div class="align-items-center">
-                        <img id="myImage" src="images/method/edge_detection/canny.png">
-                        <p style="text-align: center; font-size: 15px;">（Canny）</p>
-                    </div>
-                    <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>霍夫轉換</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;對進行過Canny偵測的圖片進行霍夫轉換，透過轉換後的座標畫出場地線。</p>
-                    </div>
-                    <div class="align-items-center">
-                        <img id="myImage" src="images/method/edge_detection/coordinates.png">
-                        <p style="text-align: center; font-size: 15px;">（HoughLine）</p>
-                    </div>
-                    <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>ROWS & COLUMNS</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;將進行霍夫轉換後的ROW和COLUMN拆分。</p>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/rows.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（ROWS）</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/cols.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（COLS）</p>
-                        </div>
-                    </div>
-                    <h2 class="fs-1 text-capitalize fst-italic"><strong>處理後ROWS & COLUMNS</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;先將場地外的線刪除，因為有多條線重合在一起，為了留下一條線，所以我們利用分組的方式將重合在一起的線分在同一組，並計算出他的平均值，將這個值當作最後這條線的結果，因為分組的區域限制所以我們將上述步驟進行了兩次，為了讓這個結果可以更加貼近原本的場地線。</p>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/two_rows.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（ROWS）</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/two_cols.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（COLS）</p>
-                        </div>
-                    </div>
-                    <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>合併ROWS & COLUMNS</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;將處理後的ROWS和COLUMNS合併。</p>
-                    </div>
-                    <div class="align-items-center">
-                        <img id="myImage" src="images/method/edge_detection/two_rows_and_two_cols.png">
-                        <p style="text-align: center; font-size: 15px;">（線段合併）</p>
-                    </div>
-                    <h2 id="title05" class="fs-1 text-capitalize fst-italic"><strong>單打線</strong></h2>
-                    <div class="post-description">
-                        <p>&emsp;&emsp;將合併後的線段進行交點判斷，並留下單打線。</p>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/final.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（單打線）</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="edge_img" class="image-container" style="height: 370px;">
-                                <img id="myImage" src="images/method/edge_detection/final_csv.png">
-                            </div>
-                          <p style="text-align: center; font-size: 15px;">（單打線輸出csv）</p>
-                        </div>
-                    </div>
-                  </section>
-                </div>
-              </article>
+    <div  class="justify-content-center" style="display: flex; flex-direction: row;">
+      <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-5 fw-semibold">邊線偵測</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+              影像處理
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                <li><a href="#" class="link-dark rounded aside_nav_item">RGB -> HSV</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">遮罩</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">Canny</a></li>
+              </ul>
             </div>
-          </main>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              霍夫轉換
+            </button>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              拆分處理
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-dark rounded aside_nav_item">ROWS & COLUMNS</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">處理後ROWS & COLUMNS</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              資料合併
+            </button>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              單打線
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="post-wrap" id="edge_detection" style="overflow: auto; max-height: 1000px;">
+        <div class="container">
+          <div class="row">
+            <main class="post-list">
+              <div class="row">
+                <article class="post-item">
+                  <div class="post-content">
+                    <div class="small_flow_chart">
+                      <div class="item"><a href="#title01">影像<br>處理</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title02">霍夫<br>轉換</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title03">拆分<br>處理</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title04">資料<br>合併</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title05">單打線</a></div>
+                    </div>
+                    <section>
+                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>RGB -> HSV</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;因為羽球場地大多數為綠色的場地，因此為了能夠更快速尋找目標， 在這將原圖的RGB格式轉為HSV格式。</p>
+                      </div>
+                      <div class="row align-items-center">
+                      <div class="col-lg-6">
+                          <div id="edge_img" class="image-container">
+                            <img id="myImage" src="images/method/edge_detection/image.png">
+                          </div>
+                        <p style="text-align: center; font-size: 15px;">（原圖）</p>
+                      </div>
+                      <div class="col-lg-6">
+                          <div id="edge_img" class="image-container">
+                              <img id="myImage" src="images/method/edge_detection/hsv.png">
+                          </div>
+                        <p style="text-align: center; font-size: 15px;">（HSV）</p>
+                      </div>
+                      </div>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>遮罩</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;將轉換後的HSV圖片進行遮罩，可看到圖中綠色的部分轉換成白色，其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
+                      </div>
+                      <div class="row align-items-center">
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/mask.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（遮罩）</p>
+                          </div>
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/res.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（加疊）</p>
+                          </div>
+                      </div>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>Canny</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;對處理後的圖片進行Canny邊緣偵測，可看見Canny描繪出圖中所有可辨識的線條。</p>
+                      </div>
+                      <div class="align-items-center">
+                          <img id="myImage" src="images/method/edge_detection/canny.png">
+                          <p style="text-align: center; font-size: 15px;">（Canny）</p>
+                      </div>
+                      <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>霍夫轉換</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;對進行過Canny偵測的圖片進行霍夫轉換，透過轉換後的座標畫出場地線。</p>
+                      </div>
+                      <div class="align-items-center">
+                          <img id="myImage" src="images/method/edge_detection/coordinates.png">
+                          <p style="text-align: center; font-size: 15px;">（HoughLine）</p>
+                      </div>
+                      <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>ROWS & COLUMNS</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;將進行霍夫轉換後的ROW和COLUMN拆分。</p>
+                      </div>
+                      <div class="row align-items-center">
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/rows.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（ROWS）</p>
+                          </div>
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/cols.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（COLS）</p>
+                          </div>
+                      </div>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>處理後ROWS & COLUMNS</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;先將場地外的線刪除，因為有多條線重合在一起，為了留下一條線，所以我們利用分組的方式將重合在一起的線分在同一組，並計算出他的平均值，將這個值當作最後這條線的結果，因為分組的區域限制所以我們將上述步驟進行了兩次，為了讓這個結果可以更加貼近原本的場地線。</p>
+                      </div>
+                      <div class="row align-items-center">
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/two_rows.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（ROWS）</p>
+                          </div>
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/two_cols.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（COLS）</p>
+                          </div>
+                      </div>
+                      <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>合併ROWS & COLUMNS</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;將處理後的ROWS和COLUMNS合併。</p>
+                      </div>
+                      <div class="align-items-center">
+                          <img id="myImage" src="images/method/edge_detection/two_rows_and_two_cols.png">
+                          <p style="text-align: center; font-size: 15px;">（線段合併）</p>
+                      </div>
+                      <h2 id="title05" class="fs-1 text-capitalize fst-italic"><strong>單打線</strong></h2>
+                      <div class="post-description">
+                          <p>&emsp;&emsp;將合併後的線段進行交點判斷，並留下單打線。</p>
+                      </div>
+                      <div class="row align-items-center">
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container">
+                                  <img id="myImage" src="images/method/edge_detection/final.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（單打線）</p>
+                          </div>
+                          <div class="col-lg-6">
+                              <div id="edge_img" class="image-container" style="height: 370px;">
+                                  <img id="myImage" src="images/method/edge_detection/final_csv.png">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（單打線輸出csv）</p>
+                          </div>
+                      </div>
+                    </section>
+                  </div>
+                </article>
+              </div>
+            </main>
+          </div>
         </div>
       </div>
     </div>

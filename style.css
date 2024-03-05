@@ -818,7 +818,7 @@ form {
 }
 
 #edge_detection {
-  height: 5100px;
+  height: auto;
 }
 
 #ball_tracking {
@@ -963,6 +963,12 @@ th, tr {
   border: #87A9BC solid 1px;
   text-align: center;
   padding: 10px;
+}
+
+/*===== Aside =====*/
+.aside_nav_item {
+  padding: 20px;
+  font-size: 15px;
 }
 
 /*===== Footer =====*/
