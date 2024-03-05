@@ -771,11 +771,6 @@ a {
   box-shadow: var(--bs-light);
 }
 
-/*===== Footer =====*/
-footer {
-  font-size: 15px;
-}
-
 /*===== Fit Mobile and Desktop =====*/
 #project_content {
   padding-top: 100px;
@@ -817,14 +812,6 @@ form {
   height: auto;
 }
 
-#data_csv {
-  height: 700px;
-}
-
-#edge_img {
-  height: 300px;
-}
-
 /*===== Content Height =====*/
 #data {
   height: 1700px;
@@ -857,6 +844,25 @@ form {
 #ball_trajectory {
   height: 2000px;
 }
+
+/*===== Content Image =====*/
+#data_csv {
+  height: 700px;
+}
+
+#edge_img {
+  height: 300px;
+}
+
+#tracking_img {
+  max-height: 400px;
+  overflow: auto;
+}
+
+#winner_img {
+  height: 400px;
+}
+
 /* ========== Flow Chart ========== */
 .flow-chart {
   font-size: 30px;
@@ -946,17 +952,6 @@ form {
   flex: 1;
 }
 
-/*===== Footer =====*/
-.footer01 {
-  width: 110px;
-}
-.footer02 {
-  width: 850px;
-}
-.footer03 {
-  width: 80px;
-}
-
 /*===== Table =====*/
 table {
   font-size: 0.8rem;
@@ -968,6 +963,23 @@ th, tr {
   border: #87A9BC solid 1px;
   text-align: center;
   padding: 10px;
+}
+
+/*===== Footer =====*/
+footer {
+  font-size: 15px;
+}
+
+.footer01 {
+  width: 110px;
+}
+
+.footer02 {
+  width: 850px;
+}
+
+.footer03 {
+  width: 80px;
 }
 
 @media (max-width: 600px) {
@@ -1017,12 +1029,17 @@ th, tr {
     height: auto;
   } 
 
+  /*===== Image =====*/
   #data_csv {
     height: 550px;
   } 
 
   #edge_img {
     height: 170px;
+  }
+
+  #winner_img {
+    height: 500px;
   }
 
   /* Content Height */

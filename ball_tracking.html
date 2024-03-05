@@ -204,11 +204,11 @@
                   </div>
                   <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>TrackNetV2生成羽球座標以及影片</strong></h2>
                   <div class="post-description">
-                   <p>利用TrackNetV2讓多個影片連續生成羽球位置， 他會分成一個csv檔(羽球軌跡的位置數據)、一個mp4檔(將影片中羽球位置進行標示)</p>
+                   <p>利用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示）。</p>
                   </div>
                   <div class="row align-items-center">
                     <div class="col-lg-6">
-                      <div class="video-container" style="height: 320px; margin-top: 50px;">
+                      <div class="video-container" style="height: 330px; margin-top: 50px;">
                         <video id="myVideo" controls autoplay>
                           <source id="videoSource" src="images/method/ball_tracking/ball_tracking.mp4" type="video/mp4">
                           Your browser does not support the video tag.
@@ -217,15 +217,15 @@
                       <p style="text-align: center; font-size: 15px;">（羽球軌跡影片）</p>
                     </div>
                     <div class="col-lg-6">
-                      <div id="tracking_img" class="image-container">
-                          <img id="myImage" src="images/method/ball_tracking/img1.png">
+                      <div id="tracking_img" class="align-items-center">
+                        <img id="smallImage" src="images/method/ball_tracking/img1.jpg" style="width: 100%;" alt="Ball Tracking Image">
                       </div>
                       <p style="text-align: center; font-size: 15px;">（羽球軌跡數據集）</p>
                     </div>
                   </div>
                   <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>Arima資料矯正</strong></h2>
                   <div class="post-description">
-                    <p>因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊</p>
+                    <p>因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊。</p>
                   </div>
                   <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -243,7 +243,7 @@
                   </div>
                   <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
                   <div class="post-description">
-                    <p>將軌跡中的y軸用移動平均濾波讓軌跡平滑化。 數據會因為一些誤差，導致球的y軸會上上下下跑動， 所以需要做軌跡平滑化讓他數據可以更好分析擊球點的最低點</p>
+                    <p>將軌跡中的y軸用移動平均濾波讓軌跡平滑化。 數據會因為一些誤差，導致球的y軸會上上下下跑動， 所以需要做軌跡平滑化讓他數據可以更好分析擊球點的最低點。</p>
                   </div>
                   <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -261,10 +261,10 @@
                   </div>
                   <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>輸出結果</strong></h2>
                   <div class="post-description">
-                    <p>將修正後的資料以CSV輸出，方便後續使用</p>
+                    <p>將修正後的資料以CSV輸出，X1為X調整後的資料，Y1為Y調整後的資料。</p>
                   </div>
-                  <div class="align-items-center">
-                    <img id="smallImage" src="images/method/ball_tracking/img6.png">
+                  <div class="align-items-center" style="overflow: auto; max-height: 400px;">
+                    <img id="smallImage" src="images/method/ball_tracking/img6.png" style="width: 100%;" alt="Ball Tracking Image">
                   </div>
                 </div>
               </article>
