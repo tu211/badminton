@@ -91,9 +91,11 @@ document.addEventListener('DOMContentLoaded', function () {
         changeVideoSource(videoPaths.ball_00001);
       } else if (line.checked) {
         changeVideoSource(videoPaths.line_00001);
+      } else if (bg.checked) {
+        alert("請再勾選人物、羽球或場地")
       } else {
         // 如果沒有 checkbox 被勾選，保留初始影片
-        changeVideoSource(videoPaths.origin_00001);
+        alert("請勾選顯示項目");
       }
     } else if (video.value === "00105") {
       if (bg.checked && pose.checked && line.checked && ball.checked) {
@@ -124,9 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
         changeVideoSource(videoPaths.ball_00105);
       } else if (line.checked) {
         changeVideoSource(videoPaths.line_00105);
+      } else if (bg.checked) {
+        alert("請再勾選人物、羽球或場地")
       } else {
         // 如果沒有 checkbox 被勾選，保留初始影片
-        changeVideoSource(videoPaths.origin_00105);
+        alert("請勾選顯示項目");
       }
     } else if (video.value === "00108") {
       if (bg.checked && pose.checked && line.checked && ball.checked) {
@@ -157,9 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
         changeVideoSource(videoPaths.ball_00108);
       } else if (line.checked) {
         changeVideoSource(videoPaths.line_00108);
+      } else if (bg.checked) {
+        alert("請再勾選人物、羽球或場地")
       } else {
         // 如果沒有 checkbox 被勾選，保留初始影片
-        changeVideoSource(videoPaths.origin_00108);
+        alert("請勾選顯示項目");
       }
     } else {
       alert("請選擇影片")

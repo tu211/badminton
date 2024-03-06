@@ -174,102 +174,204 @@
         </div>
       </div>
     </section>
-    <div class="post-wrap" id="ball_tracking">
-      <div class="container">
-        <div class="row">
-          <main class="post-list">
-            <div class="row">
-              <article class="post-item">
-                <div class="post-content">
-                  <div class="small_flow_chart">
-                    <div class="item"><a href="#title01">羽球<br>座標</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title02">Arima<br>資料矯正</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title03">移動平均濾波</a></div>
-                    <div class="arrow_right">
-                      <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
-                        <use xlink:href="#footer_arrow-right"></use>
-                      </svg>
-                    </div>
-                    <div class="item"><a href="#title04">輸出<br>結果</a></div>
-                  </div>
-                  <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>TrackNetV2生成羽球座標以及影片</strong></h2>
-                  <div class="post-description">
-                   <p>利用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示）。</p>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6">
-                      <div class="video-container" style="height: 330px; margin-top: 50px;">
-                        <video id="myVideo" controls autoplay>
-                          <source id="videoSource" src="images/method/ball_tracking/ball_tracking.mp4" type="video/mp4">
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                      <p style="text-align: center; font-size: 15px;">（羽球軌跡影片）</p>
-                    </div>
-                    <div class="col-lg-6">
-                      <div id="tracking_img" class="align-items-center">
-                        <img id="smallImage" src="images/method/ball_tracking/img1.jpg" style="width: 100%;" alt="Ball Tracking Image">
-                      </div>
-                      <p style="text-align: center; font-size: 15px;">（羽球軌跡數據集）</p>
-                    </div>
-                  </div>
-                  <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>Arima資料矯正</strong></h2>
-                  <div class="post-description">
-                    <p>因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊。</p>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6">
-                      <div id="tracking_img" class="image-container">
-                        <img id="myImage" src="images/method/ball_tracking/img2.png">
-                      </div>
-                      <p style="text-align: center; font-size: 15px;">（修補前）</p>
-                    </div>
-                    <div class="col-lg-6">
-                      <div id="tracking_img" class="image-container">
-                          <img id="myImage" src="images/method/ball_tracking/img3.png">
-                      </div>
-                      <p style="text-align: center; font-size: 15px;">（修補後）</p>
-                    </div>
-                  </div>
-                  <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
-                  <div class="post-description">
-                    <p>將軌跡中的y軸用移動平均濾波讓軌跡平滑化。 數據會因為一些誤差，導致球的y軸會上上下下跑動， 所以需要做軌跡平滑化讓他數據可以更好分析擊球點的最低點。</p>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6">
-                      <div id="tracking_img" class="image-container">
-                        <img id="myImage" src="images/method/ball_tracking/img4.png">
-                      </div>
-                      <p style="text-align: center; font-size: 15px;">（軌跡平滑前）</p>
-                    </div>
-                    <div class="col-lg-6">
-                      <div id="tracking_img" class="image-container">
-                          <img id="myImage" src="images/method/ball_tracking/img5.png">
-                      </div>
-                      <p style="text-align: center; font-size: 15px;">（軌跡平滑後）</p>
-                    </div>
-                  </div>
-                  <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>輸出結果</strong></h2>
-                  <div class="post-description">
-                    <p>將修正後的資料以CSV輸出，X1為X調整後的資料，Y1為Y調整後的資料。</p>
-                  </div>
-                  <div class="align-items-center" style="overflow: auto; max-height: 400px;">
-                    <img id="smallImage" src="images/method/ball_tracking/img6.png" style="width: 100%;" alt="Ball Tracking Image">
-                  </div>
-                </div>
-              </article>
+    <div  class="justify-content-center" style="display: flex; flex-direction: row;">
+      <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-5 fw-semibold">MENU</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1" style="border: 2px solid red;">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#one" aria-expanded="true">
+              <a href="index.html">首頁</a>
+            </button>
+            <div class="collapse show" id="one">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                <li><a href="#title01" class="link-dark rounded aside_nav_item">摘要</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">研究動機與目標</a></li>
+              </ul>
             </div>
-          </main>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#two" aria-expanded="false">
+              資料介紹
+            </button>
+            <div class="collapse" id="two">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                <li><a href="#" class="link-dark rounded aside_nav_item">資料集</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">數據集</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">影片</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#three" aria-expanded="false">
+              流程與方法
+            </button>
+            <div class="collapse" id="three">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                <li><a href="#" class="link-dark rounded aside_nav_item">邊線偵測</a></li>
+                <div class="collapse" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">RGB -> HSV</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">遮罩</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">Canny</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">霍夫轉換</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">ROWS & COLUMNS</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">處理後ROWS & COLUMNS</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">合併ROWS & COLUMNS</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">單打線</a></li>
+                  </ul>
+                </div>
+                <li><a href="#" class="link-dark rounded aside_nav_item">羽球軌跡</a></li>
+                <div class="collapse" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">TrackNetV2生成羽球座標以及影片</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">Arima資料矯正</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">移動平均濾波</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">輸出結果</a></li>
+                  </ul>
+                </div>
+                <li><a href="#" class="link-dark rounded aside_nav_item">人體節點</a></li>
+                <div class="collapse" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">建立選手基礎節點座標檔</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">1. 讀取第一個Json檔</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">2. 座標比對</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">3. 資料矯正</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">4. 資料輸出</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">節點座標資料前處理</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">1. 原始資料Knn補值</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">2. Arima檢查軌跡</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">3. 資料矯正</a></li>
+                    <li><a href="#" class="link-dark rounded aside_nav_item_2">4. 資料輸出</a></li>
+                  </ul>
+                </div>
+                <li><a href="#" class="link-dark rounded aside_nav_item">擊球點</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">判斷擊球方</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#four" aria-expanded="false">
+              結論
+            </button>
+            <div class="collapse" id="four">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
+                <li><a href="#" class="link-dark rounded aside_nav_item">判斷得分方</a></li>
+                <li><a href="#" class="link-dark rounded aside_nav_item">球路</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#five" aria-expanded="false">
+              <a href="demo.html">成果展示</a>
+            </button>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#six" aria-expanded="false">
+              <a href="reference.html">參考文獻</a>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="post-wrap " id="ball_tracking" style="overflow: auto; max-height: 1000px;">
+        <div class="container">
+          <div class="row">
+            <main class="post-list">
+              <div class="row">
+                <article class="post-item">
+                  <div class="post-content">
+                    <div class="small_flow_chart">
+                      <div class="item"><a href="#title01">羽球<br>座標</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title02">Arima<br>資料矯正</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title03">移動平均濾波</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#title04">輸出<br>結果</a></div>
+                    </div>
+                    <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>TrackNetV2生成羽球座標以及影片</strong></h2>
+                    <div class="post-description">
+                    <p>利用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示）。</p>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="video-container" style="height: 330px; margin-top: 50px;">
+                          <video id="myVideo" controls autoplay>
+                            <source id="videoSource" src="images/method/ball_tracking/ball_tracking.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <p style="text-align: center; font-size: 15px;">（羽球軌跡影片）</p>
+                      </div>
+                      <div class="col-lg-6">
+                        <div id="tracking_img" class="align-items-center">
+                          <img id="smallImage" src="images/method/ball_tracking/img1.png" style="width: 100%;" alt="Ball Tracking Image">
+                        </div>
+                        <p style="text-align: center; font-size: 15px;">（羽球軌跡數據集）</p>
+                      </div>
+                    </div>
+                    <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>Arima資料矯正</strong></h2>
+                    <div class="post-description">
+                      <p>因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊。</p>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div id="tracking_img" class="image-container">
+                          <img id="myImage" src="images/method/ball_tracking/img2.png">
+                        </div>
+                        <p style="text-align: center; font-size: 15px;">（修補前）</p>
+                      </div>
+                      <div class="col-lg-6">
+                        <div id="tracking_img" class="image-container">
+                            <img id="myImage" src="images/method/ball_tracking/img3.png">
+                        </div>
+                        <p style="text-align: center; font-size: 15px;">（修補後）</p>
+                      </div>
+                    </div>
+                    <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
+                    <div class="post-description">
+                      <p>將軌跡中的y軸用移動平均濾波讓軌跡平滑化。 數據會因為一些誤差，導致球的y軸會上上下下跑動， 所以需要做軌跡平滑化讓他數據可以更好分析擊球點的最低點。</p>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div id="tracking_img" class="image-container">
+                          <img id="myImage" src="images/method/ball_tracking/img4.png">
+                        </div>
+                        <p style="text-align: center; font-size: 15px;">（軌跡平滑前）</p>
+                      </div>
+                      <div class="col-lg-6">
+                        <div id="tracking_img" class="image-container">
+                            <img id="myImage" src="images/method/ball_tracking/img5.png">
+                        </div>
+                        <p style="text-align: center; font-size: 15px;">（軌跡平滑後）</p>
+                      </div>
+                    </div>
+                    <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>輸出結果</strong></h2>
+                    <div class="post-description">
+                      <p>將修正後的資料以CSV輸出，X1為X調整後的資料，Y1為Y調整後的資料。</p>
+                    </div>
+                    <div class="align-items-center" style="overflow: auto; max-height: 400px;">
+                      <img id="smallImage" src="images/method/ball_tracking/img6.png" style="width: 100%;" alt="Ball Tracking Image">
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </main>
+          </div>
         </div>
       </div>
     </div>

@@ -777,8 +777,8 @@ a {
 }
 
 #project_title {
-  font-size: 150px;
-  font-family: chenyuluoyan;
+  font-size: 130px;
+  font-family: iansui;
   backdrop-filter: blur(15px);
 }
 
@@ -968,6 +968,16 @@ th, tr {
 /*===== Aside =====*/
 .aside_nav_item {
   padding: 20px;
+  font-size: 15px;
+}
+
+.aside_button {
+  background: white;
+  border: 2px solid white;
+}
+
+.aside_nav_item_2 {
+  padding: 30px;
   font-size: 15px;
 }
 
