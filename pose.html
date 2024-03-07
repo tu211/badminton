@@ -182,7 +182,7 @@
               <article class="post-item">
                 <div class="post-content">
                   <section>
-                    <h2 class="fs-1 text-capitalize fst-italic" style="border: 2px solid #87A9BC;"><strong>建立選手基礎節點座標檔</strong></h2>
+                    <h2 class="fs-1 text-capitalize fst-italic"><strong>建立選手基礎節點座標檔</strong></h2>
                     <div class="post-description">
                     <p>&emsp;&emsp;使用CMU - Panoptic Studio（卡內基·梅隆大學的研究單位）在github所提供的openpose執行檔，輸出影片中所有人的25個身體節點json檔。</p>
                     </div>
@@ -292,25 +292,25 @@
                       <p style="text-align: center; font-size: 15px;">（影片1）</p>
                     </div>
                     <div class="small_flow_chart">
-                      <div class="item"><a href="#title01">抓取選<br>手座標</a></div>
+                      <div class="item"><a href="#title01">抓取選手座標</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#title02">座標<br>比對</a></div>
+                      <div class="item"><a href="#title02">座標比對</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#title03">資料<br>矯正</a></div>
+                      <div class="item"><a href="#title03">資料矯正</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#title04">資料<br>輸出</a></div>
+                      <div class="item"><a href="#title04">資料輸出</a></div>
                     </div>
                     <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>1.	讀取第一個json檔</strong></h2>
                     <p>&emsp;&emsp;將json檔 (圖3)中的每個人單獨整理成一個list(圖4)，並利用先前切割出的第一照幀片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標(圖5)。</p>
@@ -344,27 +344,27 @@
                   <section>
                     <h1 class="fs-1 text-capitalize fst-italic"><strong>節點座標資料前處理</strong></h1>
                     <div class="small_flow_chart">
-                      <div class="item"><a href="#title05">原始資料<br>knn補值</a></div>
+                      <div class="item"><a href="#title05">原資料KNN補值</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#title06">Arima<br>檢查軌跡 </a></div>
+                      <div class="item"><a href="#title06">Arima檢查軌跡 </a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#title07">資料<br>矯正</a></div>
+                      <div class="item"><a href="#title07">資料矯正</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#title08">資料<br>輸出</a></div>
+                      <div class="item"><a href="#title08">資料輸出</a></div>
                     </div>
-                    <h2 id="title05" class="fs-1 text-capitalize fst-italic"><strong>1.	原始資料knn補值</strong></h2>
+                    <h2 id="title05" class="fs-1 text-capitalize fst-italic"><strong>1.	原資料KNN補值</strong></h2>
                     <div class="post-description">
                     <p>&emsp;&emsp;將基礎節點座標檔中的遺失值進行插補，但為了維持資料的可用性，也為了不要讓資料有太大的偏差，遺失的幀數只要大於等於10幀，便不進行插補(圖8)。</p>
                     </div>

@@ -777,13 +777,13 @@ a {
 }
 
 #project_title {
+  padding-top: 100px;
   font-size: 130px;
   font-family: iansui;
-  backdrop-filter: blur(15px);
 }
 
 #member {
-  padding-top: 60px;
+  padding-top: 40px;
   font-family: iansui;
   font-size: 30px;
 }
@@ -941,8 +941,8 @@ form {
   height:80px;
   border-radius:999em;
   text-align: center;
-  font-size: 20px;
-  padding-top: 10px;
+  font-size: 25px;
+  padding-top: 20px;
   flex: 2;
 }
 
