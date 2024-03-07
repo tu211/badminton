@@ -231,25 +231,25 @@
                     <div class="small_flow_chart">
                       <div class="item"><a href="#title01">影像處理</a></div>
                       <div class="arrow_right">
-                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
                       <div class="item"><a href="#title02">霍夫轉換</a></div>
                       <div class="arrow_right">
-                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
                       <div class="item"><a href="#title03">拆分處理</a></div>
                       <div class="arrow_right">
-                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
                       <div class="item"><a href="#title04">資料合併</a></div>
                       <div class="arrow_right">
-                        <svg class="arrow-right svg-primary position-absolute" width="50" height="50">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
@@ -258,7 +258,7 @@
                     <section>
                       <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>RGB -> HSV</strong></h2>
                       <div class="post-description">
-                          <p>&emsp;&emsp;因為羽球場地大多數為綠色的場地，因此為了能夠更快速尋找目標， 在這將原圖的RGB格式轉為HSV格式。</p>
+                          <p>&emsp;&emsp;因為羽球場地大多數為綠色的場地，因此為了能夠更快速尋找目標， 在這將原圖的RGB（RGB color model，RGB色彩模型）格式轉為HSV（Hue, Saturation, Value，色相、飽和度、明度）格式。</p>
                       </div>
                       <div class="row align-items-center">
                       <div class="col-lg-6">
@@ -276,7 +276,7 @@
                       </div>
                       <h2 class="fs-1 text-capitalize fst-italic"><strong>遮罩</strong></h2>
                       <div class="post-description">
-                          <p>&emsp;&emsp;將轉換後的HSV圖片進行遮罩，可看到圖中綠色的部分轉換成白色，其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
+                          <p>&emsp;&emsp;將轉換後的HSV（Hue, Saturation, Value，色相、飽和度、明度）圖片進行遮罩，可看到圖中綠色的部分轉換成白色，其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
                       </div>
                       <div class="row align-items-center">
                           <div class="col-lg-6">
@@ -300,9 +300,9 @@
                           <img id="myImage" src="images/method/edge_detection/canny.png">
                           <p style="text-align: center; font-size: 15px;">（Canny）</p>
                       </div>
-                      <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>霍夫轉換</strong></h2>
+                      <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>霍夫轉換（Hough Line Transform）</strong></h2>
                       <div class="post-description">
-                          <p>&emsp;&emsp;對進行過Canny偵測的圖片進行霍夫轉換，透過轉換後的座標畫出場地線。</p>
+                          <p>&emsp;&emsp;對進行過Canny偵測的圖片進行霍夫轉換（Hough Line Transform），透過轉換後的座標畫出場地線。</p>
                       </div>
                       <div class="align-items-center">
                           <img id="myImage" src="images/method/edge_detection/coordinates.png">
@@ -310,7 +310,7 @@
                       </div>
                       <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>ROWS & COLUMNS</strong></h2>
                       <div class="post-description">
-                          <p>&emsp;&emsp;將進行霍夫轉換後的ROW和COLUMN拆分。</p>
+                          <p>&emsp;&emsp;將進行霍夫轉換（Hough Line Transform）後的ROW和COLUMN拆分。</p>
                       </div>
                       <div class="row align-items-center">
                           <div class="col-lg-6">
