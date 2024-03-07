@@ -176,48 +176,98 @@
     </section>
     <div  class="justify-content-center" style="display: flex; flex-direction: row;">
       <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <a href="method.html" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
           <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-          <span class="fs-5 fw-semibold">邊線偵測</span>
+          <span class="fs-5 fw-semibold">MENU</span>
         </a>
-        <ul class="list-unstyled ps-0">
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-              影像處理
-            </button>
-            <div class="collapse show" id="home-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                <li><a href="#title01" class="link-dark rounded aside_nav_item">RGB -> HSV</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">遮罩</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">Canny</a></li>
-              </ul>
+        <ul class="list-group aside_1">
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="index.html">首頁</a>
+            </div>
+            <ul class="list-group aside_2">
+              <li><a href="">摘要</a></li>
+              <li><a href="">研究動機與目標</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="data.html">資料介紹</a>
+            </div>
+            <ul class="list-group aside_2">
+              <li><a href="">資料集</a></li>
+              <li><a href="">數據集</a></li>
+              <li><a href="">影片</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="method.html">流程與方法</a>
+            </div>
+            <ul class="list-group aside_bold">
+              <li>
+                <a href="edge_detection.html">邊線偵測</a>
+                <ul class="list-group aside_3">
+                  <li><a href="">RGB -> HSV</a></li>
+                  <li><a href="">遮罩</a></li>
+                  <li><a href="">Canny</a></li>
+                  <li><a href="">霍夫轉換</a></li>
+                  <li><a href="">ROWS & COLUMNS</a></li>
+                  <li><a href="">處理後ROWS & COLUMNS</a></li>
+                  <li><a href="">合併ROWS & COLUMNS</a></li>
+                  <li><a href="">單打線</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="ball_tracking.html">羽球軌跡</a>
+                <ul class="list-group aside_3">
+                  <li><a href="">生成羽球座標以及影片</a></li>
+                  <li><a href="">Arima資料矯正</a></li>
+                  <li><a href="">移動平均濾波</a></li>
+                  <li><a href="">輸出結果</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="pose.html">人體節點</a>
+                <ul class="list-group aside_3">
+                  <li><a href="">建立選手基礎節點座標檔</a></li>
+                  <li><a href="">1. 讀取第一個Json檔</a></li>
+                  <li><a href="">2. 座標比對</a></li>
+                  <li><a href="">3. 資料矯正</a></li>
+                  <li><a href="">4. 資料輸出</a></li>
+                  <li><a href="">節點座標資料前處理</a></li>
+                  <li><a href="">1. 原資料KNN補值</a></li>
+                  <li><a href="">2. Arima檢查軌跡</a></li>
+                  <li><a href="">3. 資料矯正</a></li>
+                  <li><a href="">4. 資料輸出</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="hitting_point_and_hitter.html">擊球點</a>
+              </li>
+              <li>
+                <a href="hitting_point_and_hitter.html">判斷擊球方</a>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="conclusion.html">結論</a>
+            </div>
+            <ul class="list-group aside_2">
+              <li><a href="conclusion.html">判斷得分方</a></li>
+              <li><a href="conclusion.html">球路</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="demo.html">成果展示</a>
             </div>
           </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              霍夫轉換
-            </button>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              拆分處理
-            </button>
-            <div class="collapse" id="orders-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded aside_nav_item">ROWS & COLUMNS</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">處理後ROWS & COLUMNS</a></li>
-              </ul>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="reference.html">參考文獻</a>
             </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              資料合併
-            </button>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              單打線
-            </button>
           </li>
         </ul>
       </div>
