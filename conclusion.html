@@ -287,49 +287,58 @@
                   <article class="post-item">
                     <div class="post-content">
                       <div class="post-description">
-                      <p>&emsp;&emsp;我們判斷得分方的方式，先將球路分為兩種類型(圖十三、圖十四)，在依照斜率做下一步判斷，如圖九路徑的情況在球路原路徑偏離超過10度時(圖十五)，我們將其判斷已落地，並進而確認是否出界，若圖十路徑的情況，當球路角度連續小於20度，並且之後角度出現大幅變動時(圖十六)，則判斷已落地，並進而確認是否出界。全資料共234筆資料，其中符合路徑一共60部影片，準確率為0.76，符合路路徑二共174個影片，準確率為0.76，因而此判斷方式準確率為0.76。</p>
+                        <p>&emsp;&emsp;找出每部影片中最後一個擊球點到落地的羽球軌跡，找出每部影片中最後一個擊球點到落地的羽球軌跡，經觀察，我們大致將球路分成兩種類型，再依照斜率做下一步的判斷，第一類是選手將羽球向前方打擊，羽球呈現類似於平球或殺球的軌跡，角度變化較小（圖十三），而第二類則是選手將羽球往上方打，直到羽球達到最高點，球速與動能皆為0後開始往下墜，直到落地彈起，類似具有拋物線的軌跡，軌跡角度變化較大（圖十四）。</p>
                       </div>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
+                            <div id="winner_img" class="image-container">
                               <img id="myImage" src="images/method/winner/winner1.png">
                             </div>
                           <p style="text-align: center; font-size: 15px;">（）</p>
                         </div>
                         <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
+                            <div id="einner_img" class="image-container">
                                 <img id="myImage" src="images/method/winner/winner2.png">
                             </div>
                           <p style="text-align: center; font-size: 15px;">（）</p>
                         </div>
                       </div>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;然後以斜率做為判斷，如圖九路徑的情況在球路原路徑偏離超過10度時（圖十五），我們將其判斷已落地，並進而確認是否出界。</p>
+                      </div>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
+                            <div id="winner_img" class="image-container">
                               <img id="myImage" src="images/method/winner/winner3.png">
                             </div>
                           <p style="text-align: center; font-size: 15px;">（）</p>
                         </div>
                         <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/winner/angle2.png">
+                            <div id="winner_img" class="image-container">
+                                <img id="myImage" src="images/method/winner/angle2.png" style="height: 350px;">
                             </div>
                           <p style="text-align: center; font-size: 15px;">（）</p>
                         </div>
                       </div>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;若圖十路徑的情況，當球路角度連續小於20度，並且之後角度出現大幅變動時（圖十六），則判斷已落地，並進而確認是否出界。</p>
+                      </div>
                       <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
+                            <div id="winner_img" class="image-container">
                               <img id="myImage" src="images/method/winner/winner4.png">
                             </div>
                           <p style="text-align: center; font-size: 15px;">（）</p>
                         </div>
                         <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/winner/angle.png">
+                            <div id="winner_img" class="image-container">
+                                <img id="myImage" src="images/method/winner/angle.png" style="height: 350px;">
                             </div>
                           <p style="text-align: center; font-size: 15px;">（）</p>
                         </div>
+                      </div>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;此外軌跡異常、羽球被選手擋住等原因都會影響我們判斷得分方，因此去除這些因素影響的話，全資料共207筆資料，正確做出判斷的有195部影片，12部影片是判斷錯誤的，其原因是因為軌跡從網子下穿越對面因此判斷錯誤，準確率為94.2%。</p>
                       </div>
                     </div>
                   </article>
