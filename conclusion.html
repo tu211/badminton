@@ -162,147 +162,254 @@
         </div>
       </div>
     </header>
-    <!--WINNER-->
     <section class="hero-section p-5">
       <div class="hero-content text-center p-5">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 id="conclusion_winner" class="display-2 fst-italic">判斷得分方</h1>
+              <h1 id="conclusion_winner" class="display-2 fst-italic">結論</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <div id="winner" class="post-wrap">
-      <div class="container">
-        <div class="row">
-          <main class="post-list">
-            <div class="row">
-              <article class="post-item">
-                <div class="post-content">
-                  <div class="post-description">
-                   <p>&emsp;&emsp;我們判斷得分方的方式，先將球路分為兩種類型(圖十三、圖十四)，在依照斜率做下一步判斷，如圖九路徑的情況在球路原路徑偏離超過10度時(圖十五)，我們將其判斷已落地，並進而確認是否出界，若圖十路徑的情況，當球路角度連續小於20度，並且之後角度出現大幅變動時(圖十六)，則判斷已落地，並進而確認是否出界。全資料共234筆資料，其中符合路徑一共60部影片，準確率為0.76，符合路路徑二共174個影片，準確率為0.76，因而此判斷方式準確率為0.76。</p>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                          <img id="myImage" src="images/method/winner/winner1.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（）</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/winner/winner2.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（）</p>
-                    </div>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                          <img id="myImage" src="images/method/winner/winner3.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（）</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/winner/angle2.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（）</p>
-                    </div>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                          <img id="myImage" src="images/method/winner/winner4.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（）</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/winner/angle.png">
-                        </div>
-                      <p style="text-align: center; font-size: 15px;">（）</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
+    <div  class="justify-content-center" style="display: flex; flex-direction: row;">
+      <div class="flex-shrink-0 p-3 bg-white" style="width: 200px;">
+        <ul class="list-group aside_1">
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="index.html">首頁</a>
             </div>
-          </main>
-        </div>
+            <ul class="list-group aside_2">
+              <li><a href="index.html#summary">摘要</a></li>
+              <li><a href="index.html#motivation">研究動機與目標</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="data.html">資料介紹</a>
+            </div>
+            <ul class="list-group aside_2">
+              <li><a href="data.html#dataset">資料集</a></li>
+              <li><a href="data.html#datacsv">數據集</a></li>
+              <li><a href="data.html#datamp4">影片</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="method.html">流程與方法</a>
+            </div>
+            <ul class="list-group aside_bold">
+              <li>
+                <a href="edge_detection.html">邊線偵測</a>
+                <ul class="list-group aside_3">
+                  <li><a href="edge_detection.html#hsv">RGB -> HSV</a></li>
+                  <li><a href="edge_detection.html#mask">遮罩</a></li>
+                  <li><a href="edge_detection.html#canny">Canny</a></li>
+                  <li><a href="edge_detection.html#houghline">霍夫轉換</a></li>
+                  <li><a href="edge_detection.html#rows_cols">ROWS & COLUMNS</a></li>
+                  <li><a href="edge_detection.html#2rowsandcols">處理後ROWS & COLUMNS</a></li>
+                  <li><a href="edge_detection.html#finalrowsandcols">合併ROWS & COLUMNS</a></li>
+                  <li><a href="edge_detection.html#personal">單打線</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="ball_tracking.html">羽球軌跡</a>
+                <ul class="list-group aside_3">
+                  <li><a href="ball_tracking.html#coordinates">生成羽球座標以及影片</a></li>
+                  <li><a href="ball_tracking.html#arima">Arima資料矯正</a></li>
+                  <li><a href="ball_tracking.html#moving">移動平均濾波</a></li>
+                  <li><a href="ball_tracking.html#trackingcsv">輸出結果</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="pose.html">人體節點</a>
+                <ul class="list-group aside_3">
+                  <li><a href="pose.html#title01">建立選手基礎節點座標檔</a></li>
+                  <li><a href="pose.html#json">1. 讀取第一個Json檔</a></li>
+                  <li><a href="pose.html#coordinate">2. 座標比對</a></li>
+                  <li><a href="pose.html#adjust01">3. 資料矯正</a></li>
+                  <li><a href="pose.html#csv01">4. 資料輸出</a></li>
+                  <li><a href="pose.html#processing">節點座標資料前處理</a></li>
+                  <li><a href="pose.html#knn">1. 原資料KNN補值</a></li>
+                  <li><a href="pose.html#arima">2. Arima檢查軌跡</a></li>
+                  <li><a href="pose.html#adjust02">3. 資料矯正</a></li>
+                  <li><a href="pose.html#csv02">4. 資料輸出</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="hitting_point_and_hitter.html">擊球點</a>
+              </li>
+              <li>
+                <a href="hitting_point_and_hitter.html">判斷擊球方</a>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="conclusion.html">結論</a>
+            </div>
+            <ul class="list-group aside_2">
+              <li><a href="conclusion.html#conclusion_winner">判斷得分方</a></li>
+              <li><a href="conclusion.html#conclusion_trajectory">球路</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="demo.html">成果展示</a>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="reference.html">參考文獻</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
-    <!--BALL TRAJECTORY-->
-    <section class="hero-section p-5">
-      <div class="hero-content text-center p-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 id="conclusion_trajectory" class="display-2 fst-italic">球路</h1>
+      <div class="aside_height">
+        <!--WINNER-->
+        <section class="hero-section p-5">
+          <div class="hero-content text-center p-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 id="conclusion_winner" class="display-2 fst-italic">判斷得分方</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="winner" class="post-wrap">
+          <div class="container">
+            <div class="row">
+              <main class="post-list">
+                <div class="row">
+                  <article class="post-item">
+                    <div class="post-content">
+                      <div class="post-description">
+                      <p>&emsp;&emsp;我們判斷得分方的方式，先將球路分為兩種類型(圖十三、圖十四)，在依照斜率做下一步判斷，如圖九路徑的情況在球路原路徑偏離超過10度時(圖十五)，我們將其判斷已落地，並進而確認是否出界，若圖十路徑的情況，當球路角度連續小於20度，並且之後角度出現大幅變動時(圖十六)，則判斷已落地，並進而確認是否出界。全資料共234筆資料，其中符合路徑一共60部影片，準確率為0.76，符合路路徑二共174個影片，準確率為0.76，因而此判斷方式準確率為0.76。</p>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container">
+                              <img id="myImage" src="images/method/winner/winner1.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（）</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container">
+                                <img id="myImage" src="images/method/winner/winner2.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（）</p>
+                        </div>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container">
+                              <img id="myImage" src="images/method/winner/winner3.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（）</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container">
+                                <img id="myImage" src="images/method/winner/angle2.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（）</p>
+                        </div>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container">
+                              <img id="myImage" src="images/method/winner/winner4.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（）</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container">
+                                <img id="myImage" src="images/method/winner/angle.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px;">（）</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </main>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <div id="ball_trajectory" class="post-wrap">
-      <div class="container">
-        <div class="row">
-          <main class="post-list">
-            <div class="row">
-              <article class="post-item">
-                <div class="post-content">
-                  <h2 class="fs-1 text-capitalize fst-italic"><strong>label</strong></h2>
-                  <div class="post-description">
-                   <p>0: 發短球    1: 發長球   2: 長球   3: 平球   4: 殺球
-                    5: 網前小球  6: 切球     7: 挑球   8: 推撲球
-                    </p>
-                  </div>
-                  <h2 class="fs-1 text-capitalize fst-italic"><strong>訓練資料</strong></h2>
-                  <ul>
-                    <li>距離(將擊球幀的右腳做為球的投影點計算擊球幀之間的距離)</li>
-                    <li>速度(距離/時間變化量)</li>
-                    <li>角度變化量(計算擊球幀之間每一幀的角度變化量總和)</li>
-                    <li>人物節點資料(25個人物節點的x,y,z)</li>
-                    <li>場地資料(8個點的x,y)</li>
-                    <li>腳與發球線的距離(左右腳與發球線的y變化量)</li>
-                    <li>羽球軌跡切成3段的資料(將兩個擊球幀之間的資料分成3等分，分別計算上述的距離和角度變化量)</li>
-                  </ul>
-                  <table>
-                    <tr>
-                      <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>模型<br>&nbsp;</td>
-                      <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>訓練集準確率<br>&nbsp;</td>
-                      <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>測試集準確率<br>&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td class="hitter-table"><br>Logistic Regression(邏輯式回歸)&nbsp;<br>&nbsp;</td>
-                      <td class="hitter-table">0.73</td>
-                      <td class="hitter-table">0.66</td>
-                    </tr>
-                    <tr>
-                      <td class="hitter-table"><br>SVM(支援向量機)<br>&nbsp;</td>
-                      <td class="hitter-table">0.71</td>
-                      <td class="hitter-table">0.64</td>
-                    </tr>
-                    <tr>
-                      <td class="hitter-table"><br>&nbsp;Random Decision Forests(隨機森林)&nbsp;<br>&nbsp;</td>
-                      <td class="hitter-table">1.00</td>
-                      <td class="hitter-table">0.72</td>
-                    </tr>
-                    <tr>
-                      <td class="hitter-table"><br>XGBoost<br>&nbsp;</td>
-                      <td class="hitter-table">1.0</td>
-                      <td class="hitter-table">0.78</td>
-                    </tr>
-                  </table>
-                  <div class="image-container" style="height: 800px;">
-                    <img id="myImage" src="/images/method/ball_trajectory/img01.png">
-                  </div>
-                  <p style="text-align: center; font-size: 15px;">（XGBoost）</p>
+        <!--BALL TRAJECTORY-->
+        <section class="hero-section p-5">
+          <div class="hero-content text-center p-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 id="conclusion_trajectory" class="display-2 fst-italic">球路</h1>
                 </div>
-              </article>
+              </div>
             </div>
-          </main>
+          </div>
+        </section>
+        <div id="ball_trajectory" class="post-wrap">
+          <div class="container">
+            <div class="row">
+              <main class="post-list">
+                <div class="row">
+                  <article class="post-item">
+                    <div class="post-content">
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>label</strong></h2>
+                      <div class="post-description">
+                      <p>0: 發短球    1: 發長球   2: 長球   3: 平球   4: 殺球
+                        5: 網前小球  6: 切球     7: 挑球   8: 推撲球
+                        </p>
+                      </div>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>訓練資料</strong></h2>
+                      <ul>
+                        <li>距離(將擊球幀的右腳做為球的投影點計算擊球幀之間的距離)</li>
+                        <li>速度(距離/時間變化量)</li>
+                        <li>角度變化量(計算擊球幀之間每一幀的角度變化量總和)</li>
+                        <li>人物節點資料(25個人物節點的x,y,z)</li>
+                        <li>場地資料(8個點的x,y)</li>
+                        <li>腳與發球線的距離(左右腳與發球線的y變化量)</li>
+                        <li>羽球軌跡切成3段的資料(將兩個擊球幀之間的資料分成3等分，分別計算上述的距離和角度變化量)</li>
+                      </ul>
+                      <table>
+                        <tr>
+                          <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>模型<br>&nbsp;</td>
+                          <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>訓練集準確率<br>&nbsp;</td>
+                          <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>測試集準確率<br>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td class="hitter-table"><br>Logistic Regression(邏輯式回歸)&nbsp;<br>&nbsp;</td>
+                          <td class="hitter-table">0.73</td>
+                          <td class="hitter-table">0.66</td>
+                        </tr>
+                        <tr>
+                          <td class="hitter-table"><br>SVM(支援向量機)<br>&nbsp;</td>
+                          <td class="hitter-table">0.71</td>
+                          <td class="hitter-table">0.64</td>
+                        </tr>
+                        <tr>
+                          <td class="hitter-table"><br>&nbsp;Random Decision Forests(隨機森林)&nbsp;<br>&nbsp;</td>
+                          <td class="hitter-table">1.00</td>
+                          <td class="hitter-table">0.72</td>
+                        </tr>
+                        <tr>
+                          <td class="hitter-table"><br>XGBoost<br>&nbsp;</td>
+                          <td class="hitter-table">1.0</td>
+                          <td class="hitter-table">0.78</td>
+                        </tr>
+                      </table>
+                      <div class="image-container" style="height: 800px;">
+                        <img id="myImage" src="/images/method/ball_trajectory/img01.png">
+                      </div>
+                      <p style="text-align: center; font-size: 15px;">（XGBoost）</p>
+                    </div>
+                  </article>
+                </div>
+              </main>
+            </div>
+          </div>
         </div>
       </div>
     </div>

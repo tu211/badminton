@@ -176,106 +176,98 @@
     </section>
     <div  class="justify-content-center" style="display: flex; flex-direction: row;">
       <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-          <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-          <span class="fs-5 fw-semibold">MENU</span>
-        </a>
-        <ul class="list-unstyled ps-0">
-          <li class="mb-1" style="border: 2px solid red;">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#one" aria-expanded="true">
+        <ul class="list-group aside_1">
+          <li class="list-group-item">
+            <div class="aside_menu">
               <a href="index.html">首頁</a>
-            </button>
-            <div class="collapse show" id="one">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                <li><a href="#title01" class="link-dark rounded aside_nav_item">摘要</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">研究動機與目標</a></li>
-              </ul>
             </div>
+            <ul class="list-group aside_2">
+              <li><a href="index.html#summary">摘要</a></li>
+              <li><a href="index.html#motivation">研究動機與目標</a></li>
+            </ul>
           </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#two" aria-expanded="false">
-              資料介紹
-            </button>
-            <div class="collapse" id="two">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                <li><a href="#" class="link-dark rounded aside_nav_item">資料集</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">數據集</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">影片</a></li>
-              </ul>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="data.html">資料介紹</a>
             </div>
+            <ul class="list-group aside_2">
+              <li><a href="data.html#dataset">資料集</a></li>
+              <li><a href="data.html#datacsv">數據集</a></li>
+              <li><a href="data.html#datamp4">影片</a></li>
+            </ul>
           </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#three" aria-expanded="false">
-              流程與方法
-            </button>
-            <div class="collapse" id="three">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                <li><a href="#" class="link-dark rounded aside_nav_item">邊線偵測</a></li>
-                <div class="collapse" id="home-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">RGB -> HSV</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">遮罩</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">Canny</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">霍夫轉換</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">ROWS & COLUMNS</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">處理後ROWS & COLUMNS</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">合併ROWS & COLUMNS</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">單打線</a></li>
-                  </ul>
-                </div>
-                <li><a href="#" class="link-dark rounded aside_nav_item">羽球軌跡</a></li>
-                <div class="collapse" id="home-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">TrackNetV2生成羽球座標以及影片</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">Arima資料矯正</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">移動平均濾波</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">輸出結果</a></li>
-                  </ul>
-                </div>
-                <li><a href="#" class="link-dark rounded aside_nav_item">人體節點</a></li>
-                <div class="collapse" id="home-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">建立選手基礎節點座標檔</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">1. 讀取第一個Json檔</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">2. 座標比對</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">3. 資料矯正</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">4. 資料輸出</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">節點座標資料前處理</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">1. 原始資料Knn補值</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">2. Arima檢查軌跡</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">3. 資料矯正</a></li>
-                    <li><a href="#" class="link-dark rounded aside_nav_item_2">4. 資料輸出</a></li>
-                  </ul>
-                </div>
-                <li><a href="#" class="link-dark rounded aside_nav_item">擊球點</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">判斷擊球方</a></li>
-              </ul>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="method.html">流程與方法</a>
             </div>
+            <ul class="list-group aside_bold">
+              <li>
+                <a href="edge_detection.html">邊線偵測</a>
+                <ul class="list-group aside_3">
+                  <li><a href="edge_detection.html#hsv">RGB -> HSV</a></li>
+                  <li><a href="edge_detection.html#mask">遮罩</a></li>
+                  <li><a href="edge_detection.html#canny">Canny</a></li>
+                  <li><a href="edge_detection.html#houghline">霍夫轉換</a></li>
+                  <li><a href="edge_detection.html#rows_cols">ROWS & COLUMNS</a></li>
+                  <li><a href="edge_detection.html#2rowsandcols">處理後ROWS & COLUMNS</a></li>
+                  <li><a href="edge_detection.html#finalrowsandcols">合併ROWS & COLUMNS</a></li>
+                  <li><a href="edge_detection.html#personal">單打線</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="ball_tracking.html">羽球軌跡</a>
+                <ul class="list-group aside_3">
+                  <li><a href="ball_tracking.html#coordinates">生成羽球座標以及影片</a></li>
+                  <li><a href="ball_tracking.html#arima">Arima資料矯正</a></li>
+                  <li><a href="ball_tracking.html#moving">移動平均濾波</a></li>
+                  <li><a href="ball_tracking.html#trackingcsv">輸出結果</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="pose.html">人體節點</a>
+                <ul class="list-group aside_3">
+                  <li><a href="pose.html#title01">建立選手基礎節點座標檔</a></li>
+                  <li><a href="pose.html#json">1. 讀取第一個Json檔</a></li>
+                  <li><a href="pose.html#coordinate">2. 座標比對</a></li>
+                  <li><a href="pose.html#adjust01">3. 資料矯正</a></li>
+                  <li><a href="pose.html#csv01">4. 資料輸出</a></li>
+                  <li><a href="pose.html#processing">節點座標資料前處理</a></li>
+                  <li><a href="pose.html#knn">1. 原資料KNN補值</a></li>
+                  <li><a href="pose.html#arima">2. Arima檢查軌跡</a></li>
+                  <li><a href="pose.html#adjust02">3. 資料矯正</a></li>
+                  <li><a href="pose.html#csv02">4. 資料輸出</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="hitting_point_and_hitter.html">擊球點</a>
+              </li>
+              <li>
+                <a href="hitting_point_and_hitter.html">判斷擊球方</a>
+              </li>
+            </ul>
           </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#four" aria-expanded="false">
-              結論
-            </button>
-            <div class="collapse" id="four">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="font-size: 15px;">
-                <li><a href="#" class="link-dark rounded aside_nav_item">判斷得分方</a></li>
-                <li><a href="#" class="link-dark rounded aside_nav_item">球路</a></li>
-              </ul>
+          <li class="list-group-item">
+            <div class="aside_menu">
+              <a href="conclusion.html">結論</a>
             </div>
+            <ul class="list-group aside_2">
+              <li><a href="conclusion.html#conclusion_winner">判斷得分方</a></li>
+              <li><a href="conclusion.html#conclusion_trajectory">球路</a></li>
+            </ul>
           </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#five" aria-expanded="false">
+          <li class="list-group-item">
+            <div class="aside_menu">
               <a href="demo.html">成果展示</a>
-            </button>
+            </div>
           </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#six" aria-expanded="false">
+          <li class="list-group-item">
+            <div class="aside_menu">
               <a href="reference.html">參考文獻</a>
-            </button>
+            </div>
           </li>
         </ul>
       </div>
-      <div class="post-wrap " id="ball_tracking" style="overflow: auto; max-height: 1000px;">
+      <div class="post-wrap aside_height" id="ball_tracking">
         <div class="container">
           <div class="row">
             <main class="post-list">
@@ -305,7 +297,7 @@
                     </div>
                     <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>TrackNetV2生成羽球座標以及影片</strong></h2>
                     <div class="post-description">
-                    <p>利用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示）。</p>
+                    <p>TrackNetV2利用深度學習中的卷積神經網絡（CNN），以自動、高效地從影像中生成出羽球X、Y座標位置，我們使用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示），此外我們將TrackNetV2標記的點放大來讓每個人可以在影片解析度不高的情況下找出羽球位置。</p>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-lg-6">
@@ -344,7 +336,7 @@
                     </div>
                     <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
                     <div class="post-description">
-                      <p>將軌跡中的y軸用移動平均濾波讓軌跡平滑化。 數據會因為一些誤差，導致球的y軸會上上下下跑動， 所以需要做軌跡平滑化讓他數據可以更好分析擊球點的最低點。</p>
+                      <p>由於數據本身的微小誤差，也可能導致後面數據分析的變動，因此我們將軌跡中的羽球座標平滑化，以下是Y軸軌跡的範例，我們將Y軸座標進行移動平均濾波使其軌跡平滑化，可以看到在原始資料中105幀左右的時候，軌跡明顯的有一個點偏離該有的位置，而軌跡平滑化後可以看到105幀左右更符合應有的軌跡。</p>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-lg-6">

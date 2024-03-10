@@ -981,8 +981,9 @@ th, tr {
   font-size: 15px;
 }
 
+
 .aside_1 {
-  font-size: 30px;
+  font-size: 20px;
   list-style-type:none;
   text-align: center;
   background-color:#87A9BC;
@@ -991,7 +992,7 @@ th, tr {
   background-color: #afc4d1;
 }
 .aside_bold {
-  font-size: 25px;
+  font-size: 15px;
   list-style-type:none;
   text-align: left;
   font-weight:bold;
@@ -999,16 +1000,26 @@ th, tr {
   padding-left: 10px;
 }
 .aside_2 {
-  font-size: 25px;
+  font-size: 15px;
   list-style-type:none;
   text-align: left;
   padding-top: 10px;
   padding-left: 10px;
 }
 .aside_3 {
-  font-size: 20px;
+  font-size: 10px;
   list-style-type:none;
   font-weight:normal;
+  padding-top: 10px;
+}
+
+.aside_height {
+  overflow: auto;
+  max-height: 1600px;
+}
+
+.aside_height::-webkit-scrollbar {
+  display: none;
 }
 /*===== Footer =====*/
 footer {
