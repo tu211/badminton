@@ -297,7 +297,7 @@
                     </div>
                     <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>TrackNetV2生成羽球座標以及影片</strong></h2>
                     <div class="post-description">
-                    <p>TrackNetV2利用深度學習中的卷積神經網絡（CNN），以自動、高效地從影像中生成出羽球X、Y座標位置，我們使用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示），此外我們將TrackNetV2標記的點放大來讓每個人可以在影片解析度不高的情況下找出羽球位置。</p>
+                    <p>&emsp;&emsp;TrackNetV2利用深度學習中的卷積神經網絡（CNN），以自動、高效地從影像中生成出羽球X、Y座標位置，我們使用TrackNetV2讓多個影片連續生成羽球位置，他會分成一個csv檔（羽球軌跡的位置數據）、一個mp4檔（將影片中羽球位置進行標示），此外我們將TrackNetV2標記的點放大來讓每個人可以在影片解析度不高的情況下找出羽球位置。</p>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-lg-6">
@@ -318,7 +318,7 @@
                     </div>
                     <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>Arima資料矯正</strong></h2>
                     <div class="post-description">
-                      <p>因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊。</p>
+                      <p>&emsp;&emsp;因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊。</p>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-lg-6">
@@ -336,7 +336,7 @@
                     </div>
                     <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
                     <div class="post-description">
-                      <p>由於數據本身的微小誤差，也可能導致後面數據分析的變動，因此我們將軌跡中的羽球座標平滑化，以下是Y軸軌跡的範例，我們將Y軸座標進行移動平均濾波使其軌跡平滑化，可以看到在原始資料中105幀左右的時候，軌跡明顯的有一個點偏離該有的位置，而軌跡平滑化後可以看到105幀左右更符合應有的軌跡。</p>
+                      <p>&emsp;&emsp;由於數據本身的微小誤差，也可能導致後面數據分析的變動，因此我們將軌跡中的羽球座標平滑化，以下是Y軸軌跡的範例，我們將Y軸座標進行移動平均濾波使其軌跡平滑化，可以看到在原始資料中105幀左右的時候，軌跡明顯的有一個點偏離該有的位置，而軌跡平滑化後可以看到105幀左右更符合應有的軌跡。</p>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-lg-6">
@@ -354,7 +354,7 @@
                     </div>
                     <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>輸出結果</strong></h2>
                     <div class="post-description">
-                      <p>將修正後的資料以CSV輸出，X1為X調整後的資料，Y1為Y調整後的資料。</p>
+                      <p>&emsp;&emsp;將修正後的資料以CSV輸出，X1為X調整後的資料，Y1為Y調整後的資料。</p>
                     </div>
                     <div class="align-items-center" style="overflow: auto; max-height: 400px;">
                       <img id="smallImage" src="images/method/ball_tracking/img6.png" style="width: 100%;" alt="Ball Tracking Image">
