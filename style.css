@@ -965,22 +965,6 @@ th, tr {
 }
 
 /*===== Aside Navbar=====*/
-.aside_nav_item {
-  padding: 20px;
-  font-size: 15px;
-}
-
-.aside_button {
-  background: white;
-  border: 2px solid white;
-}
-
-.aside_nav_item_2 {
-  padding: 30px;
-  font-size: 15px;
-}
-
-
 .aside_1 {
   font-size: 20px;
   list-style-type:none;
@@ -991,7 +975,7 @@ th, tr {
   background-color: #afc4d1;
 }
 .aside_bold {
-  font-size: 15px;
+  font-size: 20px;
   list-style-type:none;
   text-align: left;
   font-weight:bold;
@@ -999,14 +983,14 @@ th, tr {
   padding-left: 10px;
 }
 .aside_2 {
-  font-size: 15px;
+  font-size: 20px;
   list-style-type:none;
   text-align: left;
   padding-top: 10px;
   padding-left: 10px;
 }
 .aside_3 {
-  font-size: 10px;
+  font-size: 20px;
   list-style-type:none;
   font-weight:normal;
   padding-top: 10px;
@@ -1026,7 +1010,8 @@ footer {
 }
 
 .footer01 {
-  width: 110px;
+  width: 230px;
+  border: 2px solid red;
 }
 
 .footer02 {
@@ -1034,7 +1019,8 @@ footer {
 }
 
 .footer03 {
-  width: 80px;
+  width: 230px;
+  border: 2px solid red;
 }
 
 @media (max-width: 600px) {
