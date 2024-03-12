@@ -1021,6 +1021,37 @@ footer {
   width: 230px;
 }
 
+.footer_btn {
+  position: relative;
+  min-width: 200px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.btn div,
+.btn:before {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+.btn:before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+.btn:hover div {
+  opacity: 0;
+  transform: translate(100%, 0)
+}
+.btn:hover:before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 @media (max-width: 600px) {
   #project_content {
     padding-top: 150px;
