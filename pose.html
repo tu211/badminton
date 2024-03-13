@@ -154,7 +154,7 @@
                 </div>
                 <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 30vw; height: 10vh;">
+                  <img src="images/logo/pose_logo.png" alt="Logo" style="width: 30vw; height: 10vh;">
                 </a>
               </div>
             </div>
@@ -174,16 +174,8 @@
         </div>
       </div>
     </section>
-    <div  class="justify-content-center" style="display: flex; flex-direction: row;">
-      <div style="justify-content: center; text-align: center; display: flex; height: 80vh; align-items: center; border: 2px solid red;">
-        <div style="width: 100px; height: 40px;">
-          <svg class="arrow-right svg-primary position-absolute" width="30" height="30">
-            <use xlink:href="#footer_arrow-left"></use>
-          </svg>
-          <span><br>上一頁</span>
-        </div>
-      </div>
-      <div class="flex-shrink-0 p-3 bg-white" style="width: 280px; height: 80vh; overflow: auto;">
+    <div class="justify-content-center" style="display: flex; flex-direction: row;">
+      <div class="flex-shrink-0 p-3 bg-white aside_chart_flow">
         <ul class="list-group aside_1">
           <li class="list-group-item">
             <div class="aside_menu">
@@ -208,49 +200,21 @@
             <div class="aside_menu">
               <a href="method.html">流程與方法</a>
             </div>
-            <ul class="list-group aside_bold">
+            <ul class="list-group aside_2">
               <li>
                 <a href="edge_detection.html">邊線偵測</a>
-                <ul class="list-group aside_3">
-                  <li><a href="edge_detection.html#hsv">RGB -> HSV</a></li>
-                  <li><a href="edge_detection.html#mask">遮罩</a></li>
-                  <li><a href="edge_detection.html#canny">Canny</a></li>
-                  <li><a href="edge_detection.html#houghline">霍夫轉換</a></li>
-                  <li><a href="edge_detection.html#rows_cols">ROWS & COLUMNS</a></li>
-                  <li><a href="edge_detection.html#2rowsandcols">處理後ROWS & COLUMNS</a></li>
-                  <li><a href="edge_detection.html#finalrowsandcols">合併ROWS & COLUMNS</a></li>
-                  <li><a href="edge_detection.html#personal">單打線</a></li>
-                </ul>
               </li>
               <li>
                 <a href="ball_tracking.html">羽球軌跡</a>
-                <ul class="list-group aside_3">
-                  <li><a href="ball_tracking.html#coordinates">生成羽球座標以及影片</a></li>
-                  <li><a href="ball_tracking.html#arima">Arima資料矯正</a></li>
-                  <li><a href="ball_tracking.html#moving">移動平均濾波</a></li>
-                  <li><a href="ball_tracking.html#trackingcsv">輸出結果</a></li>
-                </ul>
               </li>
               <li>
                 <a href="pose.html">人體節點</a>
-                <ul class="list-group aside_3">
-                  <li><a href="pose.html#title01">建立選手基礎節點座標檔</a></li>
-                  <li><a href="pose.html#json">1. 讀取第一個Json檔</a></li>
-                  <li><a href="pose.html#coordinate">2. 座標比對</a></li>
-                  <li><a href="pose.html#adjust01">3. 資料矯正</a></li>
-                  <li><a href="pose.html#csv01">4. 資料輸出</a></li>
-                  <li><a href="pose.html#processing">節點座標資料前處理</a></li>
-                  <li><a href="pose.html#knn">1. 原資料KNN補值</a></li>
-                  <li><a href="pose.html#arima">2. Arima檢查軌跡</a></li>
-                  <li><a href="pose.html#adjust02">3. 資料矯正</a></li>
-                  <li><a href="pose.html#csv02">4. 資料輸出</a></li>
-                </ul>
               </li>
               <li>
-                <a href="hitting_point_and_hitter.html">擊球點</a>
+                <a href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
               </li>
               <li>
-                <a href="hitting_point_and_hitter.html">判斷擊球方</a>
+                <a href="hitting_point_and_hitter.html#hitter">判斷擊球方</a>
               </li>
             </ul>
           </li>
@@ -259,8 +223,8 @@
               <a href="conclusion.html">結論</a>
             </div>
             <ul class="list-group aside_2">
-              <li><a href="conclusion.html#conclusion_winner">判斷得分方</a></li>
-              <li><a href="conclusion.html#conclusion_trajectory">球路</a></li>
+              <li><a href="conclusion.html#winner">判斷得分方</a></li>
+              <li><a href="conclusion.html#ball_trajectory">球路</a></li>
             </ul>
           </li>
           <li class="list-group-item">
@@ -275,7 +239,7 @@
           </li>
         </ul>
       </div>
-      <div class="post-wrap aside_height" id="pose" style="height: 80vh;">
+      <div class="post-wrap aside_height" id="pose">
         <div class="container">
           <div class="row">
             <main class="post-list">
@@ -520,14 +484,6 @@
               </div>
             </main>
           </div>
-        </div>
-      </div>
-      <div style="justify-content: center; text-align: center; display: flex; height: 80vh; align-items: center; border: 2px solid red;">
-        <div style="width: 100px; height: 40px;">
-          <svg class="arrow-right svg-primary position-absolute" width="30" height="30">
-            <use xlink:href="#footer_arrow-right"></use>
-          </svg>
-          <span>下一頁</span>
         </div>
       </div>
     </div>
