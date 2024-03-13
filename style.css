@@ -814,11 +814,11 @@ form {
 
 /*===== Content Height =====*/
 #data {
-  height: 1700px;
+  height: 1800px;
 }
 
 #edge_detection {
-  height: auto;
+  height: 4000px;
 }
 
 #ball_tracking {
@@ -974,14 +974,6 @@ th, tr {
 .aside_menu {
   background-color: #afc4d1;
 }
-.aside_bold {
-  font-size: 20px;
-  list-style-type:none;
-  text-align: left;
-  font-weight:bold;
-  padding-top: 10px;
-  padding-left: 10px;
-}
 .aside_2 {
   font-size: 20px;
   list-style-type:none;
@@ -998,11 +990,8 @@ th, tr {
 
 .aside_height {
   overflow: auto;
-  max-height: 1600px;
-}
-
-.aside_height::-webkit-scrollbar {
-  display: none;
+  height: auto;
+  margin-top: 100px;
 }
 
 .aside_chart_flow {
