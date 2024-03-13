@@ -201,72 +201,66 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 id="title4" class="display-2 fst-italic">球路</h1>
+              <h1 id="title4" class="display-2 fst-italic">判斷擊球方</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
     <div id="hitter" class="post-wrap">
-        <div class="container">
-          <div class="row">
-            <main class="post-list">
-              <div class="row">
-                <article class="post-item">
-                  <div class="post-content">
-                    <h2 class="fs-1 text-capitalize fst-italic"><strong>label</strong></h2>
-                    <div class="post-description">
-                     <p>0: 發短球    1: 發長球   2: 長球   3: 平球   4: 殺球
-                      5: 網前小球  6: 切球     7: 挑球   8: 推撲球
-                      </p>
-                    </div>
-                    <h2 class="fs-1 text-capitalize fst-italic"><strong>訓練資料</strong></h2>
-                    <ul>
-                      <li>距離(將擊球幀的右腳做為球的投影點計算擊球幀之間的距離)</li>
-                      <li>速度(距離/時間變化量)</li>
-                      <li>角度變化量(計算擊球幀之間每一幀的角度變化量總和)</li>
-                      <li>人物節點資料(25個人物節點的x,y,z)</li>
-                      <li>場地資料(8個點的x,y)</li>
-                      <li>腳與發球線的距離(左右腳與發球線的y變化量)</li>
-                      <li>羽球軌跡切成3段的資料(將兩個擊球幀之間的資料分成3等分，分別計算上述的距離和角度變化量)</li>
-                    </ul>
-                    <table>
+      <div class="container">
+        <div class="row">
+          <main class="post-list">
+            <div class="row">
+              <article class="post-item">
+                <div class="post-content">
+                  <table style="font-size: 22px;">
+                    <p>資料大小：2485（總筆數）*171</p>
+                    <p>171：
+                      <ul>
+                        <li>羽球變數（ｘ、ｙ）：1*2</li>
+                        <li>場地變數（8個點）：8*2</li>
+                        <li>人物變數（ｘ、ｙ、ｚ）：2*3*25</li>
+                        <li>球跟手的距離：1*2</li>
+                        <li>Ｙ：擊球方</li>
+                      </ul>
+                    </p>
+                    <tbody>
                       <tr>
-                        <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>模型<br>&nbsp;</td>
-                        <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>訓練集準確率<br>&nbsp;</td>
-                        <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>測試集準確率<br>&nbsp;</td>
+                        <th>模型</th>
+                        <th>Perceptron<br>（感知器）</th>
+                        <th style="color: red;">Logistic Regression<br>（邏輯式回歸）</th>
+                        <th>SVM<br>（支援向量機）</th>
+                        <th>Decision Tree<br>（決策樹）</th>
+                        <th>Random Forest<br>（隨機森林）</th>
+                        <th>XGBoost</th>
                       </tr>
                       <tr>
-                        <td class="hitter-table"><br>Logistic Regression(邏輯式回歸)&nbsp;<br>&nbsp;</td>
-                        <td class="hitter-table">0.73</td>
-                        <td class="hitter-table">0.66</td>
+                        <th>訓練集 準確率</th>
+                        <th>0.88</th>
+                        <th style="color: red;">0.97</th>
+                        <th>0.95</th>
+                        <th>0.89</th>
+                        <th>0.91</th>
+                        <th>0.85</th>
                       </tr>
                       <tr>
-                        <td class="hitter-table"><br>SVM(支援向量機)<br>&nbsp;</td>
-                        <td class="hitter-table">0.71</td>
-                        <td class="hitter-table">0.64</td>
+                        <th>測試集 準確率</th>
+                        <th>0.88</th>
+                        <th style="color: red;">0.96</th>
+                        <th>0.94</th>
+                        <th>0.86</th>
+                        <th>0.88</th>
+                        <th>0.82</th>
                       </tr>
-                      <tr>
-                        <td class="hitter-table"><br>&nbsp;Random Decision Forests(隨機森林)&nbsp;<br>&nbsp;</td>
-                        <td class="hitter-table">1.00</td>
-                        <td class="hitter-table">0.72</td>
-                      </tr>
-                      <tr>
-                        <td class="hitter-table"><br>XGBoost<br>&nbsp;</td>
-                        <td class="hitter-table">1.0</td>
-                        <td class="hitter-table">0.78</td>
-                      </tr>
-                    </table>
-                    <div class="image-container" style="height: 800px;">
-                      <img id="myImage" src="/images/method/ball_trajectory/img01.png">
-                    </div>
-                    <p style="text-align: center; font-size: 15px;">（XGBoost）</p>
-                  </div>
-                </article>
-              </div>
-            </main>
-          </div>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+          </main>
         </div>
+      </div>
     </div>
     <!--Footer-->
     <footer id="footer" class="mt-5">

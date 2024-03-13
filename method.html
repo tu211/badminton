@@ -186,10 +186,10 @@
                     <div id="node" class="node_l" style="top: 17%; left: 25.7%;"><a href="edge_detection.html">邊線偵測</a></div>
                     <div id="node" class="node_l" style="top: 50%; left: 25.7%;"><a href="ball_tracking.html">羽球軌跡</a></div>
                     <div id="node" class="node_l" style="top: 83%; left: 25.7%;"><a href="pose.html">人體節點</a></div>
-                    <div id="node" class="node_l" style="top: 33%; left: 55%;"><a href="hitting_point.html">擊球點</a></div>
-                    <div id="node" class="node_ll" style="top: 67%; left: 55%;"><a href="hitter.html">判斷擊球方</a></div>
-                    <div id="node" class="node_ll" style="top: 33%; left: 86%;"><a href="winner.html">判斷得分方</a></div>
-                    <div id="node" class="node_l" style="top: 67%; left: 86%;"><a href="ball_trajectory.html">球路</a></div>
+                    <div id="node" class="node_l" style="top: 33%; left: 55%;"><a href="hitting_point_and_hitter.html#hitting_point">擊球點</a></div>
+                    <div id="node" class="node_ll" style="top: 67%; left: 55%;"><a href="hitting_point_and_hitter.html#hitter">判斷擊球方</a></div>
+                    <div id="node" class="node_ll" style="top: 33%; left: 86%;"><a href="conclusion.html#winner">判斷得分方</a></div>
+                    <div id="node" class="node_l" style="top: 67%; left: 86%;"><a href="conclusion.html#ball_trajectory">球路</a></div>
                     
                     <div id="line" class="line_l" style="top: 21.4%; left: 17.6%;"></div>
                     <div id="line" class="line_l" style="top: 21.4%; left: 46.97%;"></div>
@@ -228,24 +228,36 @@
         <div class="container-lg">
           <div class="row justify-content-center footer-content">
             <div class="footer01">
-              <a href="#" class="d-flex">
-                <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-up"></use>
-                </svg>
-                <span class="ps-4">Top</span>
-              </a>
-              <a href="data.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-left"></use>
-                </svg>
-                <span class="ps-4">Previous</span>
-              </a>
-              <a href="index.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-start"></use>
-                </svg>
-                <span class="ps-4">First</span>
-              </a>
+              <button class="btn btn-link footer_btn" data-hover="回到最上面">
+                <div>
+                  <a href="#" class="d-flex">
+                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-up"></use>
+                    </svg>
+                    <span class="ps-4">Top</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="資料介紹">
+                <div>
+                  <a href="data.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-left"></use>
+                    </svg>
+                    <span class="ps-4">Previous</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="首頁">
+                <div>
+                  <a href="index.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-start"></use>
+                    </svg>
+                    <span class="ps-4">First</span>
+                  </a>
+                </div>
+              </button>
             </div>
             <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
@@ -255,24 +267,36 @@
               <script src="js/last_modified.js"></script>
             </div>
             <div class="footer03">
-              <a href="#" class="d-flex">
-                <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-up"></use>
-                </svg>
-                <span class="ps-4">Top</span>
-              </a>
-              <a href="edge_detection.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-right"></use>
-                </svg>
-                <span class="ps-4">Next</span>
-              </a>
-              <a href="reference.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-end"></use>
-                </svg>
-                <span class="ps-4">Last</span>
-              </a>
+              <button class="btn btn-link footer_btn" data-hover="回到最上面">
+                <div>
+                  <a href="#" class="d-flex">
+                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-up"></use>
+                    </svg>
+                    <span class="ps-4">Top</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="邊線偵測">
+                <div>
+                  <a href="edge_detection.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-right"></use>
+                    </svg>
+                    <span class="ps-4">Next</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="參考文獻">
+                <div>
+                  <a href="reference.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-end"></use>
+                    </svg>
+                    <span class="ps-4">Last</span>
+                  </a>
+                </div>
+              </button>
             </div>
           </div>
         </div>

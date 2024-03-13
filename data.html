@@ -162,20 +162,8 @@
         </div>
       </div>
     </header>
-    <!--Header-->
-    <section class="hero-section p-5">
-      <div class="hero-content text-center p-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 id="title4" class="display-2 fst-italic">資料介紹</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <div  class="justify-content-center" style="display: flex; flex-direction: row;">
-      <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+      <div class="flex-shrink-0 p-3 bg-white aside_chart_flow" style="border: 2px solid red;">
         <ul class="list-group aside_1">
           <li class="list-group-item">
             <div class="aside_menu">
@@ -203,40 +191,12 @@
             <ul class="list-group aside_bold">
               <li>
                 <a href="edge_detection.html">邊線偵測</a>
-                <ul class="list-group aside_3">
-                  <li><a href="edge_detection.html#hsv">RGB -> HSV</a></li>
-                  <li><a href="edge_detection.html#mask">遮罩</a></li>
-                  <li><a href="edge_detection.html#canny">Canny</a></li>
-                  <li><a href="edge_detection.html#houghline">霍夫轉換</a></li>
-                  <li><a href="edge_detection.html#rows_cols">ROWS & COLUMNS</a></li>
-                  <li><a href="edge_detection.html#2rowsandcols">處理後ROWS & COLUMNS</a></li>
-                  <li><a href="edge_detection.html#finalrowsandcols">合併ROWS & COLUMNS</a></li>
-                  <li><a href="edge_detection.html#personal">單打線</a></li>
-                </ul>
               </li>
               <li>
                 <a href="ball_tracking.html">羽球軌跡</a>
-                <ul class="list-group aside_3">
-                  <li><a href="ball_tracking.html#coordinates">生成羽球座標以及影片</a></li>
-                  <li><a href="ball_tracking.html#arima">Arima資料矯正</a></li>
-                  <li><a href="ball_tracking.html#moving">移動平均濾波</a></li>
-                  <li><a href="ball_tracking.html#trackingcsv">輸出結果</a></li>
-                </ul>
               </li>
               <li>
                 <a href="pose.html">人體節點</a>
-                <ul class="list-group aside_3">
-                  <li><a href="pose.html#title01">建立選手基礎節點座標檔</a></li>
-                  <li><a href="pose.html#json">1. 讀取第一個Json檔</a></li>
-                  <li><a href="pose.html#coordinate">2. 座標比對</a></li>
-                  <li><a href="pose.html#adjust01">3. 資料矯正</a></li>
-                  <li><a href="pose.html#csv01">4. 資料輸出</a></li>
-                  <li><a href="pose.html#processing">節點座標資料前處理</a></li>
-                  <li><a href="pose.html#knn">1. 原資料KNN補值</a></li>
-                  <li><a href="pose.html#arima">2. Arima檢查軌跡</a></li>
-                  <li><a href="pose.html#adjust02">3. 資料矯正</a></li>
-                  <li><a href="pose.html#csv02">4. 資料輸出</a></li>
-                </ul>
               </li>
               <li>
                 <a href="hitting_point_and_hitter.html">擊球點</a>
@@ -267,75 +227,89 @@
           </li>
         </ul>
       </div>
-      <div class="post-wrap aside_height" id="data">
-        <div class="container">
-          <div class="row">
-            <main class="post-list">
+      <div class="aside_height" style="border: 2px solid red;">
+        <section class="hero-section p-5">
+          <div class="hero-content text-center p-5">
+            <div class="container">
               <div class="row">
-                <article class="post-item">
-                  <div class="post-content">
-                    <h2 id="dataset" class="fs-1 text-capitalize fst-italic"><strong>資料集</strong></h2>
-                    <div class="post-description">
-                    <p>&emsp;&emsp;本研究之資料集取自TrackNetV2<sup>[5]</sup>及ShuttleSet<sup>[2]</sup>。</p>
-                    <p>&emsp;&emsp;每筆資料皆是一場從發球到得分的BWF（Badminton World Federation，世界羽球聯盟）羽球賽事的單打比賽，且資料中附有一個影片紀錄檔，記錄檔中有針對賽事的各項變數描述，詳見下方數據集介紹。</p>
-                    </div>
-                    <h2 id="datacsv" class="fs-1 text-capitalize fst-italic"><strong>數據集</strong></h2>
-                    <p>&emsp;&emsp;在資料集中所提供的影片紀錄檔中包含以下變數：</p>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>ShotSeq</th>
-                          <th>HitFrame</th>
-                          <th>Hitter</th>
-                          <th>RoundHead</th>
-                          <th>Backhand</th>
-                          <th>BallHeight</th>
-                          <th>Landing Ｘ</th>
-                          <th>Landing Ｙ</th>
-                          <th>Hitter<br>Location Ｘ</th>
-                          <th>Hitter<br>Location Ｙ</th>
-                          <th>Defender<br>Location Ｘ</th>
-                          <th>Defender<br>Location Ｙ</th>
-                          <th>BallType</th>
-                          <th>Winner</th>
-
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <th>擊球<br>次數</th>
-                        <th>擊球幀數</th>
-                        <th>擊球方</th>
-                        <th>是否<br>繞頭擊球</th>
-                        <th>是否<br>反手擊球</th>
-                        <th>是否<br>高於網</th>
-                        <th>羽球<br>落地點<br>座標Ｘ</th>
-                        <th>羽球<br>落地點<br>座標Ｙ</th>
-                        <th>擊球方<br>座標Ｘ</th>
-                        <th>擊球方<br>座標Ｙ</th>
-                        <th>防守方<br>座標Ｘ</th>
-                        <th>防守方<br>座標Ｙ</th>
-                        <th>球種</th>
-                        <th>得分方</th>
-                      </tbody>
-                    </table>
-                    <div class="image-container" style="height: 250px;">
-                      <img id="myImage" src="images/data/00001_csv_index.png">
-                    </div>
-                    <h2 id="datamp4" class="fs-1 text-capitalize fst-italic"><strong>影片</strong></h2>
-                    <p>&emsp;&emsp;此為BWF（Badminton World Federation，世界羽球聯盟）羽球賽事的單打比賽影片，且每個影片都是記錄從發球到落地的擊球過程。</p>
-                    <div class="video-container" style="height: 500px; margin-top: 50px;">
-                      <video id="myVideo" controls autoplay>
-                        <source id="videoSource" src="images/data/00001_video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                </article>
+                <div class="col-md-12">
+                  <h1 id="title4" class="display-2 fst-italic">資料介紹</h1>
+                </div>
               </div>
-            </main>
+            </div>
+          </div>
+        </section>
+        <div class="post-wrap aside_height" id="data">
+          <div class="container">
+            <div class="row">
+              <main class="post-list">
+                <div class="row">
+                  <article class="post-item">
+                    <div class="post-content">
+                      <h2 id="dataset" class="fs-1 text-capitalize fst-italic"><strong>資料集</strong></h2>
+                      <div class="post-description">
+                      <p>&emsp;&emsp;本研究之資料集取自TrackNetV2<sup>[5]</sup>及ShuttleSet<sup>[2]</sup>。</p>
+                      <p>&emsp;&emsp;每筆資料皆是一場從發球到得分的BWF（Badminton World Federation，世界羽球聯盟）羽球賽事的單打比賽，且資料中附有一個影片紀錄檔，記錄檔中有針對賽事的各項變數描述，詳見下方數據集介紹。</p>
+                      </div>
+                      <h2 id="datacsv" class="fs-1 text-capitalize fst-italic"><strong>數據集</strong></h2>
+                      <p>&emsp;&emsp;在資料集中所提供的影片紀錄檔中包含以下變數：</p>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>ShotSeq</th>
+                            <th>HitFrame</th>
+                            <th>Hitter</th>
+                            <th>RoundHead</th>
+                            <th>Backhand</th>
+                            <th>BallHeight</th>
+                            <th>Landing Ｘ</th>
+                            <th>Landing Ｙ</th>
+                            <th>Hitter<br>Location Ｘ</th>
+                            <th>Hitter<br>Location Ｙ</th>
+                            <th>Defender<br>Location Ｘ</th>
+                            <th>Defender<br>Location Ｙ</th>
+                            <th>BallType</th>
+                            <th>Winner</th>
+  
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <th>擊球<br>次數</th>
+                          <th>擊球幀數</th>
+                          <th>擊球方</th>
+                          <th>是否<br>繞頭擊球</th>
+                          <th>是否<br>反手擊球</th>
+                          <th>是否<br>高於網</th>
+                          <th>羽球<br>落地點<br>座標Ｘ</th>
+                          <th>羽球<br>落地點<br>座標Ｙ</th>
+                          <th>擊球方<br>座標Ｘ</th>
+                          <th>擊球方<br>座標Ｙ</th>
+                          <th>防守方<br>座標Ｘ</th>
+                          <th>防守方<br>座標Ｙ</th>
+                          <th>球種</th>
+                          <th>得分方</th>
+                        </tbody>
+                      </table>
+                      <div class="image-container" style="height: 250px;">
+                        <img id="myImage" src="images/data/00001_csv_index.png">
+                      </div>
+                      <h2 id="datamp4" class="fs-1 text-capitalize fst-italic"><strong>影片</strong></h2>
+                      <p>&emsp;&emsp;此為BWF（Badminton World Federation，世界羽球聯盟）羽球賽事的單打比賽影片，且每個影片都是記錄從發球到落地的擊球過程。</p>
+                      <div class="video-container" style="height: 500px; margin-top: 50px;">
+                        <video id="myVideo" controls autoplay>
+                          <source id="videoSource" src="images/data/00001_video.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </main>
+            </div>
           </div>
         </div>
       </div>
+      
     </div>
     <!--Footer-->
     <footer id="footer" class="mt-5">
@@ -343,24 +317,36 @@
         <div class="container-lg">
           <div class="row justify-content-center footer-content">
             <div class="footer01">
-              <a href="#" class="d-flex">
-                <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-up"></use>
-                </svg>
-                <span class="ps-4">Top</span>
-              </a>
-              <a href="index.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-left"></use>
-                </svg>
-                <span class="ps-4">Previous</span>
-              </a>
-              <a href="index.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-start"></use>
-                </svg>
-                <span class="ps-4">First</span>
-              </a>
+              <button class="btn btn-link footer_btn" data-hover="回到最上面">
+                <div>
+                  <a href="#" class="d-flex">
+                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-up"></use>
+                    </svg>
+                    <span class="ps-4">Top</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="首頁">
+                <div>
+                  <a href="index.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-left"></use>
+                    </svg>
+                    <span class="ps-4">Previous</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="首頁">
+                <div>
+                  <a href="index.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-start"></use>
+                    </svg>
+                    <span class="ps-4">First</span>
+                  </a>
+                </div>
+              </button>
             </div>
             <div class="footer02">
               <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
@@ -370,24 +356,36 @@
               <script src="js/last_modified.js"></script>
             </div>
             <div class="footer03">
-              <a href="#" class="d-flex">
-                <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-up"></use>
-                </svg>
-                <span class="ps-4">Top</span>
-              </a>
-              <a href="method.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-right"></use>
-                </svg>
-                <span class="ps-4">Next</span>
-              </a>
-              <a href="reference.html" class="d-flex">
-                <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                  <use xlink:href="#footer_arrow-end"></use>
-                </svg>
-                <span class="ps-4">Last</span>
-              </a>
+              <button class="btn btn-link footer_btn" data-hover="回到最上面">
+                <div>
+                  <a href="#" class="d-flex">
+                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-up"></use>
+                    </svg>
+                    <span class="ps-4">Top</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="方法與流程">
+                <div>
+                  <a href="method.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-right"></use>
+                    </svg>
+                    <span class="ps-4">Next</span>
+                  </a>
+                </div>
+              </button>
+              <button class="btn btn-link footer_btn" data-hover="參考文獻">
+                <div>
+                  <a href="reference.html" class="d-flex">
+                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                      <use xlink:href="#footer_arrow-end"></use>
+                    </svg>
+                    <span class="ps-4">Last</span>
+                  </a>
+                </div>
+              </button>
             </div>
           </div>
         </div>

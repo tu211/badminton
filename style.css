@@ -1004,26 +1004,33 @@ th, tr {
 .aside_height::-webkit-scrollbar {
   display: none;
 }
+
+.aside_chart_flow {
+  overflow: auto;
+  max-height: 600px;
+  
+}
+
 /*===== Footer =====*/
 footer {
   font-size: 15px;
 }
 
 .footer01 {
-  width: 250px;
+  width: 220px;
 }
 
 .footer02 {
   display: flex;
   flex-direction: column;
-  width: 850px;
+  width: 500px;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 
 .footer03 {
-  width: 250px;
+  width: 220px;
 }
 
 .footer_btn {
