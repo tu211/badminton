@@ -86,6 +86,10 @@ body {
   font-size: 30px;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 h1,
 .h1,
 h2,
@@ -838,7 +842,7 @@ form {
 }
 
 #winner {
-  height: 2000px;
+  height: 2300px;
 }
 
 #ball_trajectory {
@@ -966,39 +970,42 @@ th, tr {
 
 /*===== Aside Navbar=====*/
 .aside_1 {
-  font-size: 20px;
+  font-size: 2.5vh;
   list-style-type:none;
   text-align: center;
-  background-color:#87A9BC;
-}
-.aside_menu {
-  background-color: #afc4d1;
+  background-color:#afc4d1;
 }
 .aside_2 {
-  font-size: 20px;
+  font-size: 2.5vh;
   list-style-type:none;
   text-align: left;
   padding-top: 10px;
   padding-left: 10px;
 }
 .aside_3 {
-  font-size: 20px;
+  font-size: 2.5vh;
   list-style-type:none;
   font-weight:normal;
   padding-top: 10px;
 }
 
+.aside_content {
+  display: flex;
+  flex-direction: row;
+  height: 900px;
+  width: 100%;
+}
 .aside_height {
   overflow: auto;
-  height: auto;
-  margin-top: 100px;
+  height: 750px;
+  margin-top: 150px;
+  width: 80%;
 }
-
 .aside_chart_flow {
   overflow: auto;
   max-height: 1600px;
-  width: 200px;
-  margin-top: 100px;
+  width: 20%;
+  margin-top: 150px;
 }
 
 /*===== Footer =====*/

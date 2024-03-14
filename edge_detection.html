@@ -154,7 +154,7 @@
                 </div>
                 <!--Desktop Logo-->
                 <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                  <img src="images/logo/edge_detection_logo.png" alt="Logo" style="width: 30vw; height: 10vh;">
+                  <img src="images/logo/edge_detection_logo.png" alt="Logo" style="width: 20vw; height: 12vh;">
                 </a>
               </div>
             </div>
@@ -162,23 +162,11 @@
         </div>
       </div>
     </header>
-    <!--Header-->
-    <section class="hero-section p-5">
-      <div class="hero-content text-center p-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 id="title4" class="display-2 fst-italic">邊線偵測</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="justify-content-center" style="display: flex; flex-direction: row;">
+    <div class="justify-content-center aside_content" style="display: flex; flex-direction: row;">
       <div class="flex-shrink-0 p-3 bg-white aside_chart_flow">
-        <ul class="list-group aside_1">
+        <ul class="list-group" style="padding-left: 100px;">
           <li class="list-group-item">
-            <div class="aside_menu">
+            <div class="aside_1">
               <a href="index.html">首頁</a>
             </div>
             <ul class="list-group aside_2">
@@ -187,17 +175,12 @@
             </ul>
           </li>
           <li class="list-group-item">
-            <div class="aside_menu">
+            <div class="aside_1">
               <a href="data.html">資料介紹</a>
             </div>
-            <ul class="list-group aside_2">
-              <li><a href="data.html#dataset">資料集</a></li>
-              <li><a href="data.html#datacsv">數據集</a></li>
-              <li><a href="data.html#datamp4">影片</a></li>
-            </ul>
           </li>
           <li class="list-group-item">
-            <div class="aside_menu">
+            <div class="aside_1">
               <a href="method.html">流程與方法</a>
             </div>
             <ul class="list-group aside_2">
@@ -214,32 +197,32 @@
                 <a href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
               </li>
               <li>
-                <a href="hitting_point_and_hitter.html#hitter">判斷擊球方</a>
+                <a href="hitting_point_and_hitter.html#hitter">擊球方</a>
               </li>
             </ul>
           </li>
           <li class="list-group-item">
-            <div class="aside_menu">
+            <div class="aside_1">
               <a href="conclusion.html">結論</a>
             </div>
             <ul class="list-group aside_2">
-              <li><a href="conclusion.html#winner">判斷得分方</a></li>
+              <li><a href="conclusion.html#winner">得分方</a></li>
               <li><a href="conclusion.html#ball_trajectory">球路</a></li>
             </ul>
           </li>
           <li class="list-group-item">
-            <div class="aside_menu">
+            <div class="aside_1">
               <a href="demo.html">成果展示</a>
             </div>
           </li>
           <li class="list-group-item">
-            <div class="aside_menu">
+            <div class="aside_1">
               <a href="reference.html">參考文獻</a>
             </div>
           </li>
         </ul>
       </div>
-      <div class="post-wrap aside_height" id="edge_detection">
+      <div class="post-wrap aside_height">
         <div class="container">
           <div class="row">
             <main class="post-list">
@@ -274,7 +257,7 @@
                       <div class="item"><a href="#personal">單打線</a></div>
                     </div>
                     <section>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>RGB -> HSV</strong></h2>
+                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>影像處理</strong></h2>
                       <div class="post-description">
                           <p>&emsp;&emsp;因為羽球場地大多數為綠色的場地，因此為了能夠更快速尋找目標， 在這將原圖的RGB（RGB color model，RGB色彩模型）格式轉為HSV（Hue, Saturation, Value，色相、飽和度、明度）格式。</p>
                       </div>
@@ -292,9 +275,8 @@
                         <p style="text-align: center; font-size: 15px;">（HSV）</p>
                       </div>
                       </div>
-                      <h2 id="mask" class="fs-1 text-capitalize fst-italic"><strong>遮罩</strong></h2>
                       <div class="post-description">
-                          <p>&emsp;&emsp;將轉換後的HSV（Hue, Saturation, Value，色相、飽和度、明度）圖片進行遮罩，可看到圖中綠色的部分轉換成白色，其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
+                          <p>&emsp;&emsp;再將轉換後的HSV（Hue, Saturation, Value，色相、飽和度、明度）圖片進行遮罩，可看到圖中綠色的部分轉換成白色，其餘的顏色轉換成黑色，再與原圖加疊，呈現除了綠色以外的部分皆為黑色的圖。</p>
                       </div>
                       <div class="row align-items-center">
                           <div class="col-lg-6">
@@ -310,9 +292,8 @@
                             <p style="text-align: center; font-size: 15px;">（加疊）</p>
                           </div>
                       </div>
-                      <h2 id="canny" class="fs-1 text-capitalize fst-italic"><strong>Canny</strong></h2>
                       <div class="post-description">
-                          <p>&emsp;&emsp;對處理後的圖片進行Canny邊緣偵測，可看見Canny描繪出圖中所有可辨識的線條。</p>
+                          <p>&emsp;&emsp;最後對處理後的圖片進行Canny邊緣偵測，可看見Canny描繪出圖中所有可辨識的線條。</p>
                       </div>
                       <div class="align-items-center">
                           <img id="myImage" src="images/method/edge_detection/canny.png">
@@ -326,7 +307,7 @@
                           <img id="myImage" src="images/method/edge_detection/coordinates.png">
                           <p style="text-align: center; font-size: 15px;">（HoughLine）</p>
                       </div>
-                      <h2 id="rows_cols" class="fs-1 text-capitalize fst-italic"><strong>ROWS & COLUMNS</strong></h2>
+                      <h2 id="rows_cols" class="fs-1 text-capitalize fst-italic"><strong>拆分處理</strong></h2>
                       <div class="post-description">
                           <p>&emsp;&emsp;將進行霍夫轉換（Hough Line Transform）後的ROW和COLUMN拆分。</p>
                       </div>
@@ -344,7 +325,6 @@
                             <p style="text-align: center; font-size: 15px;">（COLS）</p>
                           </div>
                       </div>
-                      <h2 id="2rowsandcols" class="fs-1 text-capitalize fst-italic"><strong>處理後ROWS & COLUMNS</strong></h2>
                       <div class="post-description">
                           <p>&emsp;&emsp;先將場地外的線刪除，因為有多條線重合在一起，為了留下一條線，所以我們利用分組的方式將重合在一起的線分在同一組，並計算出他的平均值，將這個值當作最後這條線的結果，因為分組的區域限制所以我們將上述步驟進行了兩次，為了讓這個結果可以更加貼近原本的場地線。</p>
                       </div>
@@ -362,7 +342,7 @@
                             <p style="text-align: center; font-size: 15px;">（COLS）</p>
                           </div>
                       </div>
-                      <h2 id="finalrowsandcols" class="fs-1 text-capitalize fst-italic"><strong>合併ROWS & COLUMNS</strong></h2>
+                      <h2 id="finalrowsandcols" class="fs-1 text-capitalize fst-italic"><strong>資料合併</strong></h2>
                       <div class="post-description">
                           <p>&emsp;&emsp;將處理後的ROWS和COLUMNS合併。</p>
                       </div>
@@ -382,10 +362,10 @@
                             <p style="text-align: center; font-size: 15px;">（單打線）</p>
                           </div>
                           <div class="col-lg-6">
-                              <div id="edge_img" class="image-container" style="height: 370px;">
+                              <div id="edge_img" class="image-container" style="height: 310px;">
                                   <img id="myImage" src="images/method/edge_detection/final_csv.png">
+                                  <p style="text-align: center; font-size: 15px;">（單打線輸出csv）</p>
                               </div>
-                            <p style="text-align: center; font-size: 15px;">（單打線輸出csv）</p>
                           </div>
                       </div>
                     </section>
@@ -395,87 +375,87 @@
             </main>
           </div>
         </div>
-      </div>
-    </div>
-    <!--Footer-->
-    <footer id="footer" class="mt-5">
-      <div class="border-top py-4">
-        <div class="container-lg">
-          <div class="row justify-content-center footer-content">
-            <div class="footer01">
-              <button class="btn btn-link footer_btn" data-hover="回到最上面">
-                <div>
-                  <a href="#" class="d-flex">
-                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-up"></use>
-                    </svg>
-                    <span class="ps-4">Top</span>
-                  </a>
+        <footer id="footer" class="mt-5">
+          <div class="border-top py-4">
+            <div class="container-lg">
+              <div class="row justify-content-center footer-content">
+                <div class="footer01">
+                  <button class="btn btn-link footer_btn" data-hover="回到最上面">
+                    <div>
+                      <a href="#" class="d-flex">
+                        <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                          <use xlink:href="#footer_arrow-up"></use>
+                        </svg>
+                        <span class="ps-4">Top</span>
+                      </a>
+                    </div>
+                  </button>
+                  <button class="btn btn-link footer_btn" data-hover="方法與流程">
+                    <div>
+                      <a href="method.html" class="d-flex">
+                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                          <use xlink:href="#footer_arrow-left"></use>
+                        </svg>
+                        <span class="ps-4">Previous</span>
+                      </a>
+                    </div>
+                  </button>
+                  <button class="btn btn-link footer_btn" data-hover="首頁">
+                    <div>
+                      <a href="index.html" class="d-flex">
+                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                          <use xlink:href="#footer_arrow-start"></use>
+                        </svg>
+                        <span class="ps-4">First</span>
+                      </a>
+                    </div>
+                  </button>
                 </div>
-              </button>
-              <button class="btn btn-link footer_btn" data-hover="方法與流程">
-                <div>
-                  <a href="method.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-left"></use>
-                    </svg>
-                    <span class="ps-4">Previous</span>
-                  </a>
+                <div class="footer02">
+                  <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系<br>羽球比賽辨識系統專題團隊。All Rights Reserved.
+                  </p>
+                  <p id="lastModified" style="text-align: center;"></p>
+                  <script src="js/last_modified.js"></script>
                 </div>
-              </button>
-              <button class="btn btn-link footer_btn" data-hover="首頁">
-                <div>
-                  <a href="index.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-start"></use>
-                    </svg>
-                    <span class="ps-4">First</span>
-                  </a>
+                <div class="footer03">
+                  <button class="btn btn-link footer_btn" data-hover="回到最上面">
+                    <div>
+                      <a href="#" class="d-flex">
+                        <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                          <use xlink:href="#footer_arrow-up"></use>
+                        </svg>
+                        <span class="ps-4">Top</span>
+                      </a>
+                    </div>
+                  </button>
+                  <button class="btn btn-link footer_btn" data-hover="羽球軌跡">
+                    <div>
+                      <a href="ball_tracking.html" class="d-flex">
+                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                        <span class="ps-4">Next</span>
+                      </a>
+                    </div>
+                  </button>
+                  <button class="btn btn-link footer_btn" data-hover="參考文獻">
+                    <div>
+                      <a href="reference.html" class="d-flex">
+                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                          <use xlink:href="#footer_arrow-end"></use>
+                        </svg>
+                        <span class="ps-4">Last</span>
+                      </a>
+                    </div>
+                  </button>
                 </div>
-              </button>
-            </div>
-            <div class="footer02">
-              <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系<br>羽球比賽辨識系統專題團隊。All Rights Reserved.
-              </p>
-              <p id="lastModified" style="text-align: center;"></p>
-              <script src="js/last_modified.js"></script>
-            </div>
-            <div class="footer03">
-              <button class="btn btn-link footer_btn" data-hover="回到最上面">
-                <div>
-                  <a href="#" class="d-flex">
-                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-up"></use>
-                    </svg>
-                    <span class="ps-4">Top</span>
-                  </a>
-                </div>
-              </button>
-              <button class="btn btn-link footer_btn" data-hover="羽球軌跡">
-                <div>
-                  <a href="ball_tracking.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-right"></use>
-                    </svg>
-                    <span class="ps-4">Next</span>
-                  </a>
-                </div>
-              </button>
-              <button class="btn btn-link footer_btn" data-hover="參考文獻">
-                <div>
-                  <a href="reference.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-end"></use>
-                    </svg>
-                    <span class="ps-4">Last</span>
-                  </a>
-                </div>
-              </button>
+              </div>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
-    </footer>
+    </div>
+    
     <script src="js/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
