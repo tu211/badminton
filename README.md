@@ -6,3 +6,5 @@ Index image：[https://www.pinterest.com/pin/5629568277501560/](https://www.pint
 Index background image：[https://www.pinterest.com/pin/5629568277501560/](https://www.pinterest.com/pin/5629568277501560/)  
 English Logo：[https://www.crazy-photoshop.com/name/english/graffiti-letters-font/?fontname=Badminton](https://www.crazy-photoshop.com/name/english/graffiti-letters-font/?fontname=Badminton)  
 Chinese Logo：[https://www.77623.com/fanti.php](https://www.77623.com/fanti.php)  
+Preloader image : [https://zh.lovepik.com/images/png-the-monochrome.html](https://zh.lovepik.com/images/png-the-monochrome.html)
+
