@@ -302,136 +302,121 @@
                 <div class="row">
                   <article class="post-item">
                     <div class="post-content">
-                      <p>&emsp;&emsp;我們使用機器學習的方式來對球路做分類，並使用先前得到的場地人物節點以及羽球軌跡當作訓練用資料，並用這些資料產出新的特徵來提高球路分類的準確率。</p>
-                      <h2 class="fs-1 text-capitalize fst-italic"><strong>球路種類（label）</strong></h2>
                       <div class="post-description">
-                      <p>0: 發短球    1: 發長球   2: 長球   3: 平球   4: 殺球
-                        5: 網前小球  6: 切球     7: 挑球   8: 推撲球
-                        </p>
+                        <p>&emsp;&emsp;為了準確的判斷羽球的球路，使用了不同的模型去對其進行分類。</p>
+                      <p>&emsp;&emsp;訓練的資料，除了先前透過不同偵測方式所獲取的羽球軌跡、人物節點及場地外，亦結合這三樣資料產生新的特徵值，去加以提高模型訓練的準確度。</p>
                       </div>
-                      <h2 class="fs-1 text-capitalize fst-italic"><strong>使用特徵：</strong></h2>
-                      <ul>
-                        <li>人物節點</li>
-                        <li>場地座標</li>
-                        <li>羽球移動距離</li>
-                        <li>羽球移動速度</li>
-                        <li>羽球角度變化量</li>
-                        <li>羽球軌跡切成3段的資料(將兩個擊球幀之間的資料分成3等分，分別計算每段的距離和角度變化量)</li>
-                        <li>腳與發球線的y變化量</li>
-                        <li>腳與中線的x變化量</li>
-                        <li>人體節點的前後5幀變化量</li>
-                        <li>手肘角度變化量(擊求幀前後5幀)</li>
-                        <li>擊球者</li>
-                        <li>是否有打對角</li>
-                      </ul>
-                      <p>&emsp;&emsp;我們使LogisticRegression、Svm、RandomForest、XGBoost來對球路做分類以下為訓練結果：</p>
-                      <table>
-                        <tr>
-                          <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>模型<br>&nbsp;</td>
-                          <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>訓練集準確率<br>&nbsp;</td>
-                          <td class="hitter-table" style="background-color: lightblue; font-size: 30px;"><br>測試集準確率<br>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td class="hitter-table"><br>Logistic Regression(邏輯式回歸)&nbsp;<br>&nbsp;</td>
-                          <td class="hitter-table">0.75</td>
-                          <td class="hitter-table">0.68</td>
-                        </tr>
-                        <tr>
-                          <td class="hitter-table"><br>SVM(支援向量機)<br>&nbsp;</td>
-                          <td class="hitter-table">0.73</td>
-                          <td class="hitter-table">0.65</td>
-                        </tr>
-                        <tr>
-                          <td class="hitter-table"><br>&nbsp;Random Decision Forests(隨機森林)&nbsp;<br>&nbsp;</td>
-                          <td class="hitter-table">0.71</td>
-                          <td class="hitter-table">0.66</td>
-                        </tr>
-                        <tr>
-                          <td class="hitter-table"><br>XGBoost<br>&nbsp;</td>
-                          <td class="hitter-table">0.71</td>
-                          <td class="hitter-table">0.64</td>
-                        </tr>
-                      </table>
-                      <p>&emsp;&emsp;我們取準確率最高的LogisticRegression並觀察各個球路的準確率</p>
-                      <table>
-                        <tr>
-                          <th>球種/準確率</th>
-                          <td>發短球(0)</td>
-                          <td>發長球(1)</td>
-                          <td>長球  (2)</td>
-                          <td>平球  (3)</td>
-                          <td>殺球  (4)</td>
-                          <td>小球  (5)</td>
-                          <td>切球  (6)</td>
-                          <td>挑球  (7)</td>
-                          <td>推撲球(8)</td>
-                        </tr>
-                        <tr>
-                          <th>準確率</th>
-                          <td>0.78</td>
-                          <td>0.72</td>
-                          <td>0.60</td>
-                          <td>0.31</td>
-                          <td>0.78</td>
-                          <td>0.85</td>
-                          <td>0.45</td>
-                          <td>0.69</td>
-                          <td>0.08</td>
-                        </tr>
-                      </table>
-                      <p>&emsp;&emsp;觀察表格後發現平球、切球以及推撲球的準確率較低，其中推撲球特別低，為了改善推撲球的準確率我們嘗試新增一些特徵值並嘗試其他分類器，但都未能改善推撲球的準確率，由於推撲球的資料數較少再加上我們沒有找到能夠改善的方發所以我們決定只對其他7種球路做分類。</p>
-                      <p>以下是去除推撲球後其他7種球路的準確率</p>
-                      <table>
-                        <tr>
-                          <th>分類器/準確率</th>
-                          <th>訓練集準確率</th>
-                          <th>測試集準確率</th>
-                        </tr>
-                        <tr>
-                          <td>LogisticRegression</td>
-                          <td>0.82</td>
-                          <td>0.73</td>
-                        </tr>
-                        <tr>
-                          <td>Svm</td>
-                          <td>0.78</td>
-                          <td>0.70</td>
-                        </tr>
-                        <tr>
-                          <td>RandomForest</td>
-                          <td>0.80</td>
-                          <td>0.70</td>
-                        </tr>
-                        <tr>
-                          <td>XGBoost</td>
-                          <td>0.77</td>
-                          <td>0.71</td>
-                        </tr>
-                      </table>
-                      <table>
-                        <tr>
-                          <th>球種/準確率</th>
-                          <td>發短球(0)</td>
-                          <td>發長球(1)</td>
-                          <td>長球  (2)</td>
-                          <td>平球  (3)</td>
-                          <td>殺球  (4)</td>
-                          <td>小球  (5)</td>
-                          <td>切球  (6)</td>
-                          <td>挑球  (7)</td>
-                        </tr>
-                        <tr>
-                          <th>準確率</th>
-                          <td>0.82</td>
-                          <td>0.69</td>
-                          <td>0.61</td>
-                          <td>0.40</td>
-                          <td>0.80</td>
-                          <td>0.85</td>
-                          <td>0.51</td>
-                          <td>0.70</td>
-                        </tr>
-                      </table>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;而在球路中，我們一共分成了下面8個類別：</p>
+                        <table>
+                          <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                          </tr>
+                          <tr>
+                            <td>發短球</td>
+                            <td>發長球</td>
+                            <td>長球</td>
+                            <td>平球</td>
+                            <td>殺球</td>
+                            <td>網前小球</td>
+                            <td>切球</td>
+                            <td>挑球</td>
+                            <td>推撲球</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="post-description">
+                        <p>變數內容:</p>
+                        <p>人物節點：2位選手25個節點的(x、y、z)坐標，一共有75個變數。</p>
+                        <p>場地座標：場地打擊區域端點，8個點的(x、y)坐標，一共有16個變數。</p>
+                        <p>羽球移動距離：1個變數。</p>
+                        <p>羽球移動速度：1個變數。</p>
+                        <p>羽球角度變化量：羽球的(x、y)坐標，一共2個變數。</p>
+                        <p>羽球軌跡切成3段的資料：將兩個擊球幀之間的資料分成3等分，分別計算每段的距離和角度變化量，一共6個變數。</p>
+                        <p>腳與發球線的y變化量：兩位選手的雙腳與發球線的y變化量，一共4個變數。</p>
+                        <p>腳與中線的x變化量：兩位選手的雙腳與中線的x變化量，一共4個變數。</p>
+                        <p>人體節點的前後5幀變化量：兩位選手的前後5幀變化量，一共18個變數</p>
+                        <p>手肘角度變化量：打擊者的手肘角度變化的(x、y)坐標，一共2個變數。</p>
+                        <p>擊球者：該球的擊球者是誰，1個變數。</p>
+                        <p>是否有打對角：是或否，1個變數。</p>
+                      </div>
+                      <div class="post-description">
+                        <p>一共使用了四種機器學習的方式去進行分類訓練，分別是LogisticRegression、Svm、RandomForest及XGBoost，以下為訓練結果。</p>
+                        <table>
+                          <thead>
+                            <th>分類器/準確率</th>
+                            <th>訓練集準確率</th>
+                            <th>測試集準確率</th>
+                          </thead>
+                          <tr>
+                            <td>LogisticRegression</td>
+                            <td>0.82</td>
+                            <td>0.73</td>
+                          </tr>
+                          <tr>
+                            <td>Svm</td>
+                            <td>0.78</td>
+                            <td>0.70</td>
+                          </tr>
+                          <tr>
+                            <td>RandomForest</td>
+                            <td>0.80</td>
+                            <td>0.70</td>
+                          </tr>
+                          <tr>
+                            <td>XGBoost</td>
+                            <td>0.77</td>
+                            <td>0.71</td>
+                          </tr>
+                        </table>
+                        <p>從上方的表格來看，其實整體的訓練集準確率都落在或接近0.8左右，而測試也都落在0.7左右，因此我們挑選了準確率相對高的LogisticRegression來當作最後使用的模型。</p>
+                      </div>
+                      <div class="align-items-center">
+                        <div class="row align-items-center" style="display: flex; flex-direction: row; align-items: center;">
+                          <p>但我們也想要從各種球路來觀察，是哪幾個種類比較容易被分錯，導致準確度不高，下表是各類的準確率及其混淆矩陣。</p>
+                          <div class="col-lg-6" style="text-align: center;">
+                            <table>
+                              <thead>
+                                <td>球種/準確率</td>
+                                <td>發短球(0)</td>
+                                <td>發長球(1)</td>
+                                <td>長球(2)</td>
+                                <td>平球(3)</td>
+                                <td>殺球(4)</td>
+                                <td>小球(5)</td>
+                                <td>切球(6)</td>
+                                <td>挑球(7)</td>
+                              </thead>
+                              <th>
+                                <td>準確率</td>
+                                <td>0.82</td>
+                                <td>0.69</td>
+                                <td>0.61</td>
+                                <td>0.40</td>
+                                <td>0.80</td>
+                                <td>0.85</td>
+                                <td>0.51</td>
+                                <td>0.70</td>
+                              </th>
+                            </table>
+                          </div>
+                          <div class="col-lg-6" style="text-align: center;">
+                              <div class="image-container">
+                                <img id="smallImage" src="images/method/ball_trajectory/confusion_matrix.jpg">
+                              </div>
+                            <p style="text-align: center; font-size: 15px;">（混淆矩陣）</p>
+                          </div>
+                          <p>其實觀察後會發現平球(3)、切球(6)的準確率較低，原因可能是這兩種資料的筆數都相對較少，也可能我們目前所使用的特徵還不足以對這些球路進行分類而導致。</p>
+                        </div>
+                      </div>
                     </div>
                   </article>
                 </div>

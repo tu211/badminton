@@ -229,6 +229,27 @@
               <div class="row">
                 <article class="post-item">
                   <div class="post-content">
+                    <div class="small_flow_chart">
+                      <div class="item"><a href="#hsv">偵測人物節點</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#houghline">資料處理</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#rows_cols">資料矯正</a></div>
+                      <div class="arrow_right">
+                        <svg class="arrow-right svg-primary" width="50" height="50">
+                          <use xlink:href="#footer_arrow-right"></use>
+                        </svg>
+                      </div>
+                      <div class="item"><a href="#finalrowsandcols">資料輸出</a></div>
+                    </div>
                     <section>
                       <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>建立選手基礎節點座標檔</strong></h2>
                       <div class="post-description">
@@ -352,18 +373,19 @@
                         </div>
                       </div>
                       <p>&emsp;&emsp;其執行檔的安裝流程和使用方式均有放置在github上。</p>
-                      <p>&emsp;&emsp;將影片輸入後，其可輸出標示人體關節點的影片(影片1)，及如圖一25個點的json檔(圖2)。因我們僅需人體關節點的數據檔，因此僅輸出json檔以利後續研究。</p>
+                      <p>&emsp;&emsp;將須判斷之影片輸入後，其會輸出標示人體關節點的影片，及下圖的json檔樣式。因我們僅需人體關節點的數據檔，因此僅輸出json檔以利後續研究。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img2.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片2）</p>
+                        <p style="text-align: center; font-size: 15px;">（openpose 輸出的json檔）</p>
                       </div>
                       <div class="video-container">
                         <video id="myVideo" controls autoplay>
                           <source id="videoSource" src="images/method/pose/pose.mp4" type="video/mp4">
                           Your browser does not support the video tag.
                         </video>
-                        <p style="text-align: center; font-size: 15px;">（影片1）</p>
+                        <p style="text-align: center; font-size: 15px;">(openpose輸出的人物節點影片)</p>
                       </div>
+                      <p>&emsp;&emsp;OPENPOSE所輸出的json檔，為了後續使用便利，因此將其輸出的檔案，使用多個自訂義的程式去校正，並輸出csv檔，主要執行流程如下圖</p>
                       <div class="small_flow_chart">
                         <div class="item"><a href="#title01">抓取選手座標</a></div>
                         <div class="arrow_right">
@@ -385,27 +407,28 @@
                         </div>
                         <div class="item"><a href="#title04">資料輸出</a></div>
                       </div>
-                      <h2 id="json" class="fs-1 text-capitalize fst-italic"><strong>1.	讀取第一個json檔</strong></h2>
-                      <p>&emsp;&emsp;將json檔 (圖3)中的每個人單獨整理成一個list(圖4)，並利用先前切割出的第一照幀片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標(圖5)。</p>
+                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>資料整理</strong></h2>
+                      <h2 id="json" class="fs-1 text-capitalize fst-italic"><strong>讀取第一個json檔</strong></h2>
+                      <p>&emsp;&emsp;將json檔中的每個人單獨整理成一個list檔，並利用第一幀的照片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img3.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片3）</p>
+                        <p style="text-align: center; font-size: 15px;">（第一幀所有人25個節點的list）</p>
                       </div>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img4.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片4）</p>
+                        <p style="text-align: center; font-size: 15px;">（偵測出的兩位選手的第一幀座標）</p>
                       </div>
-                      <h2 id="coordinate" class="fs-1 text-capitalize fst-italic"><strong>2.	座標比對</strong></h2>
-                      <p>&emsp;&emsp;利用前一幀座標的距離(和前一幀的x、y座標，相差絕對值20以內)去判斷其是否為該選手的座標，將選手在每一幀的座標點找出，並將每一個節點都單獨整理成一個list檔，所以一共會有25個檔案，而圖6中第一個personA就是初始25個節點的座標。</p>
+                      <h2 id="coordinate" class="fs-1 text-capitalize fst-italic"><strong>座標比對</strong></h2>
+                      <p>&emsp;&emsp;利用後減前的x、y坐標距離差，判斷是否為該選手，並用此方式將選手在每一幀的坐標點找出，將每一個節點都單獨整理成一個list檔，所以每位選手都會有25個list去分別對應其節點(請參考人物節點介紹中的25個人體節點位置圖)。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img5.png">
                         <p style="text-align: center; font-size: 15px;">（圖片5）</p>
                       </div>
-                      <h2 id="adjust01" class="fs-1 text-capitalize fst-italic"><strong>3.	資料矯正</strong></h2>
-                      <p>&emsp;&emsp;將Arima偵測出軌跡異常歸0的幀數，使用knn再次進行插補，並且遺失的幀數只要大於等於10，便不進行插補。</p>
+                      <h2 id="adjust01" class="fs-1 text-capitalize fst-italic"><strong>資料筆數矯正</strong></h2>
+                      <p>&emsp;&emsp;會有幾幀因為偵測誤差或是其他干擾因素而導致資料有誤差，所以需要確認資料筆數是否和其幀數一致，若不一致，找出缺少的幀數並將該幀補0，讓資料筆數一致。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img6.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片6）</p>
+                        <p style="text-align: center; font-size: 15px;">（檢查資料筆數是否正確）</p>
                       </div>
                       <h2 id="csv01" class="fs-1 text-capitalize fst-italic"><strong>4.	資料輸出</strong></h2>
                       <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點csv檔(圖7)。</p>
@@ -415,7 +438,7 @@
                       </div>
                     </section>
                     <section>
-                      <h1 id="processing" class="fs-1 text-capitalize fst-italic"><strong>節點座標資料前處理</strong></h1>
+                      <h1 id="processing" class="fs-1 text-capitalize fst-italic"><strong>資料前處理</strong></h1>
                       <div class="small_flow_chart">
                         <div class="item"><a href="#title05">原資料KNN補值</a></div>
                         <div class="arrow_right">
@@ -437,14 +460,15 @@
                         </div>
                         <div id="data_csv" class="item"><a href="#title08">資料輸出</a></div>
                       </div>
-                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>1.	原資料KNN補值</strong></h2>
+                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>人物節點介紹</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;將基礎節點座標檔中的遺失值進行插補，但為了維持資料的可用性，也為了不要讓資料有太大的偏差，遺失的幀數只要大於等於10幀，便不進行插補(圖8)。</p>
+                      <p>&emsp;&emsp;使用CMU - Panoptic Studio（卡內基·梅隆大學的研究單位）在github所提供的openpose執行檔，輸出影片中所有人的25個身體節點json檔。</p>
                       </div>
                       <div class="align-items-center">
                         <img id="smallImage" src="images/method/pose/img8.jpg">
-                        <p style="text-align: center; font-size: 15px;">（圖片8）</p>
+                        <p style="text-align: center; font-size: 15px;">（25個人體節點位置圖）</p>
                       </div>
+
                       <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>2.	arima檢查軌跡</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;利用Arima來檢查各點的運動軌跡，因openpose偵測錯誤產生偏差，所以導致前後座標誤差太大，運動軌跡不連貫。因此我們使用arima進行偵測(圖9)，將軌跡異常的幀數歸0。</p>
