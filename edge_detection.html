@@ -350,6 +350,14 @@
                           <img id="myImage" src="images/method/edge_detection/two_rows_and_two_cols.png">
                           <p style="text-align: center; font-size: 15px;">（線段合併）</p>
                       </div>
+                      <h2 id="personal" class="fs-1 text-capitalize fst-italic"><strong>透視變換</strong></h2>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;之後我們以先前Row與col所產生的節點，利用迴圈把場地中所有節點組合的四邊形找出，然後用透視變換將所有組合的四邊形轉換為真實場地的比例，再利用真實場地的比例找出其他場地的關鍵點，接著用透視變換將關鍵點的座標轉換回圖片上的座標，然後將轉換回地座標與先前所Row與col所產生的節點進行比較，當兩個點的誤差小於某個程度，則判斷為有效節點，最後再找出所有組合有效點最多的為正確場地。</p>
+                      </div>
+                      <div class="align-items-center">
+                        <img id="myImage" src="images/method/edge_detection/Perspective_Transformation.png">
+                        <p style="text-align: center; font-size: 15px;">（線段合併）</p>
+                      </div>
                       <h2 id="personal" class="fs-1 text-capitalize fst-italic"><strong>單打線</strong></h2>
                       <div class="post-description">
                           <p>&emsp;&emsp;將合併後的線段進行交點判斷，並留下單打線。</p>
