@@ -420,21 +420,11 @@
                       </div>
                       <h2 id="coordinate" class="fs-1 text-capitalize fst-italic"><strong>座標比對</strong></h2>
                       <p>&emsp;&emsp;利用後減前的x、y坐標距離差，判斷是否為該選手，並用此方式將選手在每一幀的坐標點找出，將每一個節點都單獨整理成一個list檔，所以每位選手都會有25個list去分別對應其節點(請參考人物節點介紹中的25個人體節點位置圖)。</p>
-                      <div class="align-items-center">
-                        <img id="myImage" src="images/method/pose/img5.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片5）</p>
-                      </div>
                       <h2 id="adjust01" class="fs-1 text-capitalize fst-italic"><strong>資料筆數矯正</strong></h2>
                       <p>&emsp;&emsp;會有幾幀因為偵測誤差或是其他干擾因素而導致資料有誤差，所以需要確認資料筆數是否和其幀數一致，若不一致，找出缺少的幀數並將該幀補0，讓資料筆數一致。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img6.png">
                         <p style="text-align: center; font-size: 15px;">（檢查資料筆數是否正確）</p>
-                      </div>
-                      <h2 id="csv01" class="fs-1 text-capitalize fst-italic"><strong>4.	資料輸出</strong></h2>
-                      <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點csv檔(圖7)。</p>
-                      <div class="align-items-center">
-                        <img id="smallImage" src="images/method/pose/img7.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片7）</p>
                       </div>
                     </section>
                     <section>
@@ -458,32 +448,28 @@
                             <use xlink:href="#footer_arrow-right"></use>
                           </svg>
                         </div>
-                        <div id="data_csv" class="item"><a href="#title08">資料輸出</a></div>
+                        <div id="data_adjust" class="item"><a href="#title08">資料輸出</a></div>
                       </div>
-                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>人物節點介紹</strong></h2>
+                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>Knn遺失值插補</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;使用CMU - Panoptic Studio（卡內基·梅隆大學的研究單位）在github所提供的openpose執行檔，輸出影片中所有人的25個身體節點json檔。</p>
+                      <p>&emsp;&emsp;將節點檔中的遺失值進行插補，但為了維持資料的可用性，也為了降低資料的偏誤，遺失的幀數只要大於等於10幀，便不進行插補。</p>
                       </div>
                       <div class="align-items-center">
                         <img id="smallImage" src="images/method/pose/img8.jpg">
-                        <p style="text-align: center; font-size: 15px;">（25個人體節點位置圖）</p>
+                        <p style="text-align: center; font-size: 15px;">（偵測哪一幀需要插補）</p>
                       </div>
 
-                      <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>2.	arima檢查軌跡</strong></h2>
+                      <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>arima檢查軌跡 & 資料插補</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;利用Arima來檢查各點的運動軌跡，因openpose偵測錯誤產生偏差，所以導致前後座標誤差太大，運動軌跡不連貫。因此我們使用arima進行偵測(圖9)，將軌跡異常的幀數歸0。</p>
+                      <p>&emsp;&emsp;因openpose偵測時有可能會因姿勢或是攝影角度...等各項因素，而產生偵測的節點位置誤差，所以導致其運動軌跡不連貫。為避免此情況，故使用arima檢查各點的運動軌跡，並將軌跡異常點列出後歸0，並再次使用knn進行插補，插補條件同上一步。</p>
                       </div>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img9.png">
-                        <p style="text-align: center; font-size: 15px;">（圖片9）</p>
+                        <p style="text-align: center; font-size: 15px;">（使用arima檢測發現的異常點）</p>
                       </div>
-                      <h2 id="adjust02" class="fs-1 text-capitalize fst-italic"><strong>3.	資料矯正</strong></h2>
+                      <h2 id="adjust02" class="fs-1 text-capitalize fst-italic"><strong>資料輸出</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;將上一步歸0的幀數，使用knn再次進行插補。</p>
-                      </div>
-                      <h2 id="csv02" class="fs-1 text-capitalize fst-italic"><strong>4.	資料輸出</strong></h2>
-                      <div class="post-description">
-                      <p>&emsp;&emsp;再次輸出兩位選手在影片中每一幀的25個人體節點csv檔。</p>
+                      <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點csv檔。</p>
                       </div>
                     </section>
                   </div>
