@@ -81,7 +81,7 @@
             </button>
             <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
+              <img src="images/logo/demo_logo.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -118,25 +118,25 @@
                           <a class="dropdown-item" href="pose.html">人體節點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitting_point_and_hitter.html">擊球點</a>
+                          <a class="dropdown-item" href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitting_point_and_hitter.html">擊球方</a>
+                          <a class="dropdown-item" href="hitting_point_and_hitter.html#hitter">擊球方</a>
                         </li>
                       </ul>
                     </li>
                     <li class="btn btn-group btn-sm" role="group">
                       <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
-                        <a href="conclusion.html">結論</a>
+                        <a href="result.html">結果</a>
                       </button>
                       <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
                       </button>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="conclusion.html">得分方</a>
+                          <a class="dropdown-item" href="result.html#winner">得分方</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="conclusion.html">球路</a>
+                          <a class="dropdown-item" href="result.html#ball_trajectory">球路</a>
                         </li>
                       </ul>
                     </li>
@@ -145,6 +145,11 @@
                         <a href="demo.html">成果展示</a>
                       </button>
                     </li> 
+                    <li class="btn btn-link btn-sm">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                    </li>  
                     <li class="btn btn-link btn-sm">
                       <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
                         <a href="reference.html">參考文獻</a>
@@ -219,34 +224,28 @@
         <div class="container-lg">
           <div class="row justify-content-center footer-content">
             <div class="footer01">
-              <button class="btn btn-link footer_btn" data-hover="回到最上面">
+              <button onclick="goToTop()" class="btn btn-link footer_btn" data-hover="回到最上面">
                 <div>
-                  <a href="#" class="d-flex">
-                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-up"></use>
-                    </svg>
-                    <span class="ps-4">Top</span>
-                  </a>
+                  <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-up"></use>
+                  </svg>
+                  <span class="ps-4">Top</span>
                 </div>
               </button>
-              <button class="btn btn-link footer_btn" data-hover="結論">
+              <button onclick="goToPrevious()" class="btn btn-link footer_btn" data-hover="結果">
                 <div>
-                  <a href="conclusion.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-left"></use>
-                    </svg>
-                    <span class="ps-4">Previous</span>
-                  </a>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-left"></use>
+                  </svg>
+                  <span class="ps-4">Previous</span>
                 </div>
               </button>
-              <button class="btn btn-link footer_btn" data-hover="首頁">
+              <button onclick="goToFirst()" class="btn btn-link footer_btn" data-hover="首頁">
                 <div>
-                  <a href="index.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-start"></use>
-                    </svg>
-                    <span class="ps-4">First</span>
-                  </a>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-start"></use>
+                  </svg>
+                  <span class="ps-4">First</span>
                 </div>
               </button>
             </div>
@@ -258,41 +257,36 @@
               <script src="js/last_modified.js"></script>
             </div>
             <div class="footer03">
-              <button class="btn btn-link footer_btn" data-hover="回到最上面">
+              <button onclick="goToTop()" class="btn btn-link footer_btn" data-hover="回到最上面">
                 <div>
-                  <a href="#" class="d-flex">
-                    <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-up"></use>
-                    </svg>
-                    <span class="ps-4">Top</span>
-                  </a>
+                  <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-up"></use>
+                  </svg>
+                  <span class="ps-4">Top</span>
                 </div>
               </button>
-              <button class="btn btn-link footer_btn" data-hover="參考文獻">
+              <button onclick="goToNext()" class="btn btn-link footer_btn" data-hover="結論">
                 <div>
-                  <a href="reference.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-right"></use>
-                    </svg>
-                    <span class="ps-4">Next</span>
-                  </a>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-right"></use>
+                  </svg>
+                  <span class="ps-4">Next</span>
                 </div>
               </button>
-              <button class="btn btn-link footer_btn" data-hover="參考文獻">
+              <button onclick="goToLast()" class="btn btn-link footer_btn" data-hover="參考文獻">
                 <div>
-                  <a href="reference.html" class="d-flex">
-                    <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                      <use xlink:href="#footer_arrow-end"></use>
-                    </svg>
-                    <span class="ps-4">Last</span>
-                  </a>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-end"></use>
+                  </svg>
+                  <span class="ps-4">Last</span>
                 </div>
               </button>
-            </div>
+            </div>             
           </div>
         </div>
       </div>
     </footer>
+    <script src="js/footer.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>

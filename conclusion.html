@@ -81,7 +81,7 @@
             </button>
             <!--Mobile Logo-->
             <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-              <img src="images/icons/Badminton_graffiti.png" alt="Logo" style="width: 80vw; height: 10vh;">
+              <img src="images/logo/conclusion_logo.png" alt="Logo" style="width: 80vw; height: 10vh;">
             </a>
             <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
               <div class="offcanvas-body">
@@ -118,25 +118,25 @@
                           <a class="dropdown-item" href="pose.html">人體節點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitting_point_and_hitter.html">擊球點</a>
+                          <a class="dropdown-item" href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitting_point_and_hitter.html">擊球方</a>
+                          <a class="dropdown-item" href="hitting_point_and_hitter.html#hitter">擊球方</a>
                         </li>
                       </ul>
                     </li>
                     <li class="btn btn-group btn-sm" role="group">
                       <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
-                        <a href="conclusion.html">結論</a>
+                        <a href="result.html">結果</a>
                       </button>
                       <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
                       </button>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="conclusion.html">得分方</a>
+                          <a class="dropdown-item" href="result.html#winner">得分方</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="conclusion.html">球路</a>
+                          <a class="dropdown-item" href="result.html#ball_trajectory">球路</a>
                         </li>
                       </ul>
                     </li>
@@ -145,6 +145,11 @@
                         <a href="demo.html">成果展示</a>
                       </button>
                     </li> 
+                    <li class="btn btn-link btn-sm">
+                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
+                        <a href="conclusion.html">結論</a>
+                      </button>
+                    </li>  
                     <li class="btn btn-link btn-sm">
                       <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
                         <a href="reference.html">參考文獻</a>
@@ -162,349 +167,77 @@
         </div>
       </div>
     </header>
-    <div  class="justify-content-center" style="display: flex; flex-direction: row;">
-      <div class="flex-shrink-0 p-3 bg-white aside_chart_flow">
-        <ul class="list-group" style="padding-left: 100px;">
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="index.html">首頁</a>
-            </div>
-            <ul class="list-group aside_2">
-              <li><a href="index.html#summary">摘要</a></li>
-              <li><a href="index.html#motivation">研究動機與目標</a></li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="data.html">資料介紹</a>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="method.html">流程與方法</a>
-            </div>
-            <ul class="list-group aside_2">
-              <li>
-                <a href="edge_detection.html">邊線偵測</a>
-              </li>
-              <li>
-                <a href="ball_tracking.html">羽球軌跡</a>
-              </li>
-              <li>
-                <a href="pose.html">人體節點</a>
-              </li>
-              <li>
-                <a href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
-              </li>
-              <li>
-                <a href="hitting_point_and_hitter.html#hitter">擊球方</a>
-              </li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="conclusion.html">結論</a>
-            </div>
-            <ul class="list-group aside_2">
-              <li><a href="conclusion.html#winner">得分方</a></li>
-              <li><a href="conclusion.html#ball_trajectory">球路</a></li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="demo.html">成果展示</a>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="reference.html">參考文獻</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="aside_height">
-        <!--WINNER-->
-        <section class="hero-section p-5">
-          <div class="hero-content text-center p-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1 id="conclusion_winner" class="display-2 fst-italic">得分方</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div id="winner" class="post-wrap">
-          <div class="container">
-            <div class="row">
-              <main class="post-list">
-                <div class="row">
-                  <article class="post-item">
-                    <div class="post-content">
-                      <div class="post-description">
-                        <p>&emsp;&emsp;找出每部影片中最後一個擊球點到落地的羽球軌跡，經觀察我們大致將球路分成兩種類型，再依照斜率做下一步的判斷，第一類(左圖)是選手將羽球向前方打擊，羽球呈現類似於平球或殺球的軌跡，角度變化較小，而第二類(右圖)則是選手將羽球往上方打，直到羽球達到最高點，球速與動能皆為0後開始往下墜，直到落地彈起，類似具有拋物線的軌跡，軌跡角度變化較大。</p>
-                      </div>
-                      <div class="row align-items-center" style="height: 500px;">
-                        <div class="col-lg-6">
-                            <div id="winner_img" class="image-container" style="height: 450px;">
-                              <img id="myImage" src="images/method/winner/winner1.png">
-                              <p style="text-align: center; font-size: 15px;">（軌跡向前）</p>
-                            </div> 
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="winner_img" class="image-container" style="height: 450px;">
-                                <img id="myImage" src="images/method/winner/winner2.png">
-                                <p style="text-align: center; font-size: 15px;">（軌跡向上）</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="post-description">
-                        <p>&emsp;&emsp;發生軌跡向前情況時，若球不在其原路徑上且偏離超過10度時，便將其判斷為已落地，並進而確認其是否出界。</p>
-                      </div>
-                      <div class="align-items-center">
-                        <img id="myImage" src="images/method/winner/ing1.png">
-                        <p style="text-align: center; font-size: 15px;">（軌跡向前）</p>
-                      </div>
-                      <div class="post-description">
-                        <p>&emsp;&emsp;若軌跡向上路徑的情況，當球路角度連續小於20度，並且之後角度出現大幅變動時，則判斷已落地，並進而確認是否出界。</p>
-                      </div>
-                      <div class="align-items-center">
-                        <img id="myImage" src="images/method/winner/ing2.png">
-                        <p style="text-align: center; font-size: 15px;">（軌跡向上）</p>
-                    </div>
-                      <div class="post-description">
-                        <p>&emsp;&emsp;此外軌跡異常、羽球被選手擋住等原因都會影響我們判斷得分方，因此去除這些因素影響的話，全資料共203筆資料，正確做出判斷的有187部影片，16部影片是判斷錯誤的，其原因是因為軌跡從網子下穿越對面因此判斷錯誤，準確率為92.12%，其中符合路徑一的有71部影片準確率為88.73%，符合路徑二的有132部影片準確率為93.94%。</p>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </main>
-            </div>
-          </div>
-        </div>
-        <!--BALL TRAJECTORY-->
-        <section class="hero-section p-5">
-          <div class="hero-content text-center p-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1 id="conclusion_trajectory" class="display-2 fst-italic">球路</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div id="ball_trajectory" class="post-wrap">
-          <div class="container">
-            <div class="row">
-              <main class="post-list">
-                <div class="row">
-                  <article class="post-item">
-                    <div class="post-content">
-                      <div class="post-description">
-                        <p>&emsp;&emsp;為了準確的判斷羽球的球路，使用了不同的模型去對其進行分類。</p>
-                      <p>&emsp;&emsp;訓練的資料，除了先前透過不同偵測方式所獲取的羽球軌跡、人物節點及場地外，亦結合這三樣資料產生新的特徵值，去加以提高模型訓練的準確度。</p>
-                      </div>
-                      <div class="post-description">
-                        <p>&emsp;&emsp;而在球路中，我們一共分成了下面8個類別：</p>
-                        <table>
-                          <tr>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                          </tr>
-                          <tr>
-                            <td>發短球</td>
-                            <td>發長球</td>
-                            <td>長球</td>
-                            <td>平球</td>
-                            <td>殺球</td>
-                            <td>網前小球</td>
-                            <td>切球</td>
-                            <td>挑球</td>
-                            <td>推撲球</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="post-description">
-                        <p>變數內容:</p>
-                        <p>人物節點：2位選手25個節點的(x、y、z)坐標，一共有75個變數。</p>
-                        <p>場地座標：場地打擊區域端點，8個點的(x、y)坐標，一共有16個變數。</p>
-                        <p>羽球移動距離：1個變數。</p>
-                        <p>羽球移動速度：1個變數。</p>
-                        <p>羽球角度變化量：羽球的(x、y)坐標，一共2個變數。</p>
-                        <p>羽球軌跡切成3段的資料：將兩個擊球幀之間的資料分成3等分，分別計算每段的距離和角度變化量，一共6個變數。</p>
-                        <p>腳與發球線的y變化量：兩位選手的雙腳與發球線的y變化量，一共4個變數。</p>
-                        <p>腳與中線的x變化量：兩位選手的雙腳與中線的x變化量，一共4個變數。</p>
-                        <p>人體節點的前後5幀變化量：兩位選手的前後5幀變化量，一共18個變數</p>
-                        <p>手肘角度變化量：打擊者的手肘角度變化的(x、y)坐標，一共2個變數。</p>
-                        <p>擊球者：該球的擊球者是誰，1個變數。</p>
-                        <p>是否有打對角：是或否，1個變數。</p>
-                      </div>
-                      <div class="post-description">
-                        <p>一共使用了四種機器學習的方式去進行分類訓練，分別是LogisticRegression、Svm、RandomForest及XGBoost，以下為訓練結果。</p>
-                        <table>
-                          <thead>
-                            <th>分類器/準確率</th>
-                            <th>訓練集準確率</th>
-                            <th>測試集準確率</th>
-                          </thead>
-                          <tr>
-                            <td>LogisticRegression</td>
-                            <td>0.82</td>
-                            <td>0.73</td>
-                          </tr>
-                          <tr>
-                            <td>Svm</td>
-                            <td>0.78</td>
-                            <td>0.70</td>
-                          </tr>
-                          <tr>
-                            <td>RandomForest</td>
-                            <td>0.80</td>
-                            <td>0.70</td>
-                          </tr>
-                          <tr>
-                            <td>XGBoost</td>
-                            <td>0.77</td>
-                            <td>0.71</td>
-                          </tr>
-                        </table>
-                        <p>從上方的表格來看，其實整體的訓練集準確率都落在或接近0.8左右，而測試也都落在0.7左右，因此我們挑選了準確率相對高的LogisticRegression來當作最後使用的模型。</p>
-                      </div>
-                      <div class="align-items-center">
-                        <div class="row align-items-center" style="display: flex; flex-direction: row; align-items: center;">
-                          <p>但我們也想要從各種球路來觀察，是哪幾個種類比較容易被分錯，導致準確度不高，下表是各類的準確率及其混淆矩陣。</p>
-                          <div class="col-lg-6" style="text-align: center;">
-                            <table>
-                              <thead>
-                                <td>球種/準確率</td>
-                                <td>發短球(0)</td>
-                                <td>發長球(1)</td>
-                                <td>長球(2)</td>
-                                <td>平球(3)</td>
-                                <td>殺球(4)</td>
-                                <td>小球(5)</td>
-                                <td>切球(6)</td>
-                                <td>挑球(7)</td>
-                              </thead>
-                              <th>
-                                <td>準確率</td>
-                                <td>0.82</td>
-                                <td>0.69</td>
-                                <td>0.61</td>
-                                <td>0.40</td>
-                                <td>0.80</td>
-                                <td>0.85</td>
-                                <td>0.51</td>
-                                <td>0.70</td>
-                              </th>
-                            </table>
-                          </div>
-                          <div class="col-lg-6" style="text-align: center;">
-                              <div class="image-container">
-                                <img id="smallImage" src="images/method/ball_trajectory/confusion_matrix.jpg">
-                              </div>
-                            <p style="text-align: center; font-size: 15px;">（混淆矩陣）</p>
-                          </div>
-                          <p>其實觀察後會發現平球(3)、切球(6)的準確率較低，原因可能是這兩種資料的筆數都相對較少，也可能我們目前所使用的特徵還不足以對這些球路進行分類而導致。</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </main>
-            </div>
-          </div>
-        </div>
-        <footer id="footer" class="mt-5">
-          <div class="border-top py-4">
-            <div class="container-lg">
-              <div class="row justify-content-center footer-content">
-                <div class="footer01">
-                  <button class="btn btn-link footer_btn" data-hover="回到最上面">
-                    <div>
-                      <a href="#" class="d-flex">
-                        <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                          <use xlink:href="#footer_arrow-up"></use>
-                        </svg>
-                        <span class="ps-4">Top</span>
-                      </a>
-                    </div>
-                  </button>
-                  <button class="btn btn-link footer_btn" data-hover="擊球點">
-                    <div>
-                      <a href="hitting_point_and_hitter.html" class="d-flex">
-                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                          <use xlink:href="#footer_arrow-left"></use>
-                        </svg>
-                        <span class="ps-4">Previous</span>
-                      </a>
-                    </div>
-                  </button>
-                  <button class="btn btn-link footer_btn" data-hover="首頁">
-                    <div>
-                      <a href="index.html" class="d-flex">
-                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                          <use xlink:href="#footer_arrow-start"></use>
-                        </svg>
-                        <span class="ps-4">First</span>
-                      </a>
-                    </div>
-                  </button>
-                </div>
-                <div class="footer02">
-                  <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
-                    羽球比賽辨識系統專題團隊。All Rights Reserved.
-                  </p>
-                  <p id="lastModified" style="text-align: center;"></p>
-                  <script src="js/last_modified.js"></script>
-                </div>
-                <div class="footer03">
-                  <button class="btn btn-link footer_btn" data-hover="回到最上面">
-                    <div>
-                      <a href="#" class="d-flex">
-                        <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
-                          <use xlink:href="#footer_arrow-up"></use>
-                        </svg>
-                        <span class="ps-4">Top</span>
-                      </a>
-                    </div>
-                  </button>
-                  <button class="btn btn-link footer_btn" data-hover="成果展示">
-                    <div>
-                      <a href="demo.html" class="d-flex">
-                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                          <use xlink:href="#footer_arrow-right"></use>
-                        </svg>
-                        <span class="ps-4">Next</span>
-                      </a>
-                    </div>
-                  </button>
-                  <button class="btn btn-link footer_btn" data-hover="參考文獻">
-                    <div>
-                      <a href="reference.html" class="d-flex">
-                        <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
-                          <use xlink:href="#footer_arrow-end"></use>
-                        </svg>
-                        <span class="ps-4">Last</span>
-                      </a>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+    <div class="justify-content-center" style="display: flex; flex-direction: row;">
+      
     </div>
+    <footer id="footer" class="mt-5">
+      <div class="border-top py-4">
+        <div class="container-lg">
+          <div class="row justify-content-center footer-content">
+            <div class="footer01">
+              <button onclick="goToTop()" class="btn btn-link footer_btn" data-hover="回到最上面">
+                <div>
+                  <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-up"></use>
+                  </svg>
+                  <span class="ps-4">Top</span>
+                </div>
+              </button>
+              <button onclick="goToPrevious()" class="btn btn-link footer_btn" data-hover="成果展示">
+                <div>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-left"></use>
+                  </svg>
+                  <span class="ps-4">Previous</span>
+                </div>
+              </button>
+              <button onclick="goToFirst()" class="btn btn-link footer_btn" data-hover="首頁">
+                <div>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-start"></use>
+                  </svg>
+                  <span class="ps-4">First</span>
+                </div>
+              </button>
+            </div>
+            <div class="footer02">
+              <p style="text-align: center;">Copyright &copy; 2024 靜宜大學資料科學暨大數據分析與應用學系
+                羽球比賽辨識系統專題團隊。All Rights Reserved.
+              </p>
+              <p id="lastModified" style="text-align: center;"></p>
+              <script src="js/last_modified.js"></script>
+            </div>
+            <div class="footer03">
+              <button onclick="goToTop()" class="btn btn-link footer_btn" data-hover="回到最上面">
+                <div>
+                  <svg class="arrow-up svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-up"></use>
+                  </svg>
+                  <span class="ps-4">Top</span>
+                </div>
+              </button>
+              <button onclick="goToNext()" class="btn btn-link footer_btn" data-hover="參考文獻">
+                <div>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-right"></use>
+                  </svg>
+                  <span class="ps-4">Next</span>
+                </div>
+              </button>
+              <button onclick="goToLast()" class="btn btn-link footer_btn" data-hover="參考文獻">
+                <div>
+                  <svg class="arrow-right svg-primary position-absolute" width="20" height="20">
+                    <use xlink:href="#footer_arrow-end"></use>
+                  </svg>
+                  <span class="ps-4">Last</span>
+                </div>
+              </button>
+            </div>             
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/footer.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha3/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
