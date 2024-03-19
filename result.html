@@ -301,7 +301,7 @@
             </div>
           </div>
         </section>
-        <div id="ball_trajectory" class="post-wrap">
+        <div id="result" class="post-wrap">
           <div class="container">
             <div class="row">
               <main class="post-list">
@@ -314,7 +314,7 @@
                       </div>
                       <div class="post-description">
                         <p>&emsp;&emsp;而在球路中，我們一共分成了下面8個類別：</p>
-                        <table>
+                        <table style="font-size: 22px;">
                           <tr>
                             <td>0</td>
                             <td>1</td>
@@ -356,7 +356,7 @@
                       </div>
                       <div class="post-description">
                         <p>一共使用了四種機器學習的方式去進行分類訓練，分別是LogisticRegression、Svm、RandomForest及XGBoost，以下為訓練結果。</p>
-                        <table>
+                        <table style="font-size: 22px;">
                           <thead>
                             <th>分類器/準確率</th>
                             <th>訓練集準確率</th>
@@ -389,7 +389,7 @@
                         <div class="row align-items-center" style="display: flex; flex-direction: row; align-items: center;">
                           <p>但我們也想要從各種球路來觀察，是哪幾個種類比較容易被分錯，導致準確度不高，下表是各類的準確率及其混淆矩陣。</p>
                           <div class="col-lg-6" style="text-align: center;">
-                            <table>
+                            <table style="font-size: 22px;">
                               <thead>
                                 <td>球種/準確率</td>
                                 <td>發短球(0)</td>
@@ -401,7 +401,7 @@
                                 <td>切球(6)</td>
                                 <td>挑球(7)</td>
                               </thead>
-                              <th>
+                              <tr>
                                 <td>準確率</td>
                                 <td>0.82</td>
                                 <td>0.69</td>
@@ -411,14 +411,13 @@
                                 <td>0.85</td>
                                 <td>0.51</td>
                                 <td>0.70</td>
-                              </th>
+                              </tr>
                             </table>
                           </div>
-                          <div class="col-lg-6" style="text-align: center;">
+                          <div class="col-lg-6" style="text-align: center;;">
                               <div class="image-container">
-                                <img id="smallImage" src="images/method/ball_trajectory/confusion_matrix.jpg">
+                                <img id="smallImage" src="images/method/ball_trajectory/confusion_matrix.jpg" style="width: 550px; height: 400px;">
                               </div>
-                            <p style="text-align: center; font-size: 15px;">（混淆矩陣）</p>
                           </div>
                           <p>其實觀察後會發現平球(3)、切球(6)的準確率較低，原因可能是這兩種資料的筆數都相對較少，也可能我們目前所使用的特徵還不足以對這些球路進行分類而導致。</p>
                         </div>
