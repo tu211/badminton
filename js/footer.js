@@ -25,10 +25,10 @@ function goToPrevious() {
         window.location.href = "ball_tracking.html";
     } else if (window.location.href.indexOf("hitting_point_and_hitter.html") > -1) {
         window.location.href = "pose.html";
-    } else if (window.location.href.indexOf("result.html") > -1) {
+    } else if (window.location.href.indexOf("winner_and_ball_trajectory.html") > -1) {
         window.location.href = "hitting_point_and_hitter.html";
     } else if (window.location.href.indexOf("demo.html") > -1) {
-        window.location.href = "result.html";
+        window.location.href = "winner_and_ball_trajectory.html";
     } else if (window.location.href.indexOf("conclusion.html") > -1) {
         window.location.href = "demo.html";
     } else if (window.location.href.indexOf("reference.html") > -1) {
@@ -52,8 +52,8 @@ function goToNext() {
     } else if (window.location.href.indexOf("pose.html") > -1) {
         window.location.href = "hitting_point_and_hitter.html";
     } else if (window.location.href.indexOf("hitting_point_and_hitter.html") > -1) {
-        window.location.href = "result.html";
-    } else if (window.location.href.indexOf("result.html") > -1) {
+        window.location.href = "winner_and_ball_trajectory.html";
+    } else if (window.location.href.indexOf("winner_and_ball_trajectory.html") > -1) {
         window.location.href = "demo.html";
     } else if (window.location.href.indexOf("demo.html") > -1) {
         window.location.href = "conclusion.html";

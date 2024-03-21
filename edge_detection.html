@@ -118,25 +118,16 @@
                           <a class="dropdown-item" href="pose.html">人體節點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
+                          <a class="dropdown-item" href="hitter_and_hitting_point.html#hitter">擊球方</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="hitting_point_and_hitter.html#hitter">擊球方</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="btn btn-group btn-sm" role="group">
-                      <button type="button" class="btn btn-link btn-sm btn-outline-light" style="text-decoration: none; font-size: 20px;">
-                        <a href="result.html">結果</a>
-                      </button>
-                      <button type="button" class="btn btn-link btn-sm btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a class="dropdown-item" href="result.html#winner">得分方</a>
+                          <a class="dropdown-item" href="hitter_and_hitting_point.html#hitting_point">擊球點</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="result.html#ball_trajectory">球路</a>
+                          <a class="dropdown-item" href="winner_and_ball_trajectory.html#winner">得分方</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="winner_and_ball_trajectory.html#ball_trajectory">球路</a>
                         </li>
                       </ul>
                     </li>
@@ -195,20 +186,17 @@
                 <a href="pose.html">人體節點</a>
               </li>
               <li>
-                <a href="hitting_point_and_hitter.html#hitting_point">擊球點</a>
+                <a href="hitter_and_hitting_point.html#hitter">擊球方</a>
               </li>
               <li>
-                <a href="hitting_point_and_hitter.html#hitter">擊球方</a>
+                <a href="hitter_and_hitting_point.html#hitting_point">擊球點</a>
               </li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <div class="aside_1">
-              <a href="result.html">結果</a>
-            </div>
-            <ul class="list-group aside_2">
-              <li><a href="result.html#winner">得分方</a></li>
-              <li><a href="result.html#ball_trajectory">球路</a></li>
+              <li>
+                <a href="winner_and_ball_trajectory.html#winner">得分方</a>
+              </li>
+              <li>
+                <a href="winner_and_ball_trajectory.htmlball_trajectory">球路</a>
+              </li>
             </ul>
           </li>
           <li class="list-group-item">
@@ -236,22 +224,22 @@
                 <article class="post-item">
                   <div class="post-content">
                     <div class="small_flow_chart">
-                      <div class="item"><a href="#hsv">影像轉換</a></div>
+                      <div class="item"><a href="#sfc01">影像轉換</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#houghline">生成線段座標</a></div>
+                      <div class="item"><a href="#sfc02">生成線段座標</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#rows_cols">場地校正</a></div>
+                      <div class="item"><a href="#sfc03">場地校正</a></div>
                     </div>
-                    <section>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>影像轉換</strong></h2>
+                    <section id="cf01">
+                      <h2 id="scf01" class="fs-1 text-capitalize fst-italic"><strong>影像轉換</strong></h2>
                       <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 色彩格式轉換</strong></h2>
                       <div class="post-description">
                         <p>&emsp;&emsp;將圖片顏色格式進行轉換，從RGB(原色光谱)轉為HSV(色调（H），饱和度（S），明度（V）)。是因將圖片進行轉換後，更加有利於去進行顏色的提取和分辨，故進行轉換。</p>
@@ -292,7 +280,7 @@
                     </div>
                     </section>
                     <section>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>生成線段座標</strong></h2>
+                      <h2 id="sfc02" class="fs-1 text-capitalize fst-italic"><strong>生成線段座標</strong></h2>
                       <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 線段檢測</strong></h2>
                       <div class="post-description">
                         <p>&emsp;&emsp;將處理好的圖片使用Canny邊緣檢測，可藉此看出場地的部分是否完整辨識。</p>
@@ -314,7 +302,7 @@
                       </div>
                     </section>
                     <section>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>場地校正</strong></h2>
+                      <h2 id="sfc03" class="fs-1 text-capitalize fst-italic"><strong>場地校正</strong></h2>
                       <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 刪除多餘線段</strong></h2>
                       <div class="post-description">
                         <p>&emsp;&emsp;在圖中會發現，被繪製出的線條數極多，故將線條分為水平(row)和垂直(column)兩類去進行處理。</p>
@@ -349,7 +337,7 @@
                             </div>
                           <p style="text-align: center; font-size: 15px;">（COLS）</p>
                         </div>
-                    </div>
+                      </div>
                       <div class="post-description">  
                         <p>&emsp;&emsp;各自處理完後，再將兩者結合，產生出一組完整的場地座標。</p>
                       </div>
