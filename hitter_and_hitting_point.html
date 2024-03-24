@@ -217,6 +217,101 @@
         </ul>
       </div>
       <div class="aside_height">
+        <!--HITTER-->
+        <section class="hero-section p-5">
+          <div class="hero-content text-center p-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 id="title4" class="display-2 fst-italic">擊球方</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="hitter" class="post-wrap">
+          <div class="container">
+            <div class="row">
+              <main class="post-list">
+                <div class="row">
+                  <article class="post-item">
+                    <div class="post-content">
+                      <table style="font-size: 22px;">
+                        <p>&emsp;&emsp;我們判斷擊球方的方式，利用已得到的所有擊球幀，共2485筆資料，特徵值的部分包含了羽球軌跡座標（x、y座標）、場地節點（8個交點的x、y座標）、人物節點（兩個人、xyz座標、25個節點）、球與手的距離（羽球和兩位球員的直徑距離）共170個再加上要預測的擊球方做為y共171個特徵值，並以70%作為訓練集30%為預測集來訓練模型，分別為Perceptron(感知器)、Logistic Regression(邏輯斯回歸)、SVM(支援向量機)、Decision Tree(決策樹)、Random decision forests(隨機森林)、XGBoost等6項分類器進行訓練。</p>
+                        <p>訓練結果如下：</p>
+                        <tbody>
+                          <tr>
+                            <th>模型</th>
+                            <th>Perceptron<br>（感知器）</th>
+                            <th style="color: red;">Logistic Regression<br>（邏輯斯回歸）</th>
+                            <th>SVM<br>（支援向量機）</th>
+                            <th>Decision Tree<br>（決策樹）</th>
+                            <th>Random Forest<br>（隨機森林）</th>
+                            <th>XGBoost</th>
+                          </tr>
+                          <tr>
+                            <th>測試集 準確率</th>
+                            <th>0.88</th>
+                            <th style="color: red;">0.96</th>
+                            <th>0.94</th>
+                            <th>0.86</th>
+                            <th>0.88</th>
+                            <th>0.82</th>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p>測試結果準確率以「邏輯斯回歸」最高，所以挑選邏輯斯回歸來做我們的模型。</p>
+                    </div>
+                    <div class="post-content">
+                      <table style="font-size: 22px;">
+                        <p>&emsp;&emsp;方法與擊球方模型更新，資料從2485筆變成3269筆，特徵值的部分維持不變，一樣是171筆，並同樣以70%作為訓練集30%為測試集來訓練下表的6項分類器模型。</p>
+                        <tbody>
+                          <tr>
+                            <th>分類器</th>
+                            <th>測試集<br>準確率</th>
+                            <th>全部資料<br>的準確率</th>
+                          </tr>
+                          <tr>
+                            <th>Perceptron</th>
+                            <th>89.09%</th>
+                            <th>88.34%</th>
+                          </tr>
+                          <tr>
+                            <th>Logistic Regression</th>
+                            <th>95.41%</th>
+                            <th>95.35%</th>
+                          </tr>
+                          <tr>
+                            <th>SVM</th>
+                            <th>95.31%</th>
+                            <th>96.15%</th>
+                          </tr>
+                          <tr>
+                            <th>Decision Tree</th>
+                            <th>88.58%</th>
+                            <th>89.38%</th>
+                          </tr>
+                          <tr>
+                            <th>Random Decision Forests</th>
+                            <th>87.36%</th>
+                            <th>88.13%</th>
+                          </tr>
+                          <tr>
+                            <th>XGBoost</th>
+                            <th>88.58%</th>
+                            <th>89.66%</th>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p>預測結果：0代表的是選手A，1代表的是選手B。</p>
+                      <p>我們預測結果是採用多數決的方式，因為結果不是0就是1，於是我們將所有模型的準確率加總起來接著除2（0或者1有兩個數）以此做為判斷的基準（272.165），意思是，如果預測結果為1的所有模型準確率加起來大於基準（272.165）那麼就判斷擊球方為1（選手B），若預測結果為1的模型準確率加總起來小於基準（272.165）則判斷擊球方為0（選手A）。</p>
+                    </div>
+                  </article>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
         <!--HITTING_POINT-->
         <section class="hero-section p-5">
           <div class="hero-content text-center p-5">
@@ -249,73 +344,6 @@
                 </main>
               </div>
             </div>
-        </div>
-        <!--HITTER-->
-        <section class="hero-section p-5">
-          <div class="hero-content text-center p-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1 id="title4" class="display-2 fst-italic">擊球方</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div id="hitter" class="post-wrap">
-          <div class="container">
-            <div class="row">
-              <main class="post-list">
-                <div class="row">
-                  <article class="post-item">
-                    <div class="post-content">
-                      <table style="font-size: 22px;">
-                        <p>資料大小：3269（總筆數）*171（變數）</p>
-                        <p>變數內容：
-                          <ul>
-                            <li>X1＝羽球：二維座標［ｘ、ｙ］</li>
-                            <li>X2＝場地：8個點（單打線＋發球線）</li>
-                            <li>X3＝人物：25(人物節點)*三維座標［ｘ、ｙ、ｚ］</li>
-                            <li>X4＝球跟手的距離</li>
-                            <li>Ｙ：擊球方</li>
-                          </ul>
-                        </p>
-                        <tbody>
-                          <tr>
-                            <th>模型</th>
-                            <th>Perceptron<br>（感知器）</th>
-                            <th style="color: red;">Logistic Regression<br>（邏輯斯回歸）</th>
-                            <th>SVM<br>（支援向量機）</th>
-                            <th>Decision Tree<br>（決策樹）</th>
-                            <th>Random Forest<br>（隨機森林）</th>
-                            <th>XGBoost</th>
-                          </tr>
-                          <tr>
-                            <th>訓練集 準確率</th>
-                            <th>0.88</th>
-                            <th>0.95</th>
-                            <th style="color: red;">0.95</th>
-                            <th>0.89</th>
-                            <th>0.87</th>
-                            <th>0.89</th>
-                          </tr>
-                          <tr>
-                            <th>訓練集+測試集 準確率</th>
-                            <th>0.88</th>
-                            <th>0.95</th>
-                            <th style="color: red;">0.96</th>
-                            <th>0.89</th>
-                            <th>0.88</th>
-                            <th>0.90</th>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </article>
-                </div>
-              </main>
-            </div>
-          </div>
         </div>
         <footer id="footer" class="mt-5">
           <div class="border-top py-4">

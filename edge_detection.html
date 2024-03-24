@@ -238,10 +238,12 @@
                       </div>
                       <div class="item"><a href="#sfc03">場地校正</a></div>
                     </div>
-                    <section id="cf01">
-                      <h2 id="scf01" class="fs-1 text-capitalize fst-italic"><strong>影像轉換</strong></h2>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 色彩格式轉換</strong></h2>
+                    <section>
+                      <div id="sfc01">
+                        <h2 class="fs-1 text-capitalize fst-italic"><strong>影像轉換</strong></h2>
+                      </div>
                       <div class="post-description">
+                        <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 色彩格式轉換</strong></h2>
                         <p>&emsp;&emsp;將圖片顏色格式進行轉換，從RGB(原色光谱)轉為HSV(色调（H），饱和度（S），明度（V）)。是因將圖片進行轉換後，更加有利於去進行顏色的提取和分辨，故進行轉換。</p>
                       </div>
                       <div class="row align-items-center">
@@ -258,8 +260,8 @@
                           <p style="text-align: center; font-size: 15px;">（HSV）</p>
                         </div>
                       </div>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 色彩辨識及遮罩</strong></h2>
                       <div class="post-description">
+                        <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 色彩辨識及遮罩</strong></h2>
                         <p>&emsp;&emsp;因圖片中不僅有場地，還含有其餘資訊，故為了僅提取出場地，利用場地內外的顏色差距，去加以凸顯場地。</p>
                         <p>&emsp;&emsp;主要是透過HSV中，色調（H），飽和度（S），明度（V）的數值差異，透過調整這三樣參數，去保留照片中和場地一致的顏色區域，並在此時將照片顏色轉換為灰階，若是和場地一致色調的區域將顯示為白色，其餘區域皆為黑色，如同下圖一致。</p>
                         <p>&emsp;&emsp;而轉換為灰階後可以較為明顯的觀察出場地，為了更加有利於觀察和後續操作，會將這個灰階圖片變成原圖的遮罩，此舉便是將白色區域的原圖保留，其餘皆為黑色，不會顯現，如圖一致。</p>
@@ -277,12 +279,14 @@
                             </div>
                           <p style="text-align: center; font-size: 15px;">（加疊）</p>
                         </div>
-                    </div>
+                      </div>
                     </section>
                     <section>
-                      <h2 id="sfc02" class="fs-1 text-capitalize fst-italic"><strong>生成線段座標</strong></h2>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 線段檢測</strong></h2>
+                      <div id="sfc02">
+                        <h2 id="sfc02" class="fs-1 text-capitalize fst-italic"><strong>生成線段座標</strong></h2>
+                      </div>
                       <div class="post-description">
+                        <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 線段檢測</strong></h2>
                         <p>&emsp;&emsp;將處理好的圖片使用Canny邊緣檢測，可藉此看出場地的部分是否完整辨識。</p>
                         <p>&emsp;&emsp;使用Canny邊緣檢測，去偵測有遮罩的原圖，其會針對所觀察到的線條去加以繪製。因此圖上的遮罩便可以使其辨識出的線條數量減少，降低干擾值。</p>
                       </div>
@@ -290,8 +294,8 @@
                         <img id="myImage" src="images/method/edge_detection/canny.png">
                         <p style="text-align: center; font-size: 15px;">（Canny）</p>
                       </div>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 產生線段座標</strong></h2>
                       <div class="post-description">
+                        <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 產生線段座標</strong></h2>
                         <p>&emsp;&emsp;將Canny所繪製出的線，進行霍夫轉換，並透過調整霍夫轉換公式中的參數值，去提取場地中的線段。</p>
                         <p>&emsp;&emsp;霍夫轉換提供的僅有直線的極座標(rho,theta)，但為使後續使用便利，故將極座標轉換為直角坐標。</p>
                         <p>&emsp;&emsp;將座標轉換後提取出線段的端點值，並繪製在原圖上。</p>
@@ -302,9 +306,11 @@
                       </div>
                     </section>
                     <section>
-                      <h2 id="sfc03" class="fs-1 text-capitalize fst-italic"><strong>場地校正</strong></h2>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 刪除多餘線段</strong></h2>
+                      <div id="sfc03">
+                        <h2 id="sfc03" class="fs-1 text-capitalize fst-italic"><strong>場地校正</strong></h2>
+                      </div>
                       <div class="post-description">
+                        <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>1. 刪除多餘線段</strong></h2>
                         <p>&emsp;&emsp;在圖中會發現，被繪製出的線條數極多，故將線條分為水平(row)和垂直(column)兩類去進行處理。</p>
                       </div> 
                       <div class="row align-items-center">
@@ -345,8 +351,8 @@
                         <img id="myImage" src="images/method/edge_detection/two_rows_and_two_cols.png">
                         <p style="text-align: center; font-size: 15px;">（線段合併）</p>
                       </div>
-                      <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 計算最終場地座標</strong></h2>
                       <div class="post-description">
+                        <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 計算最終場地座標</strong></h2>
                         <p>&emsp;&emsp;由於先前透過線段處理，所產生的座標仍有少許誤差，導致有些場地線不齊全或歪斜，因此使用透視變換去再次判斷場地，透過此方式將因攝影角度而變形的場地，校正為長方形，從而產生一組新的場地線座標。</p>
                       </div>
                       <div class="align-items-center">
