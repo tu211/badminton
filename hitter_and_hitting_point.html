@@ -327,7 +327,7 @@
                     <div class="post-content">
                       <p>計算羽球的向量角度</p>
                       <div class="align-items-center">
-                        <img id="myImage" src="images/method/hitter/img03.png">
+                        <img id="myImage" src="images/method/hitter/img03.png" style="width: 400px; height: 500px;">
                         <p style="text-align: center; font-size: 15px;">（羽球的向量角度算法）</p>
                       </div> 
                       <p>最下方是0度角，不管是從左還是右邊往上移動，角度皆是正數，最高點為180度角。</p>
@@ -348,6 +348,132 @@
                         <p>藍線為擊球時間點</p>
                         <p>上方兩張範例為影片中的兩個擊球點時段，可以發現在擊球時間點，角度會突然增加。</p>
                       </div>  
+                    </div>
+                    <div class="post-content">
+                      <p>符號 | 為判斷擊球方的時間點，以此做為區段的分割</p>
+
+                      <p>擊球時間點  [38, 104, 121, 149, 166, 200, 239]</p>
+                      <p>先用羽球的向量角度初步預測 [15, 37, 122, 148, 200, 243, 291]</p>
+
+                      <p>接著利用擊球方模型的結果判斷擊球時間點</p>
+                      <p>擊球方模型的結果&emsp;69&emsp;&emsp;|&emsp;&emsp;114&emsp;&emsp;|&emsp;&emsp;128&emsp;&emsp;|&emsp;&emsp;160&emsp;&emsp;|&emsp;&emsp;174&emsp;&emsp;|&emsp;&emsp;217&emsp;&emsp;|&emsp;&emsp;243</p>
+                      <p>擊球時間點&emsp;&emsp;&emsp;&emsp;38&emsp;&emsp;  |  104  |  121  |  149  |  166  |  200  |  239   |</p>
+                      <p>初步預測結果&emsp;&emsp;&emsp;15, 37 |&emsp;&emsp;|  122  |  148  |       |  200  | 243 | 291</p>
+                      <table>
+                        <tr>
+                          <td>擊球方模型的結果</td>
+                          <td>69</td>
+                          <td>114</td>
+                          <td>128</td>
+                          <td>160</td>
+                          <td>174</td>
+                          <td>217</td>
+                          <td>243</td>
+                        </tr>
+                        <tr>
+                          <td>擊球時間點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td>15, 37</td>
+                          <td></td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td></td>
+                          <td>200</td>
+                          <td>243</td>
+                          <td>291</td>
+                        </tr>
+                      </table>
+
+                      <p>羽球在落地後會因為彈起，所以有一次的角度改變，因此要將最後一個擊球點刪除</p>
+                      <p>發球前羽球容易被擋住或偵測到其他東西導致多偵測，所以要將第一個多預測的刪除</p>
+                      <p>擊球方模型的結果    69     114     128    160    174     217    243</p>
+                      <p>擊球時間點       38  |  104  |  121  |  149  |  166  |  200  |  239   |</p>
+                      <p>初步預測結果      37 |        |  122  |  148  |       |  200  |  243   | </p>
+                      <table>
+                        <tr>
+                          <td>擊球方模型的結果</td>
+                          <td>69</td>
+                          <td>114</td>
+                          <td>128</td>
+                          <td>160</td>
+                          <td>174</td>
+                          <td>217</td>
+                          <td>243</td>
+                        </tr>
+                        <tr>
+                          <td>擊球時間點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td style="color: red;">37</td>
+                          <td></td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td></td>
+                          <td>200</td>
+                          <td>243</td>
+                        </tr>
+                      </table>
+
+                      <p>然後將未偵測到的時間段降低標準重新偵測，原本的標準為前面三幀的角度都要小於50度，又或者連續三幀角度都需要大於50度，因此降低標準就是調整參數，直到出現預測的擊球點。</p>
+                      <p>擊球方模型的結果    69     114     128    160    174     217    243</p>
+                      <p>擊球時間點       38  |  104  |  121  |  149  |  166  |  200  |  239   |</p>
+                      <p>預測結果          37 |   106  |  122  |  148  |  166  |  200  |  243  | </p>
+                      <table>
+                        <tr>
+                          <td>擊球方模型的結果</td>
+                          <td>69</td>
+                          <td>114</td>
+                          <td>128</td>
+                          <td>160</td>
+                          <td>174</td>
+                          <td>217</td>
+                          <td>243</td>
+                        </tr>
+                        <tr>
+                          <td>擊球時間點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td>37</td>
+                          <td style="color: red;">106</td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td style="color: red;">166</td>
+                          <td>200</td>
+                          <td>243</td>
+                        </tr>
+                      </table>
+                      <p>下方圖片擊球時間點104 可發現不降低標準難以偵測到</p>
+                      <div class="post-content">
+                        <p>計算羽球的向量角度</p>
+                        <div class="align-items-center">
+                          <img id="myImage" src="images/method/hitter/img06.png">
+                        </div> 
+                      </div>
                     </div>
                   </article>
                 </div>
