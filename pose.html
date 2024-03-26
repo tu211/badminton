@@ -195,7 +195,7 @@
                 <a href="winner_and_ball_trajectory.html#winner">得分方</a>
               </li>
               <li>
-                <a href="winner_and_ball_trajectory.htmlball_trajectory">球路</a>
+                <a href="winner_and_ball_trajectory.html#ball_trajectory">球路</a>
               </li>
             </ul>
           </li>
@@ -381,7 +381,7 @@
                       </div>
                       <p>&emsp;&emsp;OPENPOSE所輸出的json檔，為了後續使用便利，因此將其輸出的檔案，使用多個自訂義的程式去校正，並輸出csv檔，主要執行流程如下圖</p>
                       <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>資料整理</strong></h2>
-                      <h2 id="json" class="fs-1 text-capitalize fst-italic"><strong>讀取第一個json檔</strong></h2>
+                      <h2 id="json" class="fs-1 text-capitalize fst-italic"><strong>1. 讀取第一個json檔</strong></h2>
                       <p>&emsp;&emsp;將json檔中的每個人單獨整理成一個list檔，並利用第一幀的照片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img3.png">
@@ -391,9 +391,9 @@
                         <img id="myImage" src="images/method/pose/img4.png">
                         <p style="text-align: center; font-size: 15px;">（偵測出的兩位選手的第一幀座標）</p>
                       </div>
-                      <h2 id="coordinate" class="fs-1 text-capitalize fst-italic"><strong>座標比對</strong></h2>
+                      <h2 id="coordinate" class="fs-1 text-capitalize fst-italic"><strong>2. 座標比對</strong></h2>
                       <p>&emsp;&emsp;利用後減前的x、y坐標距離差，判斷是否為該選手，並用此方式將選手在每一幀的坐標點找出，將每一個節點都單獨整理成一個list檔，所以每位選手都會有25個list去分別對應其節點(請參考人物節點介紹中的25個人體節點位置圖)。</p>
-                      <h2 id="adjust01" class="fs-1 text-capitalize fst-italic"><strong>資料筆數矯正</strong></h2>
+                      <h2 id="adjust01" class="fs-1 text-capitalize fst-italic"><strong>3. 資料筆數矯正</strong></h2>
                       <p>&emsp;&emsp;會有幾幀因為偵測誤差或是其他干擾因素而導致資料有誤差，所以需要確認資料筆數是否和其幀數一致，若不一致，找出缺少的幀數並將該幀補0，讓資料筆數一致。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img6.png">
@@ -402,7 +402,7 @@
                     </section>
                     <section>
                       <h1 id="processing" class="fs-1 text-capitalize fst-italic"><strong>資料前處理</strong></h1>
-                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>Knn遺失值插補</strong></h2>
+                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>1. Knn遺失值插補</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;將節點檔中的遺失值進行插補，但為了維持資料的可用性，也為了降低資料的偏誤，遺失的幀數只要大於等於10幀，便不進行插補。</p>
                       </div>
@@ -411,7 +411,7 @@
                         <p style="text-align: center; font-size: 15px;">（偵測哪一幀需要插補）</p>
                       </div>
 
-                      <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>arima檢查軌跡 & 資料插補</strong></h2>
+                      <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>2. arima檢查軌跡 & 資料插補</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;因openpose偵測時有可能會因姿勢或是攝影角度...等各項因素，而產生偵測的節點位置誤差，所以導致其運動軌跡不連貫。為避免此情況，故使用arima檢查各點的運動軌跡，並將軌跡異常點列出後歸0，並再次使用knn進行插補，插補條件同上一步。</p>
                       </div>
@@ -419,7 +419,7 @@
                         <img id="myImage" src="images/method/pose/img9.png">
                         <p style="text-align: center; font-size: 15px;">（使用arima檢測發現的異常點）</p>
                       </div>
-                      <h2 id="adjust02" class="fs-1 text-capitalize fst-italic"><strong>資料輸出</strong></h2>
+                      <h2 id="adjust02" class="fs-1 text-capitalize fst-italic"><strong>3. 資料輸出</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點csv檔。</p>
                       </div>
