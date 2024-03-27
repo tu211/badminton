@@ -374,10 +374,9 @@
                         <p>從上方的表格來看，其實整體的訓練集準確率都落在或接近0.8左右，而測試也都落在0.7左右，因此我們挑選了準確率相對高的LogisticRegression來當作最後使用的模型。</p>
                       </div>
                       <div class="align-items-center">
-                        <div class="row align-items-center" style="display: flex; flex-direction: row; align-items: center;">
+                        <div class="row align-items-center" style="align-items: center;">
                           <p>但我們也想要從各種球路來觀察，是哪幾個種類比較容易被分錯，導致準確度不高，下表是各類的準確率及其混淆矩陣。</p>
-                          <div class="col-lg-6" style="text-align: center;">
-                            <table style="font-size: 22px;">
+                          <table style="font-size: 22px;">
                               <thead>
                                 <td>球種/準確率</td>
                                 <td>發短球(0)</td>
@@ -400,12 +399,10 @@
                                 <td>0.51</td>
                                 <td>0.70</td>
                               </tr>
-                            </table>
-                          </div>
-                          <div class="col-lg-6" style="text-align: center;;">
-                              <div class="image-container">
-                                <img id="smallImage" src="images/method/ball_trajectory/confusion_matrix.jpg" style="width: 550px; height: 400px;">
-                              </div>
+                          </table>
+                          <div class="align-items-center">
+                            <img id="myImage" src="images/method/ball_trajectory/confusion_matrix.jpg">
+                            <p style="text-align: center; font-size: 15px;">（Canny）</p>
                           </div>
                           <p>其實觀察後會發現平球(3)、切球(6)的準確率較低，原因可能是這兩種資料的筆數都相對較少，也可能我們目前所使用的特徵還不足以對這些球路進行分類而導致。</p>
                         </div>

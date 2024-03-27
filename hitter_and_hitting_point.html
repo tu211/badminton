@@ -217,6 +217,7 @@
         </ul>
       </div>
       <div class="aside_height">
+        <p>我們透過辨識擊球點和擊球方，去加以判斷該球的打擊者、該球的球路以及判斷本局的勝者。</p>
         <!--HITTER-->
         <section class="hero-section p-5">
           <div class="hero-content text-center p-5">
@@ -236,82 +237,53 @@
                 <div class="row">
                   <article class="post-item">
                     <div class="post-content">
+                      <p>我們使用各種不同的機器學習模型去訓練其判斷擊球方為哪位選手，並將影片上方的選手視為選手A，下方的選手視為選手B。<br>資料筆數為所有影片中的擊球幀共有3269筆資料。<br>變數除了先前透過不同偵測方式所獲取的羽球軌跡（x、y座標）、人物節點（兩個人、xyz座標、25個節點）及場地（8個交點的x、y座標）外，還加上了球與手的距離（羽球和兩位球員的直徑距離），一共有170個變數。<br>而資料中的Y則是需要預測的擊球方。<br>我們將整筆資料拆分成訓練集70%、測試集30%，來進行後續的模型訓練。<br>而我們在訓練中一共採用了XGBoost、SVM(支援向量機)、Perceptron(感知器) 、Decision Tree(決策樹)、Logistic Regression(邏輯斯回歸)、Random decision forests(隨機森林)，這6種模型進行預測，並使用多數決來決定最終的擊球選手。</p>
                       <table style="font-size: 22px;">
-                        <p>&emsp;&emsp;我們判斷擊球方的方式，利用已得到的所有擊球幀，共2485筆資料，特徵值的部分包含了羽球軌跡座標（x、y座標）、場地節點（8個交點的x、y座標）、人物節點（兩個人、xyz座標、25個節點）、球與手的距離（羽球和兩位球員的直徑距離）共170個再加上要預測的擊球方做為y共171個特徵值，並以70%作為訓練集30%為預測集來訓練模型，分別為Perceptron(感知器)、Logistic Regression(邏輯斯回歸)、SVM(支援向量機)、Decision Tree(決策樹)、Random decision forests(隨機森林)、XGBoost等6項分類器進行訓練。</p>
-                        <p>訓練結果如下：</p>
-                        <tbody>
-                          <tr>
-                            <th>模型</th>
-                            <th>Perceptron<br>（感知器）</th>
-                            <th style="color: red;">Logistic Regression<br>（邏輯斯回歸）</th>
-                            <th>SVM<br>（支援向量機）</th>
-                            <th>Decision Tree<br>（決策樹）</th>
-                            <th>Random Forest<br>（隨機森林）</th>
-                            <th>XGBoost</th>
-                          </tr>
-                          <tr>
-                            <th>測試集 準確率</th>
-                            <th>0.88</th>
-                            <th style="color: red;">0.96</th>
-                            <th>0.94</th>
-                            <th>0.86</th>
-                            <th>0.88</th>
-                            <th>0.82</th>
-                          </tr>
-                        </tbody>
+                        <p>下表是6種模型的訓練集&測試集準確率。</p>
+                        <tr>
+                          <td>分類器</td>
+                          <td>訓練集準確率</td>
+                          <td>測試集準確率</td>
+                        </tr>
+                        <tr>
+                          <td>XGBoost</td>
+                          <td>90.12%</td>
+                          <td>88.58%</td>
+                        </tr>
+                        <tr>
+                          <td>SVM（支援向量機）</td>
+                          <td>96.51%</td>
+                          <td>95.31%</td>
+                        </tr>
+                        <tr>
+                          <td>Perceptron（感知器）</td>
+                          <td>88.02%</td>
+                          <td>89.09%</td>
+                        </tr>
+                        <tr>
+                          <td>Decision Tree（決策樹）</td>
+                          <td>89.72%</td>
+                          <td>88.58%</td>
+                        </tr>
+                        <tr>
+                          <td>Logistic Regression（邏輯斯回歸）</td>
+                          <td>95.32%</td>
+                          <td>95.41%</td>
+                        </tr>
+                        <tr>
+                          <td>Random Decision（隨機森林）</td>
+                          <td>88.46%</td>
+                          <td>87.36%</td>
+                        </tr>
                       </table>
-                      <p>測試結果準確率以「邏輯斯回歸」最高，所以挑選邏輯斯回歸來做我們的模型。</p>
-                    </div>
-                    <div class="post-content">
-                      <table style="font-size: 22px;">
-                        <p>&emsp;&emsp;方法與擊球方模型更新，資料從2485筆變成3269筆，特徵值的部分維持不變，一樣是171筆，並同樣以70%作為訓練集30%為測試集來訓練下表的6項分類器模型。</p>
-                        <tbody>
-                          <tr>
-                            <th>分類器</th>
-                            <th>測試集<br>準確率</th>
-                            <th>訓練集<br>準確率</th>
-                            <th>全部資料<br>的準確率</th>
-                          </tr>
-                          <tr>
-                            <td>Perceptron（感知器）</td>
-                            <td>89.09%</td>
-                            <td>88.02%</td>
-                            <td>88.34%</td>
-                          </tr>
-                          <tr>
-                            <td>Logistic Regression（邏輯斯回歸）</td>
-                            <td>95.41%</td>
-                            <td>95.32%</td>
-                            <td>95.35%</td>
-                          </tr>
-                          <tr>
-                            <td>SVM（支援向量機）</td>
-                            <td>95.31%</td>
-                            <td>96.51%</td>
-                            <td>96.15%</td>
-                          </tr>
-                          <tr>
-                            <td>Decision Tree（決策樹）</td>
-                            <td>88.58%</td>
-                            <td>89.72%</td>
-                            <td>89.38%</td>
-                          </tr>
-                          <tr>
-                            <td>Random Decision Forests（隨機森林）</td>
-                            <td>87.36%</td>
-                            <td>88.46%</td>
-                            <td>88.13%</td>
-                          </tr>
-                          <tr>
-                            <td>XGBoost</td>
-                            <td>88.58%</td>
-                            <td>90.12%</td>
-                            <td>89.66%</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <p>預測結果：0代表的是選手A，1代表的是選手B。</p>
-                      <p>我們預測結果是採用多數決的方式，因為結果不是0就是1，於是我們將所有模型的準確率加總起來接著除2（0或者1有兩個數）以此做為判斷的基準（272.165），意思是，如果預測結果為1的所有模型準確率加起來大於基準（272.165）那麼就判斷擊球方為1（選手B），若預測結果為1的模型準確率加總起來小於基準（272.165）則判斷擊球方為0（選手A）。</p>
+                      <p>我們使用多數決來決定該球的打擊者，將選手A當作0，選手B當作1。<br>在決定打擊者時會有兩種狀況。</p>
+                      <p>狀況1：<br>當６種模型的預測結果有３種以上（不包含３）將其判定為０或是１，而該局的打擊者就會是多的那一方。</p>
+                      <p>狀況2:<br>當６種模型的預測結果為3:3，各占一半，便使用計算的方式，來決定打擊者，先將所有的模型測試準確率加總除以2，以此數值作為分隔線。<br>
+                        並將1(選手B)的三種準確率加總，若其加總的數值大於分隔線，便判定本球的打擊者為1(選手B)。反之，若該數值加總小於分隔線，則本球的打擊者就會是0(選手A)。
+                      </p>
+                      <p>舉例來說，XGBoost、SVM、Perceptron均預測為1，其餘均預測為0。<br>
+                        我們便將3種預測為1的準確率相加，加總的數值為272.98，而全部的準確率加總除以2為272.165，因預測為1的值大於分隔線值，於是該球的打擊者判定為1(選手B)。
+                      </p>
                     </div>
                   </article>
                 </div>
@@ -332,185 +304,240 @@
           </div>
         </section>
         <div id="hitting_point" class="post-wrap">
-            <div class="container">
+          <div class="small_flow_chart">
+            <div class="item"><a href="#sfc01">擊球時間分段</a></div>
+            <div class="arrow_right">
+              <svg class="arrow-right svg-primary" width="50" height="50">
+                <use xlink:href="#footer_arrow-right"></use>
+              </svg>
+            </div>
+            <div class="item"><a href="#sfc02">計算羽球角度</a></div>
+            <div class="arrow_right">
+              <svg class="arrow-right svg-primary" width="50" height="50">
+                <use xlink:href="#footer_arrow-right"></use>
+              </svg>
+            </div>
+            <div class="item"><a href="#sfc03">判斷擊球點</a></div>
+          </div>
+          <div class="container">
               <div class="row">
                 <main class="post-list">
                   <div class="row">
                     <article class="post-item">
-                      <div class="post-content">
-                        <p>將平滑化後的資料偵測羽球軌跡y軸的相對低點，以此做為擊球點</p>
-                        <div class="video-container" style="height: 500px; margin-top: 50px;">
-                          <video id="myVideo" controls autoplay>
-                            <source id="videoSource" src="images/method/hitter/hitting_point.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                          </video>
-                        </div>
+                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>擊球時間分段</strong></h2>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;透過擊球方的模型的預測結果，來尋找擊球的分界線，如下圖。</p>
                       </div>
-                      <div class="post-content">
-                        <p>擊球時間點：</p>
-                        <p>利用擊球方模型預測影片</p>
-                        <div class="row align-items-center">
-                          <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
+                      <div class="row align-items-center">
+                        <div class="col-lg-6">
+                          <div id="edge_img" class="image-container" style="height: 350px;">
+                              <img id="myImage" src="images/method/hitter/img01.png">
+                          </div>
+                          <p style="text-align: center; font-size: 15px;">（擊球方結果）</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="edge_img" class="image-container" style="height: 350px;">
                                 <img id="myImage" src="images/method/hitter/img02.png">
                             </div>
-                          </div>
-                          <div class="col-lg-6">
-                            <div id="edge_img" class="image-container" style="height: 310px;">
-                              <img id="myImage" src="images/method/hitter/img01.png">
-                            </div>
-                          </div>
-                          <p style="font-size: 22px; text-align: center;">時間</p>
-                          <p>右邊的紅線為擊球時間點，可以將擊球時間點的位置做初步的判定</p>
-                        </div>  
-                      </div>
-                      <div class="post-content">
-                        <p>計算羽球的向量角度</p>
-                        <div class="align-items-center">
-                          <img id="myImage" src="images/method/hitter/img03.png" style="width: 400px; height: 500px;">
-                          <p style="text-align: center; font-size: 15px;">（羽球的向量角度算法）</p>
-                        </div> 
-                        <p>最下方是0度角，不管是從左還是右邊往上移動，角度皆是正數，最高點為180度角。</p>
-                      </div>
-                      <div class="post-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-6">
-                            <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/hitter/img05.png">
-                            </div>
-                          </div>
-                          <div class="col-lg-6">
-                            <div id="edge_img" class="image-container" style="height: 310px;">
-                              <img id="myImage" src="images/method/hitter/img04.png">
-                            </div>
-                          </div>
-                          <p style="font-size: 22px; text-align: center;">時間</p>
-                          <p>藍線為擊球時間點</p>
-                          <p>上方兩張範例為影片中的兩個擊球點時段，可以發現在擊球時間點，角度會突然增加。</p>
-                        </div>  
-                      </div>
-                      <div class="post-content">
-                        <p>符號 | 為判斷擊球方的時間點，以此做為區段的分割</p>
-  
-                        <p>擊球時間點  [38, 104, 121, 149, 166, 200, 239]</p>
-                        <p>先用羽球的向量角度初步預測 [15, 37, 122, 148, 200, 243, 291]</p>
-  
-                        <p>接著利用擊球方模型的結果判斷擊球時間點</p>
-                        <table>
-                          <tr>
-                            <td>擊球方模型的結果</td>
-                            <td>69</td>
-                            <td>114</td>
-                            <td>128</td>
-                            <td>160</td>
-                            <td>174</td>
-                            <td>217</td>
-                            <td>243</td>
-                          </tr>
-                          <tr>
-                            <td>擊球時間點</td>
-                            <td>38</td>
-                            <td>104</td>
-                            <td>121</td>
-                            <td>149</td>
-                            <td>166</td>
-                            <td>200</td>
-                            <td>239</td>
-                          </tr>
-                          <tr>
-                            <td>初步預測結果</td>
-                            <td>15, 37</td>
-                            <td></td>
-                            <td>122</td>
-                            <td>148</td>
-                            <td></td>
-                            <td>200</td>
-                            <td>243</td>
-                            <td>291</td>
-                          </tr>
-                        </table>
-  
-                        <p>羽球在落地後會因為彈起，所以有一次的角度改變，因此要將最後一個擊球點刪除</p>
-                        <p>發球前羽球容易被擋住或偵測到其他東西導致多偵測，所以要將第一個多預測的刪除</p>
-                        <table>
-                          <tr>
-                            <td>擊球方模型的結果</td>
-                            <td>69</td>
-                            <td>114</td>
-                            <td>128</td>
-                            <td>160</td>
-                            <td>174</td>
-                            <td>217</td>
-                            <td>243</td>
-                          </tr>
-                          <tr>
-                            <td>擊球時間點</td>
-                            <td>38</td>
-                            <td>104</td>
-                            <td>121</td>
-                            <td>149</td>
-                            <td>166</td>
-                            <td>200</td>
-                            <td>239</td>
-                          </tr>
-                          <tr>
-                            <td>初步預測結果</td>
-                            <td style="color: red;">37</td>
-                            <td></td>
-                            <td>122</td>
-                            <td>148</td>
-                            <td></td>
-                            <td>200</td>
-                            <td>243</td>
-                          </tr>
-                        </table>
-  
-                        <p>然後將未偵測到的時間段降低標準重新偵測，原本的標準為前面三幀的角度都要小於50度，又或者連續三幀角度都需要大於50度，因此降低標準就是調整參數，直到出現預測的擊球點。</p>
-                        <table>
-                          <tr>
-                            <td>擊球方模型的結果</td>
-                            <td>69</td>
-                            <td>114</td>
-                            <td>128</td>
-                            <td>160</td>
-                            <td>174</td>
-                            <td>217</td>
-                            <td>243</td>
-                          </tr>
-                          <tr>
-                            <td>擊球時間點</td>
-                            <td>38</td>
-                            <td>104</td>
-                            <td>121</td>
-                            <td>149</td>
-                            <td>166</td>
-                            <td>200</td>
-                            <td>239</td>
-                          </tr>
-                          <tr>
-                            <td>初步預測結果</td>
-                            <td>37</td>
-                            <td style="color: red;">106</td>
-                            <td>122</td>
-                            <td>148</td>
-                            <td style="color: red;">166</td>
-                            <td>200</td>
-                            <td>243</td>
-                          </tr>
-                        </table>
-                        <p>下方圖片擊球時間點104 可發現不降低標準難以偵測到</p>
-                        <div class="post-content">
-                          <p>計算羽球的向量角度</p>
-                          <div class="align-items-center">
-                            <img id="smallImage" src="images/method/hitter/img06.png" style="margin-left: 25%;">
-                          </div> 
+                          <p style="text-align: center; font-size: 15px;">（擊球方加上擊球時間點）</p>
                         </div>
                       </div>
+                      <p>從上方的擊球方結果，可以判斷出影片中的擊球時間分段。<br>為了驗證這個想法，我們將擊球方的結果圖加上擊球點(紅線位置)，從圖中可以更加明顯的觀察到，基本上每個擊球的時間段中，都帶有一個擊球點，因此我們使用擊球方來當作時間的分隔點。</p>
+                      <p>像這個影片中所尋找到的切割時間點幀數為：<br>69、114、128、160、174、217、243<br>後續就會將這幾個時間點當作間隔範圍，從每一個範圍中尋找擊球點。</p>
+                    </article>
+                    <article class="post-item">
+                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>計算羽球角度</strong></h2>
+                      <div class="post-description">
+                        <p>&emsp;&emsp;我們透過計算羽球角度的變化量來找到擊球時間點。</p>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <div id="edge_img" class="image-container" style="height: 400px; width: 300px;">
+                                <img id="myImage" src="images/method/hitter/img03.png">
+                            </div>
+                          <p style="text-align: center; font-size: 15px; width: 300px;">（角度示意圖）</p>
+                        </div>
+                        <div class="col-lg-9">
+                          <p>右圖為羽球角度計算的示意圖，最下方是0度角，不管羽球是從左邊還是右邊移動，角度皆是正數，最高點為180度角。</p>
+                          <p>這樣的計算方式有利於我們觀察球的角度變化，若球有進行大幅度的角度增加時，便可以將其視為一個擊球的時間點。</p>
+                        </div>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-lg-6">
+                          <div id="edge_img" class="image-container" style="height: 350px;">
+                              <img id="myImage" src="images/method/hitter/img05.png">
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div id="edge_img" class="image-container" style="height: 350px;">
+                            <img id="myImage" src="images/method/hitter/img04.png">
+                          </div>
+                        </div>
+                        <p style="text-align: center; font-size: 15px; width: 1200px;">（角度變化下所尋找到的擊球時間點）</p>
+                        <p>從上面的兩張圖可以觀察到，皆是因為羽球的角度突然有了大幅度的增加，從而被判定為擊球點。</p>
+                        <p>從上面的兩張圖可以觀察到，在擊球點出現時，球的角度皆會進行大幅度的增加，因此當球的角度突然增加時，我們便判定其為擊球點。</p>
+                      </div>
+                    </article>
+                    <article class="post-item">
+                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>判斷擊球點</strong></h2>
+                      <p>我們使用擊球方的結果當作擊球點的範圍，再使用羽球的角度變化量來預測初步的擊球點。</p>
+                      <p>預測結果如下：</p>
+                      <table>
+                        <tr>
+                          <td>擊球方間隔範圍</td>
+                          <td>0～69</td>
+                          <td>70~114</td>
+                          <td>115~128</td>
+                          <td>129~160</td>
+                          <td>161~174</td>
+                          <td>175~217</td>
+                          <td>218~243</td>
+                          <td>244~317</td>
+                        </tr>
+                        <tr>
+                          <td>準確的擊球點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td>15、37</td>
+                          <td></td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td></td>
+                          <td>200</td>
+                          <td>243</td>
+                          <td>291</td>
+                        </tr>
+                      </table>
+                    </article>
+                    <article class="post-item">
+                      <p>從上方的預測結果來看不是每個時間段的擊球點都有被找到，且在第一個範圍中找到了兩個，在最後一個範圍中也不應該找到擊球點，而是判斷得分方。為了解決上述問題，我們針對每個情況制定一個解決方案。</p>
+                      <p>針對第一個範圍多找的情況，觀察後發現，是因為在發球前，羽球可能因為被選手拿著，而不容易被模型判定為球，故其偵測時，會將其他像球的東西，判定為球，才導致在發球前後，因為偵測錯誤，產生一個大幅度的角度增加，才導致多找到一個擊球點。而針對這個情況，將被判錯的擊球點刪除。</p>
+                      <table>
+                        <tr>
+                          <td>擊球方間隔範圍</td>
+                          <td>0～69</td>
+                          <td>70~114</td>
+                          <td>115~128</td>
+                          <td>129~160</td>
+                          <td>161~174</td>
+                          <td>175~217</td>
+                          <td>218~243</td>
+                          <td>244~317</td>
+                        </tr>
+                        <tr>
+                          <td>準確的擊球點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td style="color: red;">37</td>
+                          <td></td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td></td>
+                          <td>200</td>
+                          <td>243</td>
+                          <td>291</td>
+                        </tr>
+                      </table>
+                    </article>
+                    <article class="post-item">
+                      <p>針對最後一個範圍，在此範圍中是要判定該局的得分方，因此不會產生擊球點，但因為球在落地後彈起，造成角度增加，因此被誤判為擊球點。<br>所以產生在這個區間的擊球點，會直接進行刪除。</p>
+                      <table>
+                        <tr>
+                          <td>擊球方間隔範圍</td>
+                          <td>0～69</td>
+                          <td>70~114</td>
+                          <td>115~128</td>
+                          <td>129~160</td>
+                          <td>161~174</td>
+                          <td>175~217</td>
+                          <td>218~243</td>
+                          <td>244~317</td>
+                        </tr>
+                        <tr>
+                          <td>準確的擊球點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td>37</td>
+                          <td></td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td></td>
+                          <td>200</td>
+                          <td>243</td>
+                          <td style="color: red;">X</td>
+                        </tr>
+                      </table>
+                    </article>
+                    <article class="post-item">
+                      <p>針對有時間段中沒有擊球點來說，我們透過降低角度的增加量來尋找打擊點。<br>原先的標準為前面三幀的角度都要小於50度，或者連續三幀角度都需要大於50度，而我們就是將50度往下調整，直至在這個區間內出現擊球點。</p>
+                      <table>
+                        <tr>
+                          <td>擊球方間隔範圍</td>
+                          <td>0～69</td>
+                          <td>70~114</td>
+                          <td>115~128</td>
+                          <td>129~160</td>
+                          <td>161~174</td>
+                          <td>175~217</td>
+                          <td>218~243</td>
+                          <td>244~317</td>
+                        </tr>
+                        <tr>
+                          <td>準確的擊球點</td>
+                          <td>38</td>
+                          <td>104</td>
+                          <td>121</td>
+                          <td>149</td>
+                          <td>166</td>
+                          <td>200</td>
+                          <td>239</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>初步預測結果</td>
+                          <td>37</td>
+                          <td style="color: red;">106</td>
+                          <td>122</td>
+                          <td>148</td>
+                          <td style="color: red;">166</td>
+                          <td>200</td>
+                          <td>243</td>
+                          <td></td>
+                        </tr>
+                      </table>
+                      <p>最後預測出該影片中的擊球點幀數為：<br>37、106、122、148、166、200、243</p>
                     </article>
                   </div>
                 </main>
               </div>
-            </div>
+          </div>
         </div>
         <footer id="footer" class="mt-5">
           <div class="border-top py-4">
