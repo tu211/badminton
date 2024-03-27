@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const pose = document.getElementById('the_checkbox_of_pose');
   const ball = document.getElementById('the_checkbox_of_ball');
   const line = document.getElementById('the_checkbox_of_line');
+  const timeline = document.getElementById('the_checkbox_of_timeline');
+  const trajectory = document.getElementById('the_checkbox_of_trajectory');
   const changeVideoBtn = document.getElementById('the_btn');
   const myVideo = document.getElementById('myVideo');
   const videoSource = document.getElementById('videoSource');
