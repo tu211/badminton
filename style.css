@@ -801,7 +801,7 @@ form {
   word-break: normal;
 }
 
-.video-container, .image_coontainer {
+.video-container, .image_container {
   max-width: 1200px; /* Adjust the max-width as needed for desktop */
   margin: auto;
 }
@@ -850,12 +850,22 @@ form {
 }
 
 /*===== Content Image =====*/
+.img_text {
+  font-size: 20px;
+  text-align: center;
+}
+
 #data_csv {
   height: 700px;
 }
 
 #edge_img {
-  height: 300px;
+  height: 250px;
+  border: 2px solid red;
+}
+#edge_img_single {
+  height: 500px;
+  border: 2px solid yellow;
 }
 
 #tracking_img {
