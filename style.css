@@ -865,12 +865,10 @@ form {
 }
 
 #edge_img {
-  height: 500px;
-  border: 2px solid red;
+  height: 250px;
 }
 #edge_img_single {
   height: 500px;
-  border: 2px solid yellow;
 }
 
 #tracking_img {

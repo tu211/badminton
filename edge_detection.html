@@ -249,10 +249,14 @@
                       <!--原圖 & HSV-->
                       <div class="row align-items-center">
                         <div class="col-lg-6">
+                          <div>
                             <div id="edge_img" class="image-container">
                               <img id="myImage" src="images/method/edge_detection/image.png">
                             </div>
-                          <p class="img_text">（原圖）</p>
+                            <div>
+                              <p class="img_text">（原圖）</p>
+                            </div>
+                          </div>
                         </div>
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
@@ -360,14 +364,14 @@
                         <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 計算最終場地座標</strong></h2>
                         <p>&emsp;&emsp;由於先前透過線段處理，所產生的座標仍有少許誤差，導致有些場地線不齊全或歪斜，因此使用透視變換去再次判斷場地，透過此方式將因攝影角度而變形的場地，校正為長方形，從而產生一組新的場地線座標。</p>
                       </div>
-                      <div class="row align-items-center">
+                      <div class="row align-items-center" style="height: 300px;">
                         <div class="col-lg-6">
                           <div id="edge_img" class="image-container">
                             <img id="myImage" src="images/method/edge_detection/img01.png">
                           </div>
                         </div>
                         <div class="col-lg-6">
-                          <div id="edge_img" class="image-container" style="height: 310px;">
+                          <div id="edge_img" class="image-container">
                             <img id="myImage" src="images/method/edge_detection/img02.png">
                           </div>
                         </div>
