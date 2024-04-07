@@ -226,12 +226,89 @@
                     <div class="post-content">
                       <h2 id="dataset" class="fs-1 text-capitalize fst-italic"><strong>資料集</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;本研究之資料集取自TrackNetV2<sup><a href="reference.html#headingTwo">[2]</a></sup>及ShuttleSet<sup><a href="reference.html#headingOne">[1]</a></sup>。</p>
-                      <p>&emsp;&emsp;每筆資料皆是一場從發球到得分的BWF（Badminton World Federation，世界羽球聯盟）羽球賽事的單打比賽，且資料中附有一個影片紀錄檔，記錄檔中有針對賽事的各項變數描述，在資料集中所提供的影片紀錄檔中包含以下變數：</p>
-                      </div>
-                      <div id="rowscroll" class="image-container">
-                        <img id="myImage" src="images/data/csv.jpg" width="100%">
-                      </div>
+                      <p>&emsp;&emsp;本研究所使用的資料集取自CoachAI在GitHub上公開的ShuttleSet<sup><a href="reference.html">[1]</a></sup>資料夾內的資料以及TrackNetV2<sup><a href="reference.html#headingOne">[2]</a></sup>此網頁所提供的資料集。該資料集包含了來自世界羽球聯盟（BWF，Badminton World Federation）羽球比賽中的單打比賽的影片和相對應的紀錄資料。影片內容涵蓋了從發球到得分的片段。記錄資料包括：</p>
+                      <table>
+                        <tr>
+                          <td>rally</td>
+                          <td>從發球到落地為單位的順序</td>
+                        </tr>
+                        <tr>
+                          <td>ball_round</td>
+                          <td>從發球到球落地的擊球順序</td>
+                        </tr>
+                        <tr>
+                          <td>time</td>
+                          <td>時間 hr:min:sec（時：分：秒）</td>
+                        </tr>
+                        <tr>
+                          <td>frame_num</td>
+                          <td>幀數 sec * fps（秒＊fps）</td>
+                        </tr>
+                        <tr>
+                          <td>roundscore_A</td>
+                          <td>Ａ的當前分數</td>
+                        </tr>
+                        <tr>
+                          <td>roundscore_B</td>
+                          <td>B的當前分數</td>
+                        </tr>
+                        <tr>
+                          <td>player</td>
+                          <td>選手（Ａ：勝利方、Ｂ：輸球方）</td>
+                        </tr>
+                        <tr>
+                          <td>type</td>
+                          <td>球種</td>
+                        </tr>
+                        <tr>
+                          <td>aroundhead</td>
+                          <td>是否繞頭擊球</td>
+                        </tr>
+                        <tr>
+                          <td>backhand</td>
+                          <td>是否反手擊球</td>
+                        </tr>
+                        <tr>
+                          <td>landing_height</td>
+                          <td>球是否高於網（１：高於網、０：低於網）</td>
+                        </tr>
+                        <tr>
+                          <td>landing_area</td>
+                          <td>羽球所在區域</td>
+                        </tr>
+                        <tr>
+                          <td>landing_x, landing_y</td>
+                          <td>羽球所在座標</td>
+                        </tr>
+                        <tr>
+                          <td>lose_reason</td>
+                          <td>失分原因</td>
+                        </tr>
+                        <tr>
+                          <td>getpoint_player</td>
+                          <td>得分選手</td>
+                        </tr>
+                        <tr>
+                          <td>player_location_area</td>
+                          <td>擊球者所在區域</td>
+                        </tr>
+                        <tr>
+                          <td>player_location_x, player_location_y</td>
+                          <td>擊球者所在座標</td>
+                        </tr>
+                        <tr>
+                          <td>opponent_location_area</td>
+                          <td>對手所在區域</td>
+                        </tr>
+                        <tr>
+                          <td>opponent_location_x, opponent_location_y</td>
+                          <td>對手所在座標</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div id="rowscroll" class="image-container">
+                      <img id="myImage" src="images/data/csv.jpg" width="100%">
+                    </div>
                       <h2 id="datamp4" class="fs-1 text-capitalize fst-italic"><strong>影片</strong></h2>
                       <p>&emsp;&emsp;此為BWF（Badminton World Federation，世界羽球聯盟）羽球賽事的單打比賽影片，且每個影片都是記錄從發球到落地的擊球過程。</p>
                       <div class="video-container" style="height: 700px; margin-top: 50px;">
