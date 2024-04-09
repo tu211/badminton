@@ -16,6 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Update the last modification time on the page
   var lastModifiedElement = document.getElementById('lastModified');
-  lastModifiedElement.textContent = '最後修改時間：' + formattedDateTime + ' | 瀏覽人次：' + history.length;
+  lastModifiedElement.textContent = '最後修改時間：' + formattedDateTime;
 
 });
