@@ -226,25 +226,25 @@
                 <article class="post-item">
                   <div class="post-content">
                     <div class="small_flow_chart">
-                      <div id="coordinates" class="item"><a href="#title01">生成軌跡資料</a></div>
+                      <div class="item"><a href="#sfc01" onclick="location.replace('#sfc01')">生成軌跡資料</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div id="arima" class="item" style="font-size: 22px;"><a href="#title02">Arima資料矯正</a></div>
+                      <div class="item"><a href="#sfc02" onclick="location.replace('#sfc02')">Arima資料矯正</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div id="moving" class="item"><a href="#title03">移動平均濾波</a></div>
+                      <div class="item"><a href="#sfc03" onclick="location.replace('#sfc03')">移動平均濾波</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div id="trackingcsv" class="item"><a href="#title04">輸出結果</a></div>
+                      <div class="item" id="sfc01"><a href="#sfc04" onclick="location.replace('#sfc04')">輸出結果</a></div>
                     </div>
                     <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>生成軌跡資料</strong></h2>
                     <div class="post-description">
@@ -264,10 +264,10 @@
                         <div id="tracking_img" class="align-items-center">
                           <img id="smallImage" src="images/method/ball_tracking/img1.png" style="width: 100%;" alt="Ball Tracking Image">
                         </div>
-                        <p class="img_text">（羽球軌跡數據集）</p>
+                        <p class="img_text" id="sfc02">（羽球軌跡數據集）</p>
                       </div>
                     </div>
-                    <h2 id="title02" class="fs-1 text-capitalize fst-italic"><strong>Arima資料矯正</strong></h2>
+                    <h2 class="fs-1 text-capitalize fst-italic"><strong>Arima資料矯正</strong></h2>
                     <div class="post-description">
                       <p>&emsp;&emsp;因為偵測錯誤而導致軌跡異常或資料缺失， 所以我們利用時間序列模型ARIMA<sup><a href="reference.html#heading11">[12]</a></sup>去找軌跡的異常點，對於這些異常點以及未被偵測到的座標， 我們透過前後時間的位置座標來讓軌跡補齊。</p>
                     </div>
@@ -282,10 +282,10 @@
                         <div id="tracking_img" class="image-container">
                             <img id="myImage" src="images/method/ball_tracking/img3.png">
                         </div>
-                        <p class="img_text">（修補後）</p>
+                        <p class="img_text" id="sfc03">（修補後）</p>
                       </div>
                     </div>
-                    <h2 id="title03" class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
+                    <h2 class="fs-1 text-capitalize fst-italic"><strong>移動平均濾波</strong></h2>
                     <div class="post-description">
                       <p>&emsp;&emsp;由於數據本身的微小誤差，也可能導致後面數據分析的變動，因此我們將軌跡中的羽球座標平滑化，以下是Y軸軌跡的範例，我們將Y軸座標進行移動平均濾波使其軌跡平滑<sup><a href="reference.html#heading13">[14]</a></sup>化，可以看到在原始資料中105幀左右的時候，軌跡明顯的有一個點偏離該有的位置，而軌跡平滑化後可以看到105幀左右更符合應有的軌跡。</p>
                     </div>
@@ -300,10 +300,10 @@
                         <div id="tracking_img" class="image-container">
                             <img id="myImage" src="images/method/ball_tracking/img5.png">
                         </div>
-                        <p class="img_text">（軌跡平滑後）</p>
+                        <p class="img_text" id="sfc04">（軌跡平滑後）</p>
                       </div>
                     </div>
-                    <h2 id="title04" class="fs-1 text-capitalize fst-italic"><strong>輸出結果</strong></h2>
+                    <h2 class="fs-1 text-capitalize fst-italic"><strong>輸出結果</strong></h2>
                     <div class="post-description">
                       <p>&emsp;&emsp;將修正後的資料以CSV輸出，X1為X調整後的資料，Y1為Y調整後的資料。</p>
                     </div>

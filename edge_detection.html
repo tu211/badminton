@@ -225,24 +225,24 @@
               <div class="row">
                 <article class="post-item">
                   <div class="post-content">
-                    <div class="small_flow_chart" id="sfc01">
-                      <div class="item"><a href="edge_detection.html#sfc01">影像轉換</a></div>
+                    <div class="small_flow_chart">
+                      <div class="item"><a href="#sfc01" onclick="location.replace('#sfc01')">影像轉換</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="edge_detection.html#sfc02">生成線段座標</a></div>
+                      <div class="item"><a href="#sfc02" onclick="location.replace('#sfc02')">生成線段座標</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="edge_detection.html#sfc03">場地校正</a></div>
+                      <div class="item" id="sfc01"><a href="#sfc03" onclick="location.replace('#sfc03')">場地校正</a></div>
                     </div>
-                    <section id="sfc02">
+                    <section>
                       <div>
-                        <h2 class="fs-1 text-capitalize fst-italic" id="sfc2"><strong>影像轉換</strong></h2>
+                        <h2 class="fs-1 text-capitalize fst-italic"><strong>影像轉換</strong></h2>
                       </div>
                       <div class="post-description">
                         <h2 id="hsv" class="fs-2 text-capitalize fst-italic"><strong>1. 色彩格式轉換</strong></h2>
@@ -285,11 +285,11 @@
                             <div id="edge_img" class="image-container">
                                 <img id="myImage" src="images/method/edge_detection/res.png">
                             </div>
-                          <p class="img_text">（加疊）</p>
+                          <p class="img_text" id="sfc02">（加疊）</p>
                         </div>
                       </div>
                     </section>
-                    <section id="sfc03">
+                    <section>
                       <div>
                         <h2 class="fs-1 text-capitalize fst-italic"><strong>生成線段座標</strong></h2>
                       </div>
@@ -313,7 +313,7 @@
                       <div id="edge_img_single" class="align-items-center">
                         <img id="myImage" src="images/method/edge_detection/coordinates.png">
                       </div>
-                      <p class="img_text">（HoughLine）</p>
+                      <p class="img_text" id="sfc03">（HoughLine）</p>
                     </section>
                     <section>
                       <div>

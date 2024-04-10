@@ -839,7 +839,7 @@ form {
 }
 
 #hitting_point{
-  height: 3800px;
+  height: 3900px;
 }
 
 #hitter{
@@ -858,15 +858,13 @@ form {
 .img_text {
   font-size: 20px;
   text-align: center;
+  padding-top: 10px;
 }
 
 #data_csv {
   height: 700px;
 }
 
-#edge_img {
-  height: 250px;
-}
 #edge_img_single {
   height: 500px;
 }

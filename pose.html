@@ -226,28 +226,22 @@
                 <article class="post-item">
                   <div class="post-content">
                     <div class="small_flow_chart">
-                      <div class="item"><a href="#hsv">偵測人物節點</a></div>
+                      <div class="item"><a href="#sfc01" onclick="location.replace('#sfc01')">偵測人物節點</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#houghline">資料處理</a></div>
+                      <div class="item"><a href="#sfc02" onclick="location.replace('#sfc02')">整理資料</a></div>
                       <div class="arrow_right">
                         <svg class="arrow-right svg-primary" width="50" height="50">
                           <use xlink:href="#footer_arrow-right"></use>
                         </svg>
                       </div>
-                      <div class="item"><a href="#rows_cols">資料矯正</a></div>
-                      <div class="arrow_right">
-                        <svg class="arrow-right svg-primary" width="50" height="50">
-                          <use xlink:href="#footer_arrow-right"></use>
-                        </svg>
-                      </div>
-                      <div class="item"><a href="#finalrowsandcols">資料輸出</a></div>
+                      <div class="item" id="sfc01"><a href="#sfc03" onclick="location.replace('#sfc03')">資料處理</a></div>
                     </div>
                     <section>
-                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>建立選手基礎節點座標檔</strong></h2>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>建立選手基礎節點座標檔</strong></h2>
                       <div class="post-description">
                         <p>&emsp;&emsp;使用CMU - Panoptic Studio（卡內基·梅隆大學的研究單位）在github所提供的openpose<sup><a href="reference.html#heading15">[16]</a></sup>執行檔，輸出影片中所有人的25個身體節點json檔。</p>
                       </div>
@@ -381,8 +375,8 @@
                         </video>
                         <p class="img_text">(openpose輸出的人物節點影片)</p>
                       </div>
-                      <p>&emsp;&emsp;Openpose<sup><a href="reference.html#heading15">[16]</a></sup>所輸出的json檔，為了後續使用便利，因此將其輸出的檔案，使用多個自訂義的程式去校正，並輸出csv檔，主要執行流程如下圖</p>
-                      <h2 id="title01" class="fs-1 text-capitalize fst-italic"><strong>資料整理</strong></h2>
+                      <p id="sfc02">&emsp;&emsp;Openpose<sup><a href="reference.html#heading15">[16]</a></sup>所輸出的json檔，為了後續使用便利，因此將其輸出的檔案，使用多個自訂義的程式去校正，並輸出csv檔，主要執行流程如下圖</p>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>資料整理</strong></h2>
                       <h2 id="json" class="fs-1 text-capitalize fst-italic"><strong>1. 讀取第一個json檔</strong></h2>
                       <p>&emsp;&emsp;將json檔中的每個人單獨整理成一個list檔，並利用第一幀的照片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標。</p>
                       <div class="align-items-center">
@@ -399,12 +393,12 @@
                       <p>&emsp;&emsp;會有幾幀因為偵測誤差或是其他干擾因素而導致資料有誤差，所以需要確認資料筆數是否和其幀數一致，若不一致，找出缺少的幀數並將該幀補0，讓資料筆數一致。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img6.png">
-                        <p class="img_text">（檢查資料筆數是否正確）</p>
+                        <p class="img_text" id = "sfc03">（檢查資料筆數是否正確）</p>
                       </div>
                     </section>
                     <section>
                       <h1 id="processing" class="fs-1 text-capitalize fst-italic"><strong>資料前處理</strong></h1>
-                      <h2 id="knn" class="fs-1 text-capitalize fst-italic"><strong>1. Knn遺失值插補</strong></h2>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>1. Knn遺失值插補</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;將節點檔中的遺失值進行插補，但為了維持資料的可用性，也為了降低資料的偏誤，遺失的幀數只要大於等於10幀，便不進行插補。</p>
                       </div>
@@ -412,7 +406,6 @@
                         <img id="smallImage" src="images/method/pose/img8.jpg">
                         <p class="img_text">（偵測哪一幀需要插補）</p>
                       </div>
-
                       <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>2. arima檢查軌跡 & 資料插補</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;因Openpose<sup><a href="reference.html#heading15">[16]</a></sup>偵測時有可能會因姿勢或是攝影角度……等各項因素，而產生偵測的節點位置誤差，所以導致其運動軌跡不連貫。為避免此情況，故使用arima<sup><a href="reference.html#heading12">[13]</a></sup>檢查各點的運動軌跡，並將軌跡異常點列出後歸0，並再次使用knn進行插補，插補條件同上一步。</p>
