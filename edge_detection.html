@@ -253,7 +253,7 @@
                         <div class="col-lg-6">
                           <div>
                             <div id="edge_img" class="image-container">
-                              <img id="myImage" src="images/method/edge_detection/image.png">
+                              <img id="myImage" src="images/method/edge_detection/orig_0.png">
                             </div>
                             <div>
                               <p class="img_text">（原圖）</p>
@@ -262,7 +262,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/hsv.png">
+                                <img id="myImage" src="images/method/edge_detection/hsv_0.png">
                             </div>
                           <p class="img_text">（HSV）</p>
                         </div>
@@ -277,13 +277,13 @@
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/mask.png">
+                                <img id="myImage" src="images/method/edge_detection/mask_0.png">
                             </div>
                           <p class="img_text">（遮罩）</p>
                         </div>
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/res.png">
+                                <img id="myImage" src="images/method/edge_detection/res_0.png">
                             </div>
                           <p class="img_text" id="sfc02">（加疊）</p>
                         </div>
@@ -300,7 +300,7 @@
                       </div>
                       <!--Canny-->
                       <div id="edge_img_single" class="align-items-center">
-                        <img id="myImage" src="images/method/edge_detection/canny.png">
+                        <img id="myImage" src="images/method/edge_detection/canny_0.png">
                       </div>
                       <p class="img_text">（Canny）</p>
                       <div class="post-description">
@@ -311,7 +311,7 @@
                       </div>
                       <!--HoughLine-->
                       <div id="edge_img_single" class="align-items-center">
-                        <img id="myImage" src="images/method/edge_detection/coordinates.png">
+                        <img id="myImage" src="images/method/edge_detection/houghline.png">
                       </div>
                       <p class="img_text" id="sfc03">（HoughLine）</p>
                     </section>
@@ -327,13 +327,13 @@
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/rows.png">
+                                <img id="myImage" src="images/method/edge_detection/row_0.png">
                             </div>
                           <p class="img_text">（水平線段）</p>
                         </div>
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/cols.png">
+                                <img id="myImage" src="images/method/edge_detection/col_0.png">
                             </div>
                           <p class="img_text">（垂直線段）</p>
                         </div>
@@ -344,13 +344,13 @@
                       <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/two_rows.png">
+                                <img id="myImage" src="images/method/edge_detection/new_row_0.png">
                             </div>
                           <p class="img_text">（垂直線段）</p>
                         </div>
                         <div class="col-lg-6">
                             <div id="edge_img" class="image-container">
-                                <img id="myImage" src="images/method/edge_detection/two_cols.png">
+                                <img id="myImage" src="images/method/edge_detection/new_col_0.png">
                             </div>
                           <p class="img_text">（水平線段）</p>
                         </div>
@@ -359,42 +359,25 @@
                         <p>&emsp;&emsp;各自處理完後，再將兩者結合，產生出一組完整的場地座標。</p>
                       </div>
                       <div class="align-items-center">
-                        <img id="myImage" src="images/method/edge_detection/two_rows_and_two_cols.png">
+                        <img id="myImage" src="images/method/edge_detection/new_row+col.png">
                         <p class="img_text">（線段合併）</p>
                       </div>
                       <div class="post-description">
                         <h2 id="hsv" class="fs-1 text-capitalize fst-italic"><strong>2. 計算最終場地座標</strong></h2>
                         <p>&emsp;&emsp;由於先前透過線段處理，所產生的座標仍有少許誤差，導致有些場地線不齊全或歪斜，因此使用透視變換去再次判斷場地，透過此方式將因攝影角度而變形的場地，校正為長方形，從而產生一組新的場地線座標。</p>
                       </div>
-                      <div class="row align-items-center" style="height: 300px;">
-                        <div class="col-lg-6">
-                          <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/edge_detection/img01.png">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/edge_detection/img02.png">
-                          </div>
-                        </div>
+                      <div id="edge_img_single" class="align-items-center">
+                        <img id="myImage" src="images/method/edge_detection/canny_0.png">
                       </div>
                       <p class="img_text">（透視轉換）</p>
                       <div class="post-description">
                         <p>&emsp;&emsp;將兩種不同方式所產生的座標進行比較，當兩者的座標點差異不大，便判斷該點為有效節點(圖中的綠點)，因透視轉換<sup><a href="reference.html#headingEight">[9]</a></sup>中可能會產生多組的四邊形，故最終是將最多有效節點的組合視為最終的場地線座標。</p>
                       </div>
                       <div class="row align-items-center">
-                        <div class="col-lg-6">
-                          <div id="edge_img" class="image-container">
-                            <img id="myImage" src="images/method/edge_detection/final.png">
-                          </div>
-                          <p class="img_text">（單打線）</p>
+                        <div id="edge_img_single" class="align-items-center">
+                          <img id="myImage" src="images/method/edge_detection/結果圖_0.png">
                         </div>
-                        <div class="col-lg-6">
-                          <div id="edge_img" class="image-container" style="height: 310px;">
-                            <img id="myImage" src="images/method/edge_detection/final_csv.png">
-                            <p class="img_text">（單打線座標輸出）</p>
-                          </div>
-                        </div>
+                        <p class="img_text">（單打線）</p>
                       </div>  
                     </section>
                   </div>
