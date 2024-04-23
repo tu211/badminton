@@ -225,20 +225,20 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h1 id="title4" class="display-2 fst-italic">擊球方</h1>
+                  <h1 id="hitter" class="display-2 fst-italic">擊球方</h1>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <div id="hitter" class="post-wrap">
+        <div id="hitter_content" class="post-wrap">
           <div class="container">
             <div class="row">
               <main class="post-list">
                 <div class="row">
                   <article class="post-item">
                     <div class="post-content">
-                      <p>&emsp;&emsp;我們使用各種不同的機器學習模型去訓練其判斷擊球方為哪位選手，並將影片上方的選手視為選手A，下方的選手視為選手B。資料筆數為所有影片中的擊球幀共有3269筆資料。變數除了先前透過不同偵測方式所獲取的羽球軌跡（x、y座標）、人物節點（兩個人、xyz座標、25個節點）及場地（8個交點的x、y座標）外，還加上了球與手的距離（羽球和兩位球員的直徑距離），一共有170個變數。而資料中的Y則是需要預測的擊球方。我們將整筆資料拆分成訓練集70%、測試集30%，來進行後續的模型訓練。而我們在訓練中一共採用了XGBoost、SVM(支援向量機)、Perceptron(感知器) 、Decision Tree(決策樹)、Logistic Regression(邏輯斯回歸)、Random Decision Forests(隨機森林)，這6種模型進行預測，並使用多數決來決定最終的擊球選手。</p>
+                      <p>&emsp;&emsp;我們使用各種不同的機器學習模型去訓練其判斷擊球方為哪位選手，並將影片上方的選手視為選手A，下方的選手視為選手B。資料筆數為所有影片中的擊球幀共有3269筆資料。變數除了先前透過不同偵測方式所獲取的羽球軌跡（X、Y座標）、人物節點（兩個人、XYZ座標、25個節點）及場地（8個交點的X、Y座標）外，還加上了球與手的距離（羽球和兩位球員的直徑距離），一共有170個變數。而資料中的Y則是需要預測的擊球方。我們將整筆資料拆分成訓練集70%、測試集30%，來進行後續的模型訓練。而我們在訓練中一共採用了XGBoost、SVM(支援向量機)、Perceptron(感知器) 、Decision Tree(決策樹)、Logistic Regression(邏輯斯回歸)、Random Decision Forests(隨機森林)，這6種模型進行預測，並使用多數決來決定最終的擊球選手。</p>
                       <table style="font-size: 22px;">
                         <p>下表是6種模型的訓練集&測試集準確率。</p>
                         <tr>
@@ -278,12 +278,12 @@
                         </tr>
                       </table>
                       <p>&emsp;&emsp;我們使用多數決來決定該球的打擊者，將選手A當作0，選手B當作1。<br>在決定打擊者時會有兩種狀況。</p>
-                      <p>狀況1：<br>&emsp;&emsp;當６種模型的預測結果有３種以上（不包含３）將其判定為０或是１，而該局的打擊者就會是多的那一方。</p>
-                      <p>狀況2:<br>&emsp;&emsp;當６種模型的預測結果為3:3，各占一半，便使用計算的方式，來決定打擊者，先將所有的模型測試準確率加總除以2，以此數值作為分隔線。<br>
-                        並將1(選手B)的三種準確率加總，若其加總的數值大於分隔線，便判定本球的打擊者為1(選手B)。反之，若該數值加總小於分隔線，則本球的打擊者就會是0(選手A)。
+                      <p>狀況1：<br>&emsp;&emsp;當6種模型的預測結果有3種以上（不包含3）將其判定為0或是1，而該局的打擊者就會是多的那一方。</p>
+                      <p>狀況2:<br>&emsp;&emsp;當6種模型的預測結果為3:3，各占一半，便使用計算的方式，來決定打擊者，先將所有的模型測試準確率加總除以2，以此數值作為分隔線。<br>
+                        並將1（選手B）的三種準確率加總，若其加總的數值大於分隔線，便判定本球的打擊者為1（選手B）。反之，若該數值加總小於分隔線，則本球的打擊者就會是0（選手A）。
                       </p>
                       <p>舉例來說，XGBoost、SVM、Perceptron均預測為1，其餘均預測為0。<br>
-                        我們便將3種預測為1的準確率相加，加總的數值為272.98，而全部的準確率加總除以2為272.165，因預測為1的值大於分隔線值，於是該球的打擊者判定為1(選手B)。
+                        我們便將3種預測為1的準確率相加，加總的數值為272.98，而全部的準確率加總除以2為272.165，因預測為1的值大於分隔線值，於是該球的打擊者判定為1（選手B）。
                       </p>
                     </div>
                   </article>
@@ -298,13 +298,13 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h1 id="title4" class="display-2 fst-italic">擊球點</h1>
+                  <h1 id="hitting_point" class="display-2 fst-italic">擊球點</h1>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <div id="hitting_point" class="post-wrap">
+        <div id="hitting_point_content" class="post-wrap">
           <div class="small_flow_chart">
             <div class="item"><a href="#sfc01">擊球時間分段</a></div>
             <div class="arrow_right">
@@ -347,7 +347,7 @@
                           </div>
                         </div>
                       </div>
-                      <p>從上方的擊球方結果，可以判斷出影片中的擊球時間分段。<br>為了驗證這個想法，我們將擊球方的結果圖加上擊球點(紅線位置)，從圖中可以更加明顯的觀察到，基本上每個擊球的時間段中，都帶有一個擊球點，因此我們使用擊球方來當作時間的分隔點。</p>
+                      <p>從上方的擊球方結果，可以判斷出影片中的擊球時間分段。<br>為了驗證這個想法，我們將擊球方的結果圖加上擊球點（紅線位置），從圖中可以更加明顯的觀察到，基本上每個擊球的時間段中，都帶有一個擊球點，因此我們使用擊球方來當作時間的分隔點。</p>
                       <p>像這個影片中所尋找到的切割時間點幀數為：<br>69、114、128、160、174、217、243<br>後續就會將這幾個時間點當作間隔範圍，從每一個範圍中尋找擊球點。</p>
                     </article>
                     <article class="post-item">

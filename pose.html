@@ -243,7 +243,7 @@
                     <section>
                       <h2 class="fs-1 text-capitalize fst-italic"><strong>建立選手基礎節點座標檔</strong></h2>
                       <div class="post-description">
-                        <p>&emsp;&emsp;使用CMU - Panoptic Studio（卡內基·梅隆大學的研究單位）在github所提供的openpose<sup><a href="reference.html#heading15">[16]</a></sup>執行檔，輸出影片中所有人的25個身體節點json檔。</p>
+                        <p>&emsp;&emsp;使用CMU - Panoptic Studio（卡內基·梅隆大學的研究單位）在GitHub所提供的OpenPose<sup><a href="reference.html#heading15">[16]</a></sup>執行檔，輸出影片中所有人的25個身體節點json檔。</p>
                       </div>
                       <div class="align-items-center">
                         <div class="row align-items-center" style="display: flex; flex-direction: row; align-items: center;">
@@ -362,20 +362,20 @@
                           </div>
                         </div>
                       </div>
-                      <p>&emsp;&emsp;其執行檔的安裝流程和使用方式均有放置在github上。</p>
+                      <p>&emsp;&emsp;其執行檔的安裝流程和使用方式均有放置在GitHub上。</p>
                       <p>&emsp;&emsp;將須判斷之影片輸入後，其會輸出標示人體關節點的影片，及下圖的json檔樣式。因我們僅需人體關節點的數據檔，因此僅輸出json檔以利後續研究。</p>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img2.png">
-                        <p class="img_text">（openpose 輸出的json檔）</p>
+                        <p class="img_text">（OpenPose 輸出的json檔）</p>
                       </div>
                       <div class="video-container">
                         <video id="myVideo" controls autoplay>
                           <source id="videoSource" src="images/method/pose/pose.mp4" type="video/mp4">
                           Your browser does not support the video tag.
                         </video>
-                        <p class="img_text">(openpose輸出的人物節點影片)</p>
+                        <p class="img_text">(OpenPose輸出的人物節點影片)</p>
                       </div>
-                      <p id="sfc02">&emsp;&emsp;Openpose<sup><a href="reference.html#heading15">[16]</a></sup>所輸出的json檔，為了後續使用便利，因此將其輸出的檔案，使用多個自訂義的程式去校正，並輸出csv檔，主要執行流程如下圖</p>
+                      <p id="sfc02">&emsp;&emsp;Openpose<sup><a href="reference.html#heading15">[16]</a></sup>所輸出的json檔，為了後續使用便利，因此將其輸出的檔案，使用多個自訂義的程式去校正，並輸出CSV檔，主要執行流程如下圖</p>
                       <h2 class="fs-1 text-capitalize fst-italic"><strong>資料整理</strong></h2>
                       <h2 id="json" class="fs-1 text-capitalize fst-italic"><strong>1. 讀取第一個json檔</strong></h2>
                       <p>&emsp;&emsp;將json檔中的每個人單獨整理成一個list檔，並利用第一幀的照片套用場地線去辨識兩位選手的座標範圍，並將偵測出的座標當作人物初始座標。</p>
@@ -388,7 +388,7 @@
                         <p class="img_text">（偵測出的兩位選手的第一幀座標）</p>
                       </div>
                       <h2 id="coordinate" class="fs-1 text-capitalize fst-italic"><strong>2. 座標比對</strong></h2>
-                      <p>&emsp;&emsp;利用後減前的x、y座標距離差，判斷是否為該選手，並用此方式將選手在每一幀的坐標點找出，將每一個節點都單獨整理成一個list檔，所以每位選手都會有25個list去分別對應其節點(請參考人物節點介紹中的25個人體節點位置圖<sup><a href="reference.html#heading14">[15]</a></sup>)。</p>
+                      <p>&emsp;&emsp;利用後減前的X、Y座標距離差，判斷是否為該選手，並用此方式將選手在每一幀的坐標點找出，將每一個節點都單獨整理成一個list檔，所以每位選手都會有25個list去分別對應其節點(請參考人物節點介紹中的25個人體節點位置圖<sup><a href="reference.html#heading14">[15]</a></sup>)。</p>
                       <h2 id="adjust01" class="fs-1 text-capitalize fst-italic"><strong>3. 資料筆數矯正</strong></h2>
                       <p>&emsp;&emsp;會有幾幀因為偵測誤差或是其他干擾因素而導致資料有誤差，所以需要確認資料筆數是否和其幀數一致，若不一致，找出缺少的幀數並將該幀補0，讓資料筆數一致。</p>
                       <div class="align-items-center">
@@ -398,7 +398,7 @@
                     </section>
                     <section>
                       <h1 id="processing" class="fs-1 text-capitalize fst-italic"><strong>資料前處理</strong></h1>
-                      <h2 class="fs-1 text-capitalize fst-italic"><strong>1. Knn遺失值插補</strong></h2>
+                      <h2 class="fs-1 text-capitalize fst-italic"><strong>1. KNN遺失值插補</strong></h2>
                       <div class="post-description">
                       <p>&emsp;&emsp;將節點檔中的遺失值進行插補，但為了維持資料的可用性，也為了降低資料的偏誤，遺失的幀數只要大於等於10幀，便不進行插補。</p>
                       </div>
@@ -406,17 +406,17 @@
                         <img id="smallImage" src="images/method/pose/img8.jpg">
                         <p class="img_text">（偵測哪一幀需要插補）</p>
                       </div>
-                      <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>2. arima檢查軌跡 & 資料插補</strong></h2>
+                      <h2 id="arima" class="fs-1 text-capitalize fst-italic"><strong>2. ARIMA檢查軌跡 & 資料插補</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;因Openpose<sup><a href="reference.html#heading15">[16]</a></sup>偵測時有可能會因姿勢或是攝影角度……等各項因素，而產生偵測的節點位置誤差，所以導致其運動軌跡不連貫。為避免此情況，故使用arima<sup><a href="reference.html#heading12">[13]</a></sup>檢查各點的運動軌跡，並將軌跡異常點列出後歸0，並再次使用knn進行插補，插補條件同上一步。</p>
+                      <p>&emsp;&emsp;因OpenPose<sup><a href="reference.html#heading15">[16]</a></sup>偵測時有可能會因姿勢或是攝影角度……等各項因素，而產生偵測的節點位置誤差，所以導致其運動軌跡不連貫。為避免此情況，故使用ARIMA<sup><a href="reference.html#heading12">[13]</a></sup>檢查各點的運動軌跡，並將軌跡異常點列出後歸0，並再次使用KNN進行插補，插補條件同上一步。</p>
                       </div>
                       <div class="align-items-center">
                         <img id="myImage" src="images/method/pose/img9.png">
-                        <p class="img_text">（使用arima檢測發現的異常點）</p>
+                        <p class="img_text">（使用ARIMA檢測發現的異常點）</p>
                       </div>
                       <h2 id="adjust02" class="fs-1 text-capitalize fst-italic"><strong>3. 資料輸出</strong></h2>
                       <div class="post-description">
-                      <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點csv檔。</p>
+                      <p>&emsp;&emsp;輸出兩位選手在影片中每一幀的25個人體節點CSV檔。</p>
                       </div>
                     </section>
                   </div>
