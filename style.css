@@ -1158,6 +1158,14 @@ footer {
     height: 2000px;
   }
 
+  #hitter_content {
+    height: 2500px;
+  }
+
+  #hitting_point_content {
+    height: 5800px;
+  }
+
   /* ========== Flow Chart ========== */
   .flow-chart {
     font-size: 15px;
