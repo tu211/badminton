@@ -165,7 +165,15 @@
         <div class="row align-items-center">
           <div class="col-lg-12 align-items-center">
             <div class="detail-entry px-4">
-              <h3 id="summary" class="mt-0 mb-4 fs-1 fst-italic"><strong>研究結論</strong></h3>
+              <div class="hero-content text-center p-5">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h1 id="conclusion_winner" class="display-2 fst-italic">研究討論</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>&emsp;&emsp;本專題中，主要使用OpenPose<sup><a href="reference.html#heading15">[16]</a></sup>、TracknetV2<sup><a href="heading12">[13]</a></sup>、Canny<sup><a href="reference.html#headingFive">[6]</a></sup>、HoughLine<sup><a href="reference.html#headingTwo">[3]</a></sup>、透視轉換<sup><a href="reference.html#headingEight">[9]</a></sup>……等方法對影片中的人物、羽球、場地進行偵測，並生成初始資料。接著，使用Arima<sup><a href="reference.html#headingEleven">[12]</a></sup>、軌跡平滑<sup><a href="heading13">[14]</a></sup>、KNN去對資料進行修正。並用修正後的資料產生新變數，去預測擊球方、擊球點、球路及得分方，預測擊球方時，使用了六種模型，分別是XGBoost、SVM(支援向量機)、Perceptron(感知器) 、Decision Tree(決策樹)、Logistic Regression(邏輯斯回歸)、Random Decision Forests(隨機森林)，並用多數決決定預測結果，預測出的準確率高達95%，使用多模型預測不僅讓結果更加準確，也讓其可信度更高。</p>
               <p>&emsp;&emsp;<a href="hitter_and_hitting_point.html#hitting_point">擊球點</a>的預測，主要是建立在<a href="hitter_and_hitting_point.html#hitter">擊球方</a>的基礎上，去分隔擊球的時間段，再使用羽球的角度變化量去預測其打擊點，讓每個擊球時間段都有一個打擊點。但因為資料具有偵測誤差，雖有進行校正，但吻合度仍不可能達到百分百，故偵測出的擊球點會有大約±5的誤差。因此在這個區塊很難定義其準確度，故我們並沒有在這個項目計算準確度，僅是確保每個擊球時間段都具有擊球點，且和原數據的誤差不要大於±5。</p>
               <p>&emsp;&emsp;<a href="winner_and_ball_trajectory.html#ball_trajectory">球路</a>預測是在本專題中最為複雜的一部分，我們為其新增許多變數，也嘗試過許多模型，因為某些類型之間的差異微不足道，很難明確劃分它們，雖然僅有幾個種類的準確度很低，也因為該種類的資料筆數少，所以可能需要在判斷時給予更多條件和變數，或是增加資料筆數，才有機會藉此提高其準確率。</p>
@@ -175,7 +183,15 @@
           </div>
           <div class="col-lg-12">
             <div class="detail-entry px-4">
-              <h3 id="summary" class="mt-0 mb-4 fs-1 fst-italic"><strong>應用與討論</strong></h3>
+              <div class="hero-content text-center p-5">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h1 id="conclusion_winner" class="display-2 fst-italic">應用與討論</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>&emsp;&emsp;本次的研究主旨在透過AI去辨識羽球競賽影片。我們在製作時使用很多方式去偵測初始資料，也因為初始資料偵測有許多的誤差，導致在後續使用資料時會有偏誤，縱使使用進行了資料校正，但在最終使用時仍導致了預測的偏差。所以希望找到更好的方式對資料進行偵測，降低資料誤差，以提高我們的準確度。</p>
               <p>&emsp;&emsp;而我們最終輸出的影片，包含了我們所預測出的各項目，但還是希望未來可以製作出一個網頁，讓用戶自行輸入影片，透過網頁偵測影片內容後，再次輸出給用戶，讓用戶可以透過這樣的方式，去研究或是學習自己想要鑽研的競賽影片。也希望這樣的方式可以提供一些簡易的選手研究，以利於教練和選手去進行技術研究和探討。</p>
             </div>
